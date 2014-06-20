@@ -14,6 +14,16 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require 'capybara/poltergeist'
+
+def snap
+  save_screenshot("tmp/screenshots/#{(Time.now.to_f * 1000).floor}.png")
+end
+
+Capybara.javascript_driver = :poltergeist
+Capybara.current_driver = :poltergeist
+
 RSpec.configure do |config|
   # Capybara 
   config.include Capybara::DSL
