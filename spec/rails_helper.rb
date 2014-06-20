@@ -4,6 +4,8 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 
+require 'capybara/poltergeist'
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -13,11 +15,21 @@ require 'rspec/rails'
 # option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+def snap
+  save_screenshot("tmp/screenshots/#{(Time.now.to_f * 1000).floor}.png")
+end
+
+Capybara.javascript_driver = :poltergeist
+Capybara.current_driver = :poltergeist
+
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  # Capybara 
+  config.include Capybara::DSL
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
