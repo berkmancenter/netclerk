@@ -2,15 +2,15 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.1'
 
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
 
 group :test do
   gem 'rspec-rails', '2.14.2'
-  gem 'capybara', '2.2.1'
-  gem 'poltergeist', '1.5.0'
+  gem 'capybara', '2.3.0'
+  gem 'poltergeist', '1.5.1'
 end
 
 gem 'factory_girl_rails'
@@ -52,6 +52,6 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-# gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 
