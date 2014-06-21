@@ -12,4 +12,6 @@ describe ( 'countries/link_item' ) {
   it { should have_css 'li' }
 
   it { should have_css 'li a' }
+
+  it { should have_css 'li a h2', text: country.name }
 }
