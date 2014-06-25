@@ -10,13 +10,15 @@ describe ( 'layouts/application' ) {
 
     it { should have_css 'header' }
 
-    it { should have_css 'header .navbar' }
+    it { should have_css 'header nav' }
 
-    it { should have_css '.navbar a' }
+    it { should have_css 'nav.navbar' }
+
+    it { should have_css 'nav a' }
     
     it { should have_css 'a.navbar-brand', text: 'NetClerk' }
 
-    it { should have_css '.navbar ul.nav' }
+    it { should have_css 'nav ul.nav' }
 
     it { should have_css 'ul.nav li a', text: 'Countries' }
 
