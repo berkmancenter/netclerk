@@ -18,15 +18,19 @@
 
 @import "bootstrap/theme";
 
-body header .navbar a.navbar-brand {
-  background: url("logo_48.png") no-repeat;
-  color: $gray-darker;
-  font-family: 'Lora', serif;
-  font-size: 32px;
-  font-weight: bold;
-  padding-left: 56px;
+body header {
+  margin-bottom: 56px;
 
-  &:hover {
-    color: $brand-primary;
+  .navbar a.navbar-brand {
+    background: url("logo_48.png") no-repeat;
+    color: $gray-darker;
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 56px;
+
+    &:hover {
+      color: $brand-primary;
+    }
   }
 }

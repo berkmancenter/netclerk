@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_name: 'NetClerk'
+
+  models:
+    countries: 'Countries'
+
+
+
