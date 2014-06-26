@@ -9,5 +9,15 @@ describe ( 'countries/country' ) {
     render country
   }
 
-  it { should have_css 'h2', text: country.name }
+  it { should have_css '.media' }
+
+  it { should have_css '.media a.pull-left' }
+
+  it { should have_css '.pull-left img' }
+
+  it { should have_css 'img.media-object' }
+
+  it { should have_css '.media .media-body' }
+
+  it { should have_css '.media-body .media-heading', text: country.name }
 }
