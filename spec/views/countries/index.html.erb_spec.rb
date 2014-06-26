@@ -4,8 +4,10 @@ describe ( 'countries/index' ) {
   subject { rendered }
 
   context ( 'default view' ) {
+    let ( :countries ) { Country.all }
+
     before {
-      assign( :countries, Country.all )
+      assign( :countries, countries )
     
       render
     }
@@ -13,5 +15,9 @@ describe ( 'countries/index' ) {
     it { should have_css 'h1', text: 'Countries' }
 
     it { should have_css 'ul.countries' }
+
+    it { should have_css 'li', count: countries.count }
+
+    it { should_not have_css 'li>a' }
   }
 }
