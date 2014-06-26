@@ -13,6 +13,8 @@ describe ( 'countries/country' ) {
 
   it { should have_css '.media a.pull-left' }
 
+  it { should have_css "a[href*='#{country_path country}']" }
+
   it { should have_css '.pull-left img' }
 
   it { should have_css 'img.media-object' }
