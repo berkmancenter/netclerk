@@ -9,9 +9,9 @@ describe ( 'countries/country' ) {
     render country
   }
 
-  it { should have_css '.media' }
+  it { should_not have_css '.media' }
 
-  it { should have_css '.media a.pull-left' }
+  it { should have_css 'a.pull-left' }
 
   it { should have_css "a[href*='#{country_path country}']" }
 
@@ -19,7 +19,7 @@ describe ( 'countries/country' ) {
 
   it { should have_css 'img.media-object' }
 
-  it { should have_css '.media .media-body' }
+  it { should have_css '.media-body' }
 
   it { should have_css '.media-body .media-heading', text: country.name }
 }

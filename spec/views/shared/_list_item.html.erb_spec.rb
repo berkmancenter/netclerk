@@ -9,7 +9,5 @@ describe ( 'shared/list_item' ) {
     render partial: 'shared/list_item', object: country
   }
 
-  it { should have_css 'li' }
-
-  it { should_not have_css 'li>a' }
+  it { should have_css 'li.media' }
 }
