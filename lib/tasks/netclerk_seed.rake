@@ -12,5 +12,10 @@ def seed
 
   # social
   social = FactoryGirl.create :social
+
+  # twitter
+  twitter = FactoryGirl.create :twitter
+  twitter.category = social
+  twitter.save
 end
 
