@@ -9,5 +9,8 @@ end
 def seed
   # usa
   usa = FactoryGirl.create :usa
+
+  # social
+  social = FactoryGirl.create :social
 end
 
