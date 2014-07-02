@@ -14,7 +14,7 @@ describe ( 'countries/index' ) {
 
     it { should have_css 'h1', text: 'Countries' }
 
-    it { should have_css 'ul.countries' }
+    it { should have_css 'ul.countries-list' }
 
     it { should have_css 'li', count: countries.count }
   }

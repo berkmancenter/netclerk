@@ -9,7 +9,9 @@ describe ( 'countries/country' ) {
     render country
   }
 
-  it { should_not have_css '.media' }
+  it { should have_css '.country' }
+
+  it { should have_css '.media' }
 
   it { should have_css 'a.pull-left' }
 
