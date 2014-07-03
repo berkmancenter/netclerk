@@ -1,2 +1,7 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1><%= t 'models.pages' %></h1>
+
+<p class="pages-help"><%= t 'pages.help' %></p>
+
+<div class="list-group pages-list">
+  <%= render partial: 'pages/group_link', collection: @pages %>
+</div>
