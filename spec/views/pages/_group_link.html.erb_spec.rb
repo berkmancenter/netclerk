@@ -16,6 +16,10 @@ describe ( 'pages/group_link' ) {
   }
 
   it {
+    should have_css 'a[title="https://twitter.com"]'
+  }
+
+  it {
     should have_css 'a span', text: 'Twitter'
   }
 
