@@ -36,10 +36,13 @@ def seed
   whitehouse_usa_r01.save
 
   # statuses
-  whitehouse_usa = FactoryGirl.create :whitehouse_usa
-  whitehouse_usa.page = whitehouse
-  whitehouse_usa.country = usa
-  whitehouse_usa.save
-
+  create_status :whitehouse_usa_yesterday, usa, whitehouse
+  create_status :whitehouse_usa, usa, whitehouse
 end
 
+def create_status( factory, country, page )
+  status = FactoryGirl.create factory
+  status.country = country
+  status.page = page
+  status.save
+end

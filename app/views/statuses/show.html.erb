@@ -1,0 +1,11 @@
+<%= render @status.country %>
+<%= render @status.page %>
+
+<h2><%= t 'statuses.recent' %></h2>
+
+<div class="list-group statuses-list">
+  <%= render partial: 'statuses/availability_link', collection: @statuses %>
+</div>
+
+<h2><%= t 'statuses.history' %></h2>
+

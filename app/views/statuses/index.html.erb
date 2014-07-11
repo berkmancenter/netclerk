@@ -1,0 +1,5 @@
+<h1><%= t 'statuses.recent' %></h1>
+
+<div class="list-group statuses-list">
+  <%= render partial: 'statuses/group_link', collection: @statuses %>
+</div>

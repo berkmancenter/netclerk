@@ -25,9 +25,26 @@ en:
   models:
     countries: 'Countries'
     pages: 'URLs'
+    statuses: 'Status'
 
   pages:
     help: 'Check the availability of any URL by using the box above, or, try one of these:'
+
+  statuses:
+    recent: 'Recent'
+    history: 'History'
+
+    '0': '%{title} is available in <b>%{country}</b>'
+    '1': '%{title} is a bit different in <b>%{country}</b>'
+    '2': '%{title} is very different in <b>%{country}</b>'
+    '3': '%{title} is not available in <b>%{country}</b>'
+
+    availability:
+      '0': 'Available on %{date}'
+      '1': 'A bit different on %{date}'
+      '2': 'Very different on %{date}'
+      '3': 'Not available on %{date}'
+
 
 
 
