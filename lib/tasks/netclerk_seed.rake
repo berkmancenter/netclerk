@@ -9,6 +9,7 @@ end
 def seed
   # countries
   usa = FactoryGirl.create :usa
+  chn = FactoryGirl.create :chn
 
   # categories
   social = FactoryGirl.create :social
@@ -38,6 +39,9 @@ def seed
   # statuses
   create_status :whitehouse_usa_yesterday, usa, whitehouse
   create_status :whitehouse_usa, usa, whitehouse
+
+  create_status :whitehouse_chn_yesterday, chn, whitehouse
+  create_status :whitehouse_chn, chn, whitehouse
 end
 
 def create_status( factory, country, page )

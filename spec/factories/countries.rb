@@ -7,5 +7,11 @@ FactoryGirl.define do
       iso2 'US'
       iso3 'USA'
     end
+
+    factory :chn do
+      name 'China'
+      iso2 'CN'
+      iso3 'CHN'
+    end
   end
 end
