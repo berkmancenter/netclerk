@@ -28,4 +28,6 @@ describe ( 'pages/page' ) {
   it { should have_css '.media-body' }
 
   it { should have_css '.media-body .media-heading', text: page.title }
+  it { should have_css '.media-body p', text: page.url }
+  it { should have_css '.media-body p', text: page.category.name }
 }

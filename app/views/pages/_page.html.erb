@@ -3,5 +3,6 @@
   <div class="media-body">
     <h4 class="media-heading"><%= page.title %></h4>
     <p><%= page.url %></p>
+    <p><%= page.category.name unless page.category.nil? %></p>
   </div>
 </div>
