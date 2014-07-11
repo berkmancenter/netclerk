@@ -5,5 +5,11 @@ FactoryGirl.define do
       title 'Twitter'
       #category social
     end
+
+    factory :whitehouse do
+      url 'http://www.whitehouse.gov/'
+      title 'The White House'
+      #category political
+    end
   end
 end

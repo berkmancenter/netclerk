@@ -5,5 +5,9 @@ FactoryGirl.define do
     factory :social do
       name 'social'
     end
+
+    factory :political do
+      name 'political'
+    end
   end
 end
