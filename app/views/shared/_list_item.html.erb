@@ -1,1 +1,5 @@
+<% if defined? classes %>
+<li class="<%= classes %>"><%= render list_item %></li>
+<% else %>
 <li><%= render list_item %></li>
+<% end %>
