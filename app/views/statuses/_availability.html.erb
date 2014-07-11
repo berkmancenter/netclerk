@@ -1,1 +1,1 @@
-<span><%= raw t( "statuses.availability.#{availability.value}", date: availability.created_at ) %></span>
+<span><%= raw t( "statuses.availability.#{availability.value}", date: availability.created_at.to_formatted_s( :year_month_day ) ) %></span>
