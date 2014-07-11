@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711161251) do
+ActiveRecord::Schema.define(version: 20140711174509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,5 +70,17 @@ ActiveRecord::Schema.define(version: 20140711161251) do
   add_index "requests", ["country_id"], name: "index_requests_on_country_id", using: :btree
   add_index "requests", ["page_id"], name: "index_requests_on_page_id", using: :btree
   add_index "requests", ["proxy_id"], name: "index_requests_on_proxy_id", using: :btree
+
+  create_table "statuses", force: true do |t|
+    t.integer  "page_id"
+    t.integer  "country_id"
+    t.integer  "value"
+    t.integer  "delta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "statuses", ["country_id"], name: "index_statuses_on_country_id", using: :btree
+  add_index "statuses", ["page_id"], name: "index_statuses_on_page_id", using: :btree
 
 end

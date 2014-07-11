@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :request do
-    factory :whitehouse_usa do
+    factory :whitehouse_usa_r01 do
       #page whitehouse
       #country usa
       #proxy proxy_usa

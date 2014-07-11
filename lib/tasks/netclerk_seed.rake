@@ -29,10 +29,17 @@ def seed
   proxy_usa.save
 
   # requests
+  whitehouse_usa_r01 = FactoryGirl.create :whitehouse_usa_r01
+  whitehouse_usa_r01.page = whitehouse
+  whitehouse_usa_r01.country = usa
+  whitehouse_usa_r01.proxy = proxy_usa
+  whitehouse_usa_r01.save
+
+  # statuses
   whitehouse_usa = FactoryGirl.create :whitehouse_usa
   whitehouse_usa.page = whitehouse
   whitehouse_usa.country = usa
-  whitehouse_usa.proxy = proxy_usa
   whitehouse_usa.save
+
 end
 
