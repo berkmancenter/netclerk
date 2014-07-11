@@ -17,5 +17,10 @@ def seed
   twitter = FactoryGirl.create :twitter
   twitter.category = social
   twitter.save
+
+  # proxies
+  proxy_usa = FactoryGirl.create :proxy_usa
+  proxy_usa.country = usa
+  proxy_usa.save
 end
 

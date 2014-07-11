@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702204848) do
+ActiveRecord::Schema.define(version: 20140711153831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,5 +40,15 @@ ActiveRecord::Schema.define(version: 20140702204848) do
   end
 
   add_index "pages", ["category_id"], name: "index_pages_on_category_id", using: :btree
+
+  create_table "proxies", force: true do |t|
+    t.string   "ip_and_port"
+    t.boolean  "permanent"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "proxies", ["country_id"], name: "index_proxies_on_country_id", using: :btree
 
 end
