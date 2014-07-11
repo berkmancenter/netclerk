@@ -12,7 +12,7 @@ describe ( 'pages/index' ) {
       render
     }
 
-    it { should have_css 'h1', text: 'Pages' }
+    it { should have_css 'h1', text: 'URLs' }
 
     it {
       should have_css '.pages-help', text: 'Check the availability'

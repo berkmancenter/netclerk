@@ -21,6 +21,7 @@ describe ( 'layouts/application' ) {
     it { should have_css 'nav ul.nav' }
 
     it { should have_css 'ul.nav li a', text: 'Countries' }
+    it { should have_css 'ul.nav li a', text: 'URLs' }
 
     it { should have_css 'div.container' }
 

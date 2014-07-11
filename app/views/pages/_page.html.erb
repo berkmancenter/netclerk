@@ -1,0 +1,7 @@
+<div class="page media">
+  <%= link_to image_tag( "http://www.google.com/s2/favicons?domain=#{URI.parse(page.url).host}", alt: '', class: 'media-object' ), page_path( page ), class: 'pull-left' %>
+  <div class="media-body">
+    <h4 class="media-heading"><%= page.title %></h4>
+    <p><%= page.url %></p>
+  </div>
+</div>
