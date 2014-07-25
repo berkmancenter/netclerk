@@ -35,12 +35,18 @@ en:
     recent: 'Recent'
     history: 'History'
 
-    '0': '%{title} is available in <b>%{country}</b>'
-    '1': '%{title} is a bit different in <b>%{country}</b>'
-    '2': '%{title} is very different in <b>%{country}</b>'
-    '3': '%{title} is not available in <b>%{country}</b>'
+    '0': 'available'
+    '1': 'a bit different'
+    '2': 'very different'
+    '3': 'not available'
 
-    availability:
+    title_in_country:
+      '0': '%{title} is available in <b>%{country}</b>'
+      '1': '%{title} is a bit different in <b>%{country}</b>'
+      '2': '%{title} is very different in <b>%{country}</b>'
+      '3': '%{title} is not available in <b>%{country}</b>'
+
+    available_on:
       '0': 'Available on %{date}'
       '1': 'A bit different on %{date}'
       '2': 'Very different on %{date}'
