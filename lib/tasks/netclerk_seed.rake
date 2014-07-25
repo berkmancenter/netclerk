@@ -39,6 +39,8 @@ def seed
   whitehouse_usa_r01.save
 
   # statuses
+  create_status :twitter_usa, usa, twitter
+
   create_status :whitehouse_usa_yesterday, usa, whitehouse
   create_status :whitehouse_usa, usa, whitehouse
 

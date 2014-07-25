@@ -10,7 +10,7 @@ describe ( 'pages/show' ) {
       Status.most_recent.where( page: page ).group_by { |status| status.value }
     }
     let ( :status_chn ) {
-      Status.most_recent.where( page: page, country: chn )
+      Status.most_recent.find_by( page: page, country: chn )
     }
 
     before {
@@ -38,7 +38,7 @@ describe ( 'pages/show' ) {
     it { should have_css '.pages-status-danger .list-group-item-danger', text: 'not available' }
 
     it ( 'should link to statuses' ) {
-      should have_css %q(.pages-status-danger a.list-group-item[href*="#{status_path status_chn}"]), text: 'China', count: 1
+      should have_css %(.pages-status-danger a.list-group-item[href*="#{status_path status_chn}"]), text: 'China', count: 1
     }
 
     it { should have_css '.pages-status-warning .list-group-item-warning', text: 'very different' }
