@@ -4,9 +4,9 @@ describe ( 'statuses/show' ) {
   subject { rendered }
 
   context ( 'default view' ) {
-    let ( :chn ) { Country.find_by_name 'China' }
+    let ( :c ) { Country.find_by_name 'China' }
     let ( :page ) { Page.find_by_title 'The White House' }
-    let ( :status ) { Status.most_recent.find_by( country: chn, page: page ) }
+    let ( :status ) { Status.most_recent.find_by( country: c, page: page ) }
 
     let ( :statuses ) { Status.where( country: status.country, page: status.page ).order( 'created_at desc' ) }
 
@@ -37,6 +37,11 @@ describe ( 'statuses/show' ) {
 
     it { 
       should have_css 'h2', text: 'History'
+    }
+
+    it {
+      # no need for a whole section atm
+      should_not have_css '.history-list'
     }
   }
 }
