@@ -3,10 +3,9 @@ require 'spec_helper'
 describe ( 'statuses/availability' ) {
   subject { rendered }
 
-  let ( :status ) {
-    # first test status is now whitehouse_usa_yesterday
-    Status.first
-  }
+  let ( :chn ) { Country.find_by_name 'China' }
+  let ( :page ) { Page.find_by_title 'The White House' }
+  let ( :status ) { Status.most_recent.find_by( country: chn, page: page ) }
   
   before {
     render partial: 'statuses/availability', object: status
@@ -17,10 +16,10 @@ describe ( 'statuses/availability' ) {
   }
 
   it {
-    should have_css 'span', text: 'Available on 2014-07-10'
+    should have_css 'span', text: 'Not available on 2014-07-11'
   }
   
   it {
-    should_not have_css 'b', 'United States'
+    should_not have_css 'b', 'China'
   }
 }

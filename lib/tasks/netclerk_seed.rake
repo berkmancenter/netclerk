@@ -40,16 +40,18 @@ def seed
 
   # statuses
   create_status :twitter_usa, usa, twitter
-
   create_status :whitehouse_usa_yesterday, usa, whitehouse
   create_status :whitehouse_usa, usa, whitehouse
 
+  create_status :twitter_chn, chn, twitter
   create_status :whitehouse_chn_yesterday, chn, whitehouse
   create_status :whitehouse_chn, chn, whitehouse
 
+  create_status :twitter_fra, fra, twitter
   create_status :whitehouse_fra_yesterday, fra, whitehouse
   create_status :whitehouse_fra, fra, whitehouse
 
+  create_status :twitter_irn, irn, twitter
   create_status :whitehouse_irn, irn, whitehouse
 end
 

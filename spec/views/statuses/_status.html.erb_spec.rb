@@ -3,7 +3,10 @@ require 'spec_helper'
 describe ( 'statuses/status' ) {
   subject { rendered }
 
-  let ( :status ) { Status.first }
+  let ( :chn ) { Country.find_by_name 'China' }
+  let ( :page ) { Page.find_by_title 'The White House' }
+  let ( :status ) { Status.most_recent.find_by( country: chn, page: page ) }
+  
   
   before {
     render status
@@ -14,10 +17,10 @@ describe ( 'statuses/status' ) {
   }
 
   it {
-    should have_css 'span', text: 'The White House is available in'
+    should have_css 'span', text: 'The White House is not available in'
   }
   
   it {
-    should have_css 'b', 'United States'
+    should have_css 'b', 'China'
   }
 }

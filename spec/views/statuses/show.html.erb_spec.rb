@@ -4,8 +4,11 @@ describe ( 'statuses/show' ) {
   subject { rendered }
 
   context ( 'default view' ) {
-    let ( :status ) { Status.first }
-    let ( :statuses ) { Status.where( country: status.country, page: status.page ).order( :created_at ) }
+    let ( :chn ) { Country.find_by_name 'China' }
+    let ( :page ) { Page.find_by_title 'The White House' }
+    let ( :status ) { Status.most_recent.find_by( country: chn, page: page ) }
+
+    let ( :statuses ) { Status.where( country: status.country, page: status.page ).order( 'created_at desc' ) }
 
     before {
       assign( :status, status )

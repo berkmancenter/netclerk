@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ( 'countries/country' ) {
   subject { rendered }
 
-  let ( :country ) { Country.first }
+  let ( :country ) { Country.first } #usa
   
   before {
     render country
@@ -25,5 +25,9 @@ describe ( 'countries/country' ) {
 
   it { should have_css '.media-body .media-heading', text: country.name }
 
-  it { should have_css '.media-body .statuses-barchart' }
+  it { should have_css '.media-body .statuses-chart' }
+
+  it { should have_css '.statuses-chart[data-todays-status]' }
+
+  it { should have_css '.statuses-chart[data-todays-status="[0, 0]"]' }
 }

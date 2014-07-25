@@ -1,3 +1,29 @@
 .countries-list {
   list-style: none;
 }
+
+.statuses-chart {
+  background: green;
+  height: 32px;
+  width: 380px;
+
+  .sc0 {
+    fill: green;
+    /* fill: #3c763d; */
+  }
+
+  .sc1 {
+    fill: blue;
+    /* fill: #31708f; */
+  }
+
+  .sc2 {
+    fill: yellow;
+    /* fill: #8a6d3b; */
+  }
+
+  .sc3 {
+    fill: red;
+    /* fill: #a94442; */
+  }
+}
