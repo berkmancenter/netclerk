@@ -27,6 +27,10 @@ en:
     pages: 'URLs'
     statuses: 'Status'
 
+  countries:
+    changed_since: 'Changed since yesterday'
+    top_urls: 'Top URLs'
+
   pages:
     help: 'Check the availability of any URL by using the box above, or, try one of these:'
     todays_status: "Today's status"
@@ -51,7 +55,6 @@ en:
       '1': 'A bit different on %{date}'
       '2': 'Very different on %{date}'
       '3': 'Not available on %{date}'
-
 
 
 

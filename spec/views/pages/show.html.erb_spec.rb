@@ -5,12 +5,12 @@ describe ( 'pages/show' ) {
 
   context ( 'default view' ) {
     let ( :page ) { Page.find_by_title 'The White House' }
-    let ( :chn ) { Country.find_by_name 'China' }
+    let ( :c ) { Country.find_by_name 'China' }
     let ( :statuses ) {
       Status.most_recent.where( page: page ).group_by { |status| status.value }
     }
     let ( :status_chn ) {
-      Status.most_recent.find_by( page: page, country: chn )
+      Status.most_recent.find_by( page: page, country: c )
     }
 
     before {

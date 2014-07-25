@@ -1,1 +1,15 @@
 <%= render @country %>
+
+<h2><%#= t 'countries.changed_since' %></h2>
+
+<h2><%= t 'countries.top_urls' %></h2>
+
+<% @statuses.each { |status_group| %>
+<div class="list-group pages-status-<%= status_context_class status_group[1][0] %>">
+  <div class="list-group-item list-group-item-<%= status_context_class status_group[1][0] %>"><%= t "statuses.#{status_group[0]}" %></div>
+
+  <% status_group[1].each { |status| %>
+    <%= link_to status.page.title, status, class: 'list-group-item' %>
+  <% } %>
+</div>
+<% } %>
