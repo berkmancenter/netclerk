@@ -31,5 +31,29 @@ FactoryGirl.define do
       delta 0
       created_at '2014-07-10'
     end
+
+    factory :whitehouse_fra do
+      #country fra
+      #page whitehouse
+      value 1
+      delta 0
+      created_at '2014-07-11'
+    end
+
+    factory :whitehouse_fra_yesterday do
+      #country fra
+      #page whitehouse
+      value 1
+      delta 0
+      created_at '2014-07-10'
+    end
+
+    factory :whitehouse_irn do
+      #country irn
+      #page whitehouse
+      value 2
+      delta 0
+      created_at '2014-07-11'
+    end
   end
 end

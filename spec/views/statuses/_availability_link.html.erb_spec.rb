@@ -22,7 +22,7 @@ describe ( 'statuses/availability_link' ) {
   }
 
   it {
-    should have_css 'a span', text: 'Available on 2014-07-11'
+    should have_css 'a span', text: 'Available on 2014-07-10'
   }
   
   it {

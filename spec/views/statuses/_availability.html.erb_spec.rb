@@ -3,7 +3,10 @@ require 'spec_helper'
 describe ( 'statuses/availability' ) {
   subject { rendered }
 
-  let ( :status ) { Status.first }
+  let ( :status ) {
+    # first test status is now whitehouse_usa_yesterday
+    Status.first
+  }
   
   before {
     render partial: 'statuses/availability', object: status
@@ -14,7 +17,7 @@ describe ( 'statuses/availability' ) {
   }
 
   it {
-    should have_css 'span', text: 'Available on 2014-07-11'
+    should have_css 'span', text: 'Available on 2014-07-10'
   }
   
   it {

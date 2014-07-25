@@ -7,7 +7,7 @@ FactoryGirl.define do
     end
 
     factory :whitehouse do
-      url 'http://www.whitehouse.gov/'
+      url 'http://www.whitehouse.gov'
       title 'The White House'
       #category political
     end

@@ -4,10 +4,14 @@ describe ( 'pages/show' ) {
   subject { rendered }
 
   context ( 'default view' ) {
-    let ( :page ) { Page.first }
+    let ( :page ) { Page.find_by_title 'The White House' }
+    let ( :statuses ) {
+      Status.most_recent.where( page: page ).group_by { |status| status.value }
+    }
 
     before {
       assign( :page, page )
+      assign( :statuses, statuses )
     
       render
     }
@@ -22,14 +26,14 @@ describe ( 'pages/show' ) {
       should have_css '.list-group', count: 4
     }
 
-    it { should have_css '.list-group .pages-status-success' }
+    it { should have_css '.list-group.pages-status-success' }
 
     it {
       should have_css '.pages-status-success .list-group-item-success'
     }
 
     it {
-      should have_css '.pages-status-success .list-group-item span', text: 'United States', count: 1
+      should have_css '.pages-status-success a.list-group-item', text: 'United States', count: 1
     }
 
     it { should have_css '.pages-status-info .list-group-item-info' }
@@ -38,13 +42,13 @@ describe ( 'pages/show' ) {
 
     it {
       # china's warning status isn't from today
-      should_not have_css '.pages-status-warning .list-group-item span', text: 'China'
+      should_not have_css '.pages-status-warning a.list-group-item', text: 'China'
     }
 
     it { should have_css '.pages-status-danger .list-group-item-danger' }
 
     it {
-      should have_css '.pages-status-danger .list-group-item span', text: 'China', count: 1
+      should have_css '.pages-status-danger a.list-group-item', text: 'China', count: 1
     }
   }
 }

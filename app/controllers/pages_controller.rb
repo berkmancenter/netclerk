@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.find(params[:id])
+    @statuses = Status.most_recent.where( page: @page ).group_by { |status| status.value }
   end
 
   def new
