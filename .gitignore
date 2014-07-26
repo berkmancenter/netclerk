@@ -18,3 +18,6 @@ config/database.yml
 ## Vim
 *.swp
 *.swo
+
+## Misc
+*.db
