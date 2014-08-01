@@ -16,4 +16,16 @@ describe( 'page model' ) {
       twitter.category.name.should eq 'social'
     }
   }
+
+  describe( 'create_proxy_requests' ) {
+    let( :p ) { Page.find_by_title 'The White House' }
+
+    it ( 'should make requests' ) {
+      expect {
+        p.create_proxy_requests
+      }.to change {
+        Request.count
+      }.by( Proxy.count )
+    }
+  }
 }

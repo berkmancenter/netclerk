@@ -11,5 +11,9 @@ describe( 'country model' ) {
       usa.should respond_to :iso3
       usa.should respond_to :local_dns
     }
+
+    it {
+      usa.should respond_to :proxies
+    }
   }
 }
