@@ -20,4 +20,14 @@ describe( 'request model' ) {
     it { request.should respond_to :response_length }
     it { request.should respond_to :response_delta }
   }
+
+  describe( 'value' ) {
+    let( :p ) { Page.find_by_title 'The White House' }
+    let( :c ) { Country.find_by_name 'United States' }
+    let( :rs ) { Request.where( page: p, country: c, created_at: '2014-07-12' ) }
+      
+    it {
+      Request.value( rs ).should eq( 1 )
+    }
+  }
 }

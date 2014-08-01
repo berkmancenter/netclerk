@@ -31,12 +31,30 @@ def seed
   proxy_usa.country = usa
   proxy_usa.save
 
+  #proxy_chn = FactoryGirl.create :proxy_chn
+  #proxy_chn.country = chn
+  #proxy_chn.save
+
+  #proxy_fra = FactoryGirl.create :proxy_fra
+  #proxy_fra.country = fra
+  #proxy_fra.save
+
+  #proxy_irn = FactoryGirl.create :proxy_irn
+  #proxy_irn.country = irn
+  #proxy_irn.save
+
   # requests
   whitehouse_usa_r01 = FactoryGirl.create :whitehouse_usa_r01
   whitehouse_usa_r01.page = whitehouse
   whitehouse_usa_r01.country = usa
   whitehouse_usa_r01.proxy = proxy_usa
   whitehouse_usa_r01.save
+
+  whitehouse_usa_r02 = FactoryGirl.create :whitehouse_usa_r02
+  whitehouse_usa_r02.page = whitehouse
+  whitehouse_usa_r02.country = usa
+  whitehouse_usa_r02.proxy = proxy_usa
+  whitehouse_usa_r02.save
 
   # statuses
   create_status :twitter_usa, usa, twitter

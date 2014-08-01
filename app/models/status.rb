@@ -13,4 +13,24 @@ class Status < ActiveRecord::Base
     statuses.country_id = s2.country_id AND
     statuses.created_at = s2.max_id")
   }
+
+  def self.create_for_date( page, country, date )
+    date = Date.parse( date ) if date.is_a? String
+    prev_date = date.yesterday
+    next_date = date.tomorrow
+
+    requests = Request.where "page_id = #{page.id} and country_id = #{country.id} and created_at >= '#{date.to_s}' and created_at < '#{next_date.to_s}'"
+    value = Request.value requests
+
+    prev_status = Status.find_by "page_id = #{page.id} and country_id = #{country.id} and created_at >= '#{prev_date.to_s}' and created_at < '#{date.to_s}'"
+    delta = ( prev_status.present? ? value - prev_status.value : value )
+
+
+    status = Status.create(
+      page: page,
+      country: country,
+      value: value,
+      delta: delta
+    )
+  end
 end

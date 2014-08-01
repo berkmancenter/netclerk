@@ -36,7 +36,7 @@ describe ( 'statuses/show' ) {
     }
 
     it { 
-      should have_css 'h2', text: 'History'
+      should_not have_css 'h2', text: 'History'
     }
 
     it {
