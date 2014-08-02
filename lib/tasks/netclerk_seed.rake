@@ -1,12 +1,26 @@
+require 'csv'
 require 'factory_girl_rails'
 
 namespace :netclerk do
-  task :seed => :environment do
-    seed
+  namespace :seed do
+    desc 'Seed test database'
+    task :test => :environment do
+      seed_test
+    end
+
+    desc 'Load all countries'
+    task :countries => :environment do
+      seed_countries
+    end
+
+    desc 'Load ONI URLs'
+    task :oni => :environment do
+      seed_oni
+    end
   end
 end
 
-def seed
+def seed_test
   # countries
   usa = FactoryGirl.create :usa
   chn = FactoryGirl.create :chn
@@ -25,6 +39,10 @@ def seed
   whitehouse = FactoryGirl.create :whitehouse
   whitehouse.category = political
   whitehouse.save
+
+  no_title = FactoryGirl.create :no_title
+  no_title.category = social
+  no_title.save
 
   # proxies
   proxy_usa = FactoryGirl.create :proxy_usa
@@ -79,3 +97,31 @@ def create_status( factory, country, page )
   status.page = page
   status.save
 end
+
+def seed_countries
+  CSV.open(Rails.root.join('db', 'data_files', 'countryInfo.txt'), {:headers => true, :col_sep => "\t"}).each do |line|
+    country = Country.create(
+      name: line['Country'],
+      iso3: line['ISO3'],
+      iso2: line['ISO']
+    )
+  end
+end
+
+def seed_oni
+  ent = Dir.entries Rails.root.join('db', 'data_files', 'oni' )
+
+  ent.each { |f| 
+    if f.present? && !File.directory?(f)
+      puts "Loading #{f}"
+      CSV.open( Rails.root.join( 'db', 'data_files', 'oni', f ), { :headers => true } ).each do |line|
+        url = line['url']
+        if Page.find_by( url: url ).nil?
+          page = Page.new( url: url)
+          page.save
+        end
+      end
+    end
+  }
+end
+

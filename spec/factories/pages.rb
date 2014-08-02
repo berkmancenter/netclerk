@@ -11,5 +11,10 @@ FactoryGirl.define do
       title 'The White House'
       #category political
     end
+
+    factory :no_title do
+      url 'http://www.no-title.com'
+      #category social
+    end
   end
 end

@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.pages {
+  &.index {
+    .list-group-item img {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
   &.show {
     .list-group {
       .list-group-item:first-child {
