@@ -30,4 +30,34 @@ describe( 'request model' ) {
       Request.value( rs ).should eq( 1 )
     }
   }
+
+  describe( 'diff' ) {
+    context ( 'with equal' ) {
+      it {
+        d = Request.diff( '00000', '00000' )
+        d.should eq( 0 )
+      }
+    }
+
+    context ( 'with one delete and insert' ) {
+      it {
+        d = Request.diff( '00000', '00100' )
+        d.should eq( 0.004 )
+      }
+    }
+
+    context ( 'with one move' ) {
+      it {
+        d = Request.diff( '01000', '00010' )
+        d.should eq( 0 )
+      }
+    }
+
+    context ( 'with html and language change' ) {
+      it {
+        d = Request.diff( '<body><h1>Hello!</h1></body>', '<body><h1>Bonjour!</h1></body>' )
+        d.should eq( 0.103 )
+      }
+    }
+  }
 }

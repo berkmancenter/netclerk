@@ -56,10 +56,12 @@ class Page < ActiveRecord::Base
             response_status: proxy_connection.status,
             response_headers: proxy_connection.meta.to_s,
             response_length: response_length,
-            response_delta: proxy_content.length - baseline_test.length
+            response_delta: Request.diff( baseline_test, proxy_content )
           )
 
           proxy_connection.close
+
+          puts request.inspect
         rescue Exception # Errno:ECONNRESET is sadly super generic
           puts 'Errno::ECONNRESET'
         end

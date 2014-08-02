@@ -65,4 +65,36 @@ class Request < ActiveRecord::Base
       return 0
     end
   end
+
+  def self.diff( text1, text2 )
+    # return difference value of two texts
+    d = DiffMatchPatch.new
+
+    df = d.diff_main text1, text2
+
+    diff = 0.0
+
+    df.each { |d| 
+      if d[ 0 ] == :delete
+        d[ 1 ].each_char { |c|
+          diff -= c.ord
+        }
+      elsif d[ 0 ] == :insert
+        d[ 1 ].each_char { |c|
+          diff += c.ord
+        }
+      end
+    }
+
+    total_ord = 0.0
+    text1.each_char { |c|
+      total_ord += c.ord
+    }
+
+    if total_ord > 0.0
+      (diff / total_ord * 1000.0).round / 1000.0
+    else
+      0.0
+    end
+  end
 end
