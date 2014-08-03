@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
   belongs_to :category
 
   def create_proxy_requests
-    #puts "create_proxy_requests #{url}"
+    puts "create_proxy_requests #{url}"
 
     baseline_content = open( url, {
       'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -15,7 +15,9 @@ class Page < ActiveRecord::Base
     } ).read
 
     Country.all.each { |c|
-      #puts c.name
+      next unless c.proxies.count > 0
+
+      puts "  #{c.name}"
 
       c.proxies.each { |p|
         #puts "  #{p.ip_and_port}"

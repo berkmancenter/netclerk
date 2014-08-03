@@ -21,3 +21,6 @@ config/database.yml
 
 ## Misc
 *.db
+
+## Data
+db/proxies
