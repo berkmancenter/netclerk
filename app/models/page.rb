@@ -9,6 +9,7 @@ class Page < ActiveRecord::Base
 
     begin
       baseline_content = open( url, {
+        redirect: false,
         'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         #'Accept-Encoding' => 'gzip,deflate', # added automatically by Net::HTTP
         'Accept-Language' => 'en-US,en;q=0.8',
@@ -71,11 +72,7 @@ class Page < ActiveRecord::Base
             response_delta: Request.diff( baseline_test, proxy_content )
           )
 
-          if proxy_content.length < 700
-            puts proxy_content
-          end
-
-          puts request.inspect
+          #puts request.inspect
         rescue Net::OpenTimeout
           rescue_time = Time.now - time_start
           puts "     time: #{rescue_time}"
