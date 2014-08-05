@@ -1,5 +1,4 @@
 require 'csv'
-require 'factory_girl_rails'
 
 namespace :netclerk do
   desc 'Load a directory of proxy lists, (one per iso2 country code) & scan all the sites'
@@ -27,6 +26,9 @@ def netclerk_scan( input_dir )
   # delete all old non-permanent proxies
   Proxy.where( permanent: false ).delete_all
 
+  # read _reliable_list
+  reliable = File.readlines "#{input_dir}/_reliable_list.txt" || []
+
   ent = Dir.entries input_dir
   ent.each { |f| 
     if f.present? && !File.directory?(f) && File.extname(f) == '.txt'
@@ -34,10 +36,8 @@ def netclerk_scan( input_dir )
       country = Country.find_by_iso2 iso2
       next if country.nil?
 
-      puts "reading proxies for #{iso2}"
-
       File.open("#{input_dir}/#{f}", 'r').each_line do |line|
-        Proxy.create( ip_and_port: line, permanent: false, country: country )
+        Proxy.create( ip_and_port: line, permanent: false, country: country ) if reliable.include? line
       end
     end
   }
