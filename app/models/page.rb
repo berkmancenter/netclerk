@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'net/http'
 
 class Page < ActiveRecord::Base
   belongs_to :category
@@ -6,21 +7,26 @@ class Page < ActiveRecord::Base
   def create_proxy_requests
     puts "create_proxy_requests #{url}"
 
-    baseline_content = open( url, {
-      'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-      'Accept-Encoding' => 'gzip,deflate,sdch',
-      'Accept-Language' => 'en-US,en;q=0.8',
-      'Connection' => 'close',
-      'User-Agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36',
-    } ).read
+    begin
+      baseline_content = open( url, {
+        'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        #'Accept-Encoding' => 'gzip,deflate', # added automatically by Net::HTTP
+        'Accept-Language' => 'en-US,en;q=0.8',
+        'Connection' => 'close',
+        'User-Agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36',
+      } ).read
+    rescue SocketError
+      puts '  SocketError (consider removing from NetClerk)'
+      return
+    end
 
     Country.all.each { |c|
       next unless c.proxies.count > 0
 
-      puts "  #{c.name}"
+      puts "  #{c.name}: #{c.proxies.count} proxies"
 
       c.proxies.each { |p|
-        #puts "  #{p.ip_and_port}"
+        puts "    #{p.ip_and_port}"
 
         baseline_test = baseline_content
 
@@ -29,43 +35,80 @@ class Page < ActiveRecord::Base
         time_start = Time.now
 
         begin
-          proxy_connection = open url, {
-            'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'Accept-Encoding' => 'gzip,deflate,sdch',
-            'Accept-Language' => 'en-US,en;q=0.8',
-            'Connection' => 'close',
-            'User-Agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36',
-            proxy: "http://#{p.ip_and_port}",
-            content_length_proc: lambda { |t|
-              response_length = t
-            }
+          uri = URI( url )
+
+          req = Net::HTTP::Get.new uri
+          req['Accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+          #req['Accept-Encoding'] = 'gzip,deflate' # added automatically by Net::HTTP
+          req['Accept-Language'] = 'en-US,en;q=0.8'
+          req['Connection'] = 'close'
+          req['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36'
+
+          proxy = p.ip_and_port.split ':'
+
+          res = Net::HTTP.start( uri.hostname, uri.port, proxy[0], proxy[1].to_i, { open_timeout: 5, read_timeout: 30 } ) { |http|
+            http.request req
           }
 
-          response_time = Time.new - time_start
+          response_time = Time.now - time_start
 
-          #puts "time: #{response_time}"
+          #puts "      time: #{response_time}"
 
-          #puts "status: #{proxy_connection.status}"
+          #puts "      status: #{res.code.to_i}"
 
-          #puts "headers: #{proxy_connection.meta.to_s}"
+          #puts "      headers: #{res.to_hash.inspect}"
 
-          proxy_content = proxy_connection.read
+          proxy_content = res.body
 
           request = Request.create(
             country_id: c.id,
+            page_id: id,
             proxy_id: p.id,
             response_time: response_time,
-            response_status: proxy_connection.status,
-            response_headers: proxy_connection.meta.to_s,
-            response_length: response_length,
+            response_status: res.code.to_i,
+            response_headers: res.to_hash.inspect,
+            response_length: proxy_content.length,
             response_delta: Request.diff( baseline_test, proxy_content )
           )
 
-          proxy_connection.close
+          if proxy_content.length < 700
+            puts proxy_content
+          end
 
           puts request.inspect
-        rescue Exception # Errno:ECONNRESET is sadly super generic
-          puts 'Errno::ECONNRESET'
+        rescue Net::OpenTimeout
+          rescue_time = Time.now - time_start
+          puts "     time: #{rescue_time}"
+
+          puts 'Net::OpenTimeout'
+        rescue Net::ReadTimeout
+          rescue_time = Time.now - time_start
+          puts "     time: #{rescue_time}"
+
+          puts 'Net::ReadTimeout'
+        rescue Zlib::BufError
+          # So, this can happen.
+          rescue_time = Time.now - time_start
+          puts "     time: #{rescue_time}"
+
+          puts 'Zlib::BuffError'
+        rescue EOFError
+          # This, too.
+          rescue_time = Time.now - time_start
+          puts "     time: #{rescue_time}"
+
+          puts 'EOFError'
+        rescue Exception => e
+          rescue_time = Time.now - time_start
+          puts "     time: #{rescue_time}"
+
+          if e === Errno::ECONNRESET
+            puts 'Errno::ECONNRESET'
+          elsif e === Errno::ECONNREFUSED
+            puts 'Errno::ECONNREFUSED'
+          else
+            raise e
+          end
         end
       }
 
