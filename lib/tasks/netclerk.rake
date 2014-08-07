@@ -49,8 +49,54 @@ def netclerk_scan( input_dir )
   }
 
   Page.all.each { |p|
-    p.create_proxy_requests
+    baseline_test = p.baseline_content
+
+    Country.all.each { |c|
+      next unless c.proxies.count > 0
+
+      puts "  #{c.name}: #{c.proxies.count} proxies"
+
+      # 21 proxies max at a time
+      proxy_enum = c.proxies.each_slice 21
+
+      begin
+        proxies = proxy_enum.next
+        threads = proxies.map { |x|
+          t = Thread.new { proxy_request_data( p.url, x.ip_and_port, baseline_test ) }
+          t[ :xid ] = x.id
+          t
+        }
+
+        threads.each { |t| 
+          t.join
+
+          if t[ :data ].present?
+            request = Request.new( t[ :data ] )
+            request.country_id = c.id
+            request.page_id = p.id
+            request.proxy_id = t[ :xid ]
+            request.save
+
+            puts request.inspect
+          end
+        }
+
+      rescue StopIteration
+        # done this country/page combo
+      end
+    }
+
+    GC.start
+    puts "heap: #{GC.stat[ :heap_live_num ]}"
   }
+
+
+
+end
+
+def proxy_request_data( url, ip_and_port, baseline_test )
+  data = Page.proxy_request_data url, ip_and_port, baseline_test
+  Thread.current[ :data ] = data unless data.nil?
 end
 
 def netclerk_status( date )
