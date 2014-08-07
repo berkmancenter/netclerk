@@ -15,22 +15,28 @@ class Status < ActiveRecord::Base
   }
 
   def self.create_for_date( page, country, date )
+    status = nil
     date = Date.parse( date ) if date.is_a? String
     prev_date = date.yesterday
     next_date = date.tomorrow
 
     requests = Request.where "page_id = #{page.id} and country_id = #{country.id} and created_at >= '#{date.to_s}' and created_at < '#{next_date.to_s}'"
-    value = Request.value requests
 
-    prev_status = Status.find_by "page_id = #{page.id} and country_id = #{country.id} and created_at >= '#{prev_date.to_s}' and created_at < '#{date.to_s}'"
-    delta = ( prev_status.present? ? value - prev_status.value : value )
+    if requests.any?
+      value = Request.value requests
 
+      prev_status = Status.where( "page_id = #{page.id} and country_id = #{country.id} and created_at < '#{date.to_s}'" ).order( 'created_at desc' ).first
 
-    status = Status.create(
-      page: page,
-      country: country,
-      value: value,
-      delta: delta
-    )
+      delta = ( prev_status.present? ? value - prev_status.value : value )
+
+      status = Status.create(
+        page: page,
+        country: country,
+        value: value,
+        delta: delta
+      )
+    end
+
+    status
   end
 end
