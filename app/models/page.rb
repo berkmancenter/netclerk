@@ -82,11 +82,10 @@ class Page < ActiveRecord::Base
     request_data
   end
 
-  def create_proxy_requests
-    puts "create_proxy_requests #{url}"
-
+  def baseline_content
+    content = nil
     begin
-      baseline_content = open( url, {
+      content = open( url, {
         redirect: false,
         'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         #'Accept-Encoding' => 'gzip,deflate', # added automatically by Net::HTTP
@@ -99,11 +98,17 @@ class Page < ActiveRecord::Base
       puts "  #{url} => #{e.uri}"
       self.url = e.uri.to_s
       save
-      return
     rescue SocketError
       puts '  SocketError (consider removing from NetClerk)'
-      return
     end
+
+    content
+  end
+
+  def create_proxy_requests
+    puts "create_proxy_requests #{url}"
+
+    baseline = baseline_content
 
     Country.all.each { |c|
       next unless c.proxies.count > 0
@@ -113,7 +118,7 @@ class Page < ActiveRecord::Base
       c.proxies.each { |p|
         puts "    #{p.ip_and_port}"
 
-        baseline_test = baseline_content
+        baseline_test = baseline
 
         request_data = Page.proxy_request_data url, p.ip_and_port, baseline_test
 
@@ -128,12 +133,6 @@ class Page < ActiveRecord::Base
           puts request.inspect
         end
       }
-
     }
-
-    #puts '***'
-    #puts baseline
-    #puts '***'
-
   end
 end
