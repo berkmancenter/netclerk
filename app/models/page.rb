@@ -22,7 +22,7 @@ class Page < ActiveRecord::Base
 
       proxy = proxy_ip_and_port.split ':'
 
-      res = Net::HTTP.start( uri.hostname, uri.port, proxy[0], proxy[1].to_i, { open_timeout: 5, read_timeout: 30 } ) { |http|
+      res = Net::HTTP.start( uri.hostname, uri.port, proxy[0], proxy[1].to_i, { open_timeout: 1, read_timeout: 30 } ) { |http|
         http.request req
       }
 
