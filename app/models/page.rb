@@ -74,6 +74,8 @@ class Page < ActiveRecord::Base
         puts 'Errno::ECONNRESET'
       elsif e === Errno::ECONNREFUSED
         puts 'Errno::ECONNREFUSED'
+      elsif e === Errno::ETIMEDOUT
+        puts 'Errno::TIMEDOUT'
       else
         puts 'Unknown Exception'
       end
