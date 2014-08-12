@@ -70,12 +70,14 @@ class Page < ActiveRecord::Base
       rescue_time = Time.now - time_start
       puts "     time: #{rescue_time}"
 
-      if e === Errno::ECONNRESET
+      if e == Errno::ECONNRESET
         puts 'Errno::ECONNRESET'
-      elsif e === Errno::ECONNREFUSED
+      elsif e == Errno::ECONNREFUSED
         puts 'Errno::ECONNREFUSED'
+      elsif e == Errno::ETIMEDOUT
+        puts 'Errno::ETIMEDOUT'
       else
-        puts 'Unknown Exception'
+        puts "Unknown Exception: #{e.inspect}"
       end
     end
 
