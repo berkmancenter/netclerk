@@ -50,6 +50,7 @@ def netclerk_scan( input_dir )
 
   Page.all.each { |p|
     baseline_test = p.baseline_content
+    next if baseline_test.nil?
 
     Country.all.each { |c|
       next unless c.proxies.count > 0
