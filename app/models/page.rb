@@ -34,7 +34,7 @@ class Page < ActiveRecord::Base
 
       #puts "      headers: #{res.to_hash.inspect}"
 
-      proxy_content = res.body
+      proxy_content = res.body.force_encoding('UTF-8')
 
       request_data = {
         response_time: response_time,
