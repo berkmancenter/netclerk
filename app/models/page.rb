@@ -106,10 +106,10 @@ class Page < ActiveRecord::Base
   end
 
   def create_proxy_requests
-    puts "create_proxy_requests #{url}"
-
     baseline = baseline_content
     return if baseline.nil?
+
+    puts "create_proxy_requests #{url}"
 
     Country.all.each { |c|
       next unless c.proxies.count > 0
