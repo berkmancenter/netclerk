@@ -21,6 +21,9 @@ describe( 'page model' ) {
     let( :p ) { Page.find_by_title 'The White House' }
 
     it ( 'should make requests' ) {
+      pending 'hard to keep working proxy up to date for test'
+      # may remove this test & create_proxy_requests function now that we have sidekiq
+
       expect {
         p.create_proxy_requests
       }.to change {
