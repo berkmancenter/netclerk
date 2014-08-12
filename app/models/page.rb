@@ -4,84 +4,8 @@ require 'net/http'
 class Page < ActiveRecord::Base
   belongs_to :category
 
-  def self.proxy_request_data( url, proxy_ip_and_port, baseline_test )
-    request_data = nil
-    response_length = 0
-
-    time_start = Time.now
-
-    begin
-      uri = URI( url )
-
-      req = Net::HTTP::Get.new uri
-      req['Accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-      #req['Accept-Encoding'] = 'gzip,deflate' # added automatically by Net::HTTP
-      req['Accept-Language'] = 'en-US,en;q=0.8'
-      req['Connection'] = 'close'
-      req['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36'
-
-      proxy = proxy_ip_and_port.split ':'
-
-      res = Net::HTTP.start( uri.hostname, uri.port, proxy[0], proxy[1].to_i, { open_timeout: 5, read_timeout: 30 } ) { |http|
-        http.request req
-      }
-
-      response_time = Time.now - time_start
-
-      #puts "      time: #{response_time}"
-
-      #puts "      status: #{res.code.to_i}"
-
-      #puts "      headers: #{res.to_hash.inspect}"
-
-      proxy_content = res.body
-
-      request_data = {
-        response_time: response_time,
-        response_status: res.code.to_i,
-        response_headers: res.to_hash.inspect,
-        response_length: proxy_content.length,
-        response_delta: Request.diff( baseline_test, proxy_content )
-      }
-
-    rescue Net::OpenTimeout
-      rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
-
-      puts 'Net::OpenTimeout'
-    rescue Net::ReadTimeout
-      rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
-
-      puts 'Net::ReadTimeout'
-    rescue Zlib::BufError
-      # So, this can happen.
-      rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
-
-      puts 'Zlib::BuffError'
-    rescue EOFError
-      # This, too.
-      rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
-
-      puts 'EOFError'
-    rescue Exception => e
-      rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
-
-      if e == Errno::ECONNRESET
-        puts 'Errno::ECONNRESET'
-      elsif e == Errno::ECONNREFUSED
-        puts 'Errno::ECONNREFUSED'
-      elsif e == Errno::ETIMEDOUT
-        puts 'Errno::ETIMEDOUT'
-      else
-        puts "Unknown Exception: #{e.inspect}"
-      end
-    end
-
-    request_data
+  def self.proxy_request_data(country, proxy, url)
+    ProxyRequest.perform_async(country.id, self.id, proxy.id)
   end
 
   def baseline_content

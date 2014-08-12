@@ -48,58 +48,15 @@ def netclerk_scan( input_dir )
     end
   }
 
-  Page.all.each { |p|
-    baseline_test = p.baseline_content
-    next if baseline_test.nil?
-
-    puts "testing #{p.url}"
-
-    Country.all.each { |c|
-      next unless c.proxies.count > 0
-
-      puts "  #{c.name}: #{c.proxies.count} proxies"
-
-      # 21 proxies max at a time
-      proxy_enum = c.proxies.each_slice 21
-
-      begin
-        proxies = proxy_enum.next
-        threads = proxies.map { |x|
-          t = Thread.new { proxy_request_data( p.url, x.ip_and_port, baseline_test ) }
-          t[ :xid ] = x.id
-          t
-        }
-
-        threads.each { |t| 
-          t.join
-
-          if t[ :data ].present?
-            request = Request.new( t[ :data ] )
-            request.country_id = c.id
-            request.page_id = p.id
-            request.proxy_id = t[ :xid ]
-            request.save
-
-            puts request.inspect
-          end
-        }
-
-      rescue StopIteration
-        # done this country/page combo
+  Page.all.each do |page|
+    Country.all.each do |country|
+      next unless country.proxies.count > 0
+      puts "  #{country.name}: #{country.proxies.count} proxies"
+      country.proxies.each do |proxy|
+        ProxyRequest.perform_async(country.id, page.id, proxy.id)
       end
-    }
-
-    GC.start
-    puts "heap: #{GC.stat[ :heap_live_num ]}"
-  }
-
-
-
-end
-
-def proxy_request_data( url, ip_and_port, baseline_test )
-  data = Page.proxy_request_data url, ip_and_port, baseline_test
-  Thread.current[ :data ] = data unless data.nil?
+    end
+  end
 end
 
 def netclerk_status( date )
