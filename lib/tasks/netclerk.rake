@@ -50,6 +50,12 @@ def netclerk_scan( input_dir )
 
   Page.all.each { |p|
     baseline_test = p.baseline_content
+    next if baseline_test.nil?
+
+    puts "Testing #{p.url}"
+
+    puts "Proxy.count: #{Proxy.count}"
+    break if !Proxy.any?
 
     Country.all.each { |c|
       next unless c.proxies.count > 0
@@ -70,6 +76,8 @@ def netclerk_scan( input_dir )
         threads.each { |t| 
           t.join
 
+          x = Proxy.find t[ :xid ]
+
           if t[ :data ].present?
             request = Request.new( t[ :data ] )
             request.country_id = c.id
@@ -77,7 +85,15 @@ def netclerk_scan( input_dir )
             request.proxy_id = t[ :xid ]
             request.save
 
-            puts request.inspect
+            puts "#{x.id} ok" # request.inspect
+          else
+            # #9573 request could not be made through this proxy
+            # remove it for today so it doesn't stall further page scans
+            x = Proxy.find t[ :xid ]
+            puts "removing #{x.ip_and_port}"
+
+            puts "#{x.id} delete" # request.inspect
+            x.delete
           end
         }
 

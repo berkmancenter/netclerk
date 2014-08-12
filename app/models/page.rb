@@ -46,29 +46,29 @@ class Page < ActiveRecord::Base
 
     rescue Net::OpenTimeout
       rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
+      #puts "     time: #{rescue_time}"
 
       puts 'Net::OpenTimeout'
     rescue Net::ReadTimeout
       rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
+      #puts "     time: #{rescue_time}"
 
       puts 'Net::ReadTimeout'
     rescue Zlib::BufError
       # So, this can happen.
       rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
+      #puts "     time: #{rescue_time}"
 
       puts 'Zlib::BuffError'
     rescue EOFError
       # This, too.
       rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
+      #puts "     time: #{rescue_time}"
 
       puts 'EOFError'
     rescue Exception => e
       rescue_time = Time.now - time_start
-      puts "     time: #{rescue_time}"
+      #puts "     time: #{rescue_time}"
 
       if e === Errno::ECONNRESET
         puts 'Errno::ECONNRESET'
@@ -111,6 +111,7 @@ class Page < ActiveRecord::Base
     puts "create_proxy_requests #{url}"
 
     baseline = baseline_content
+    return if baseline.nil?
 
     Country.all.each { |c|
       next unless c.proxies.count > 0
