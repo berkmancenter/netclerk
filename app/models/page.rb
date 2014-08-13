@@ -18,7 +18,7 @@ class Page < ActiveRecord::Base
         'Accept-Language' => 'en-US,en;q=0.8',
         'Connection' => 'close',
         'User-Agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36',
-      } ).read
+      } ).read.encode
     rescue OpenURI::HTTPRedirect => e
       # update our url and try again another day
       puts "  #{url} => #{e.uri}"

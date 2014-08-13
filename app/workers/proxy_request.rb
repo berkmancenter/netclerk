@@ -3,6 +3,7 @@ require 'net/http'
 
 class ProxyRequest
   include Sidekiq::Worker
+  sidekiq_options retry: 1, backtrace: true
 
   def perform(country_id, page_id, proxy_id)
     country = Country.find(country_id)
@@ -12,10 +13,13 @@ class ProxyRequest
     request_data = nil
     response_length = 0
 
+    logger.info "URL: #{page.url}"
+    baseline_content = page.baseline_content
+    return if baseline_content.nil?
+
     time_start = Time.now
 
       uri = URI( page.url )
-      logger.info "URL: #{page.url}"
 
       req = create_request(uri)
 
@@ -25,8 +29,8 @@ class ProxyRequest
         proxy.ip,
         proxy.port,
       )
-      http.open_timeout = 2
-      http.read_timeout = 30
+      http.open_timeout = 5
+      http.read_timeout = 10
       #http.set_debug_output $stderr
 
       res = http.start{ |http| http.request req }
@@ -37,14 +41,16 @@ class ProxyRequest
       #logger.info "      status: #{res.code.to_i}"
       #logger.info "      headers: #{res.to_hash.inspect}"
 
-      proxy_content = res.body
+      proxy_content = res.body.encode
+
+      return if proxy_content.nil?
 
       request_data = {
         response_time: response_time,
         response_status: res.code.to_i,
         response_headers: res.to_hash.inspect,
         response_length: proxy_content.length,
-        response_delta: Request.diff( page.baseline_content, proxy_content )
+        response_delta: Request.diff( baseline_content, proxy_content )
       }
 
 #    rescue Net::OpenTimeout
@@ -89,7 +95,7 @@ class ProxyRequest
     request.proxy_id = proxy.id
     request.save
 
-    puts request.inspect
+    #puts request.inspect
   end
   
   def create_request(uri)
