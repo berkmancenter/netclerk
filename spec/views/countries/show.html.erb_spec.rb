@@ -32,13 +32,17 @@ describe ( 'countries/show' ) {
       it { should have_css 'h2', text: 'Top URLs' }
 
       it {
-        should have_css '.list-group', count: Page.count
+        # Iran has a 0, 2, & 3
+        should have_css '.list-group', count: 3
       }
 
       it ( 'should link to statuses' ) {
         should have_css %(.pages-status-warning a.list-group-item[href*="#{status_path s}"]), text: p.title, count: 1
       }
 
+      it ( 'should show the url for a page w/o a title' ) {
+        should have_css '.list-group-item', text: 'www.no-title.com'
+      }
     }
   }
 }

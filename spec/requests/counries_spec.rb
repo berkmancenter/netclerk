@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'countries requests', :js => true do
   subject { page }
 
-  describe ( 'get /' ) {
+  describe ( 'get /countries/:id' ) {
     let ( :irn ) { Country.find_by_name 'Iran'  }
 
     before { visit country_path( irn ) }
@@ -14,6 +14,6 @@ describe 'countries requests', :js => true do
 
     it { should have_css 'svg.statuses-chart' }
 
-    it { should have_css 'svg.statuses-chart rect', count: 2 }
+    it { should have_css 'svg.statuses-chart rect', count: 3 }
   }
 end

@@ -87,5 +87,13 @@ FactoryGirl.define do
       delta 0
       created_at '2014-07-11'
     end
+
+    factory :no_title_irn do
+      #country irn
+      #page no_title
+      value 0
+      delta 0
+      created_at '2014-07-11'
+    end
   end
 end

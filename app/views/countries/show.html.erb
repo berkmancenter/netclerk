@@ -9,7 +9,7 @@
   <div class="list-group-item list-group-item-<%= status_context_class status_group[1][0] %>"><%= t "statuses.#{status_group[0]}" %></div>
 
   <% status_group[1].each { |status| %>
-    <%= link_to status.page.title, status, class: 'list-group-item' %>
+    <%= link_to title_or_url( status.page ), status, class: 'list-group-item' %>
   <% } %>
 </div>
 <% } %>
