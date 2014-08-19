@@ -3,7 +3,6 @@ require 'spec_helper'
 describe ( PagesController ) {
   describe ( 'GET index' ) {
     it {
-      Page.should_receive( :all )
       get :index
       response.code.should eq( '200' )
     }
