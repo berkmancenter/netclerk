@@ -3,24 +3,40 @@ require 'spec_helper'
 describe ( 'statuses/status' ) {
   subject { rendered }
 
-  let ( :chn ) { Country.find_by_name 'China' }
-  let ( :page ) { Page.find_by_title 'The White House' }
-  let ( :status ) { Status.most_recent.find_by( country: chn, page: page ) }
-  
-  
-  before {
-    render status
+  let ( :country ) { Country.find_by_name 'Iran' }
+
+  context ( 'normal status' ) {
+    let ( :page ) { Page.find_by_title 'The White House' }
+    let ( :status ) { Status.most_recent.find_by( country: country, page: page ) }
+    
+    before {
+      render status
+    }
+
+    it {
+      should have_css 'img[src="http://www.google.com/s2/favicons?domain=www.whitehouse.gov"]'
+    }
+
+    it {
+      should have_css 'span', text: 'The White House is very different in'
+    }
+    
+    it {
+      should have_css 'b', 'Iran'
+    }
   }
 
-  it {
-    should have_css 'img[src="http://www.google.com/s2/favicons?domain=www.whitehouse.gov"]'
-  }
+  context ( 'without title' ) {
+    let ( :page ) { Page.find_by_url 'http://www.no-title.com' }
+    let ( :status ) { Status.most_recent.find_by( country: country, page: page ) }
+    
+    before {
+      render status
+    }
 
-  it {
-    should have_css 'span', text: 'The White House is not available in'
-  }
-  
-  it {
-    should have_css 'b', 'China'
+    it {
+      should have_css 'span', text: 'www.no-title.com'
+    }
+    
   }
 }
