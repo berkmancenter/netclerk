@@ -12,6 +12,7 @@ EG	EGY	818	EG	Egypt	Cairo	1001450	80471869	AF	.eg	EGP	Pound	20	#####	^(\d{5})$	"
 FR	FRA	250	FR	France	Paris	547030	64768389	EU	.fr	EUR	Euro	33	#####	^(\d{5})$	"fr-FR,frp,br,co,ca,eu,oc"	3017382	"CH,DE,BE,LU,IT,AD,MC,ES"	
 IL	ISR	376	IS	Israel	Jerusalem	20770	7353985	AS	.il	ILS	Shekel	972	#####	^(\d{5})$	"he,ar-IL,en-IL,"	294640	"SY,JO,LB,EG,PS"	
 IQ	IRQ	368	IZ	Iraq	Baghdad	437072	29671605	AS	.iq	IQD	Dinar	964	#####	^(\d{5})$	"ar-IQ,ku,hy"	99237	"SY,SA,IR,JO,TR,KW"	
+IR	IRN	364	IR	Iran	Tehran	1648000	76923300	AS	.ir	IRR	Rial	98	##########	^(\d{10})$	fa-IR,ku	130758	TM,AF,IQ,AM,PK,AZ,TR
 KH	KHM	116	CB	Cambodia	Phnom Penh	181040	14453680	AS	.kh	KHR	Riels	855	#####	^(\d{5})$	"km,fr,en"	1831722	"LA,TH,VN"	
 MG	MDG	450	MA	Madagascar	Antananarivo	587040	21281844	AF	.mg	MGA	Ariary	261	###	^(\d{3})$	"fr-MG,mg"	1062947		
 MY	MYS	458	MY	Malaysia	Kuala Lumpur	329750	28274729	AS	.my	MYR	Ringgit	60	#####	^(\d{5})$	"ms-MY,en,zh,ta,te,ml,pa,th"	1733045	"BN,TH,ID"	

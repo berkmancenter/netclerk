@@ -4,5 +4,5 @@
 ---
 :verbose: false
 #:pidfile: ./tmp/pids/sidekiq.pid
-:concurrency: 512
+:concurrency: 50
 #:timeout: 30
