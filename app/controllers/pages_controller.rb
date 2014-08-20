@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @pages = Page.order( 'RANDOM()' ).limit( 20 )
+    @pages = Page.order( 'RANDOM()' ).limit( 50 )
   end
 
   def show
