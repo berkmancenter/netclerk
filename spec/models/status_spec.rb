@@ -1,19 +1,6 @@
 require 'spec_helper'
 
-describe( 'status model' ) {
-  context( 'valid attributes' ) {
-    let( :status ) { Status.first }
-
-    it {
-      status.should be_valid
-    }
-
-    it { status.should respond_to :page }
-    it { status.should respond_to :country }
-    it { status.should respond_to :value }
-    it { status.should respond_to :delta}
-  }
-
+describe Status do
   describe( 'create_for_date' ) {
     let( :p ) { Page.find_by_title 'The White House' }
     let( :c ) { Country.find_by_name 'United States' }
@@ -46,4 +33,12 @@ describe( 'status model' ) {
       }
     }
   }
-}
+
+  it { should respond_to(:page, :country, :value, :delta) }
+  it { should belong_to(:page) }
+  it { should belong_to(:country) }
+
+  it 'has a valid factory' do
+    expect(build(:status)).to be_valid
+  end
+end

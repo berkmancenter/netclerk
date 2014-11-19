@@ -2,6 +2,10 @@
 
 FactoryGirl.define do
   factory :country do
+    name 'Country'
+    iso2 'iso2'
+    iso3 'iso3'
+
     factory :usa do
       name 'United States'
       iso2 'US'

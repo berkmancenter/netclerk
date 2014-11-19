@@ -1,5 +1,9 @@
 FactoryGirl.define do
   factory :status do
+    value 0
+    delta 0
+    created_at '2014-11-19'
+
     factory :twitter_usa do
       #country usa
       #page twitter
