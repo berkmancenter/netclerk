@@ -5,6 +5,6 @@ describe Country do
   it { should respond_to(:name, :iso3, :local_dns, :proxies) }
 
   it 'has a valid factory' do
-    expect(build(:usa)).to be_valid
+    expect(build(:country)).to be_valid
   end
 end
