@@ -1,11 +1,17 @@
 class CountriesController < ApplicationController
+  before_action :set_country, only: :show
+
   def index
     @countries = Country.all
   end
 
   def show
-    @country = Country.find(params[:id])
+    @statuses = @country.statuses.group_by { |s| s.value }.sort_by { |sg| -sg[0] }
+  end
 
-    @statuses = Status.most_recent.where( country: @country ).group_by { |s| s.value }.sort_by { |sg| -sg[0] }
+  private
+
+  def set_country
+    @country = Country.find(params[:id])
   end
 end

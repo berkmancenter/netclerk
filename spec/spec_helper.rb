@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/poltergeist'
+require 'shoulda/matchers'
 
 def snap
   save_screenshot("tmp/screenshots/#{(Time.now.to_f * 1000).floor}.png")

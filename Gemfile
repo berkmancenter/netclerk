@@ -12,6 +12,7 @@ group :test do
   gem 'rspec-rails', '2.14.2'
   gem 'capybara', '2.3.0'
   gem 'poltergeist', '1.5.1'
+  gem 'shoulda-matchers', '~> 2.7.0', require: false
 end
 
 gem 'factory_girl_rails'
