@@ -39,6 +39,6 @@ describe Status do
   it { should belong_to(:country) }
 
   it 'has a valid factory' do
-    expect(build(:twitter_usa)).to be_valid
+    expect(build(:status)).to be_valid
   end
 end
