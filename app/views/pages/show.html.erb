@@ -1,13 +1,9 @@
 <%= render @page %>
 
-<h2><%= t 'pages.todays_status' %></h2>
+<h2><%= t 'pages.recent' %></h2>
 
-<% @statuses.each { |status_group| %>
-<div class="list-group pages-status-<%= status_context_class status_group[1][0] %>">
-  <div class="list-group-item list-group-item-<%= status_context_class status_group[1][0] %>"><%= t "statuses.#{status_group[0]}" %></div>
-
-  <% status_group[1].each { |status| %>
-    <%= link_to status.country.name, status, class: 'list-group-item' %>
-  <% } %>
-</div>
-<% } %>
+<% if @statuses.any? %>
+  <%= render 'recent_statuses' %>
+<% else %>
+  <p>No recent statuses.</p>
+<% end %>

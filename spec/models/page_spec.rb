@@ -1,6 +1,9 @@
 require 'spec_helper'
 
-describe( 'page model' ) {
+describe Page do
+  it { should belong_to :category }
+  it { should have_many :statuses }
+
   context( 'valid attributes' ) {
     let( :twitter ) { Page.find_by_title 'Twitter' }
 
@@ -31,4 +34,8 @@ describe( 'page model' ) {
       }.by( Proxy.count )
     }
   }
-}
+
+  it 'has a valid factory' do
+    expect(build(:page)).to be_valid
+  end
+end

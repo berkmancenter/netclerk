@@ -24,7 +24,7 @@ describe ( 'pages/show' ) {
 
     it { should have_css '.media-body .media-heading', text: page.title }
 
-    it { should have_css 'h2', text: "Today's status" }
+    it { should have_css 'h2', text: 'Recent' }
 
     it {
       should have_css '.list-group', count: 4
