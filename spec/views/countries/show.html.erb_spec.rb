@@ -28,8 +28,8 @@ describe ( 'countries/show' ) {
       it { pending "should have_css 'h2', text: 'Changed since yesterday'" }
     }
 
-    describe ( 'top urls' ) {
-      it { should have_css 'h2', text: 'Top URLs' }
+    describe ( 'recent' ) {
+      it { should have_css 'h2', text: 'Recent' }
 
       it {
         # Iran has a 0, 2, & 3

@@ -30,6 +30,7 @@ en:
   countries:
     changed_since: 'Changed since yesterday'
     top_urls: 'Top URLs'
+    recent: 'Recent'
 
   pages:
     help: 'Check the availability of any URL by using the box above, or, try one of these:'
