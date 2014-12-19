@@ -15,7 +15,7 @@ describe ( 'pages/icon_title' ) {
     }
 
     it {
-      should have_css 'img[src="http://www.google.com/s2/favicons?domain=twitter.com"]'
+      should have_xpath "//img[contains(@src, \"#{twitter.id}.ico\")]"
     }
 
     it {

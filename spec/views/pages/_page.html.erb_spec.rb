@@ -21,9 +21,7 @@ describe ( 'pages/page' ) {
 
   it { should have_css 'img.media-object' }
 
-  it {
-    should have_css 'img[src="http://www.google.com/s2/favicons?domain=twitter.com"]'
-  }
+  it { should have_xpath "//img[contains(@src, \"#{page.id}.ico\")]" }
 
   it { should have_css '.media-body' }
 

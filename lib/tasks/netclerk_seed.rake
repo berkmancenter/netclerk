@@ -124,7 +124,10 @@ def seed_oni
         url = line['url']
         if Page.find_by( url: url ).nil?
           page = Page.new( url: url)
-          page.save
+
+          if page.save
+            FaviconCacherWorker.perform_async(page.id)
+          end
         end
       end
     end
