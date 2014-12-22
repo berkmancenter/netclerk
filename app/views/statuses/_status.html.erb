@@ -1,1 +1,1 @@
-<%= image_tag "favicons/#{status.page.id}.ico", alt: 'Favicon' %> <span><%= raw t( "statuses.title_in_country.#{status.value}", title: title_or_url( status.page ), country: status.country.name ) %></span>
+<%= favicon_tag(status.page.id) %> <span><%= raw t( "statuses.title_in_country.#{status.value}", title: title_or_url( status.page ), country: status.country.name ) %></span>
