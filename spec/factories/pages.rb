@@ -17,6 +17,7 @@ FactoryGirl.define do
 
     factory :no_title do
       url 'http://www.no-title.com'
+      title nil
       #category social
     end
   end
