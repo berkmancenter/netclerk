@@ -3,6 +3,7 @@ require 'net/http'
 
 class Page < ActiveRecord::Base
   belongs_to :category
+  has_many :statuses
 
   def self.proxy_request_data(country, proxy, url)
     ProxyRequest.perform_async(country.id, self.id, proxy.id)

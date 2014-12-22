@@ -1,5 +1,8 @@
 FactoryGirl.define do
   factory :page do
+    url 'http://example.com'
+    title 'Example'
+
     factory :twitter do
       url 'https://twitter.com'
       title 'Twitter'
@@ -14,6 +17,7 @@ FactoryGirl.define do
 
     factory :no_title do
       url 'http://www.no-title.com'
+      title nil
       #category social
     end
   end

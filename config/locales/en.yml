@@ -35,6 +35,7 @@ en:
   pages:
     help: 'Check the availability of any URL by using the box above, or, try one of these:'
     todays_status: "Today's status"
+    recent: 'Recent'
 
   statuses:
     recent: 'Recent'

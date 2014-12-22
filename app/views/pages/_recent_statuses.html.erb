@@ -1,0 +1,11 @@
+<% @statuses.each do |status_group| %>
+  <div class="list-group pages-status-<%= status_context_class status_group[1][0] %>">
+    <div class="list-group-item list-group-item-<%= status_context_class status_group[1][0] %>">
+      <%= t "statuses.#{status_group[0]}" %>
+    </div>
+
+    <% status_group[1].each do |status| %>
+      <%= link_to status.country.name, status, class: 'list-group-item' %>
+    <% end %>
+  </div>
+<% end %>
