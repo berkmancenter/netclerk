@@ -1,6 +1,15 @@
 class Status < ActiveRecord::Base
+  VALUES = {
+    0 => 'available',
+    1 => 'a bit different',
+    2 => 'very different',
+    3 => 'not available',
+  }
+
   belongs_to :page
   belongs_to :country
+
+  validates :value, inclusion: { in: VALUES.keys }
 
   scope :most_recent, -> {
     joins("INNER JOIN (

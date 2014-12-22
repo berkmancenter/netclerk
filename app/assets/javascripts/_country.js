@@ -1,72 +1,28 @@
-$( function() {
-  //
-  // d3 status charts
-  //
+displayStatusBar = function(chartContainer, statuses) {
+  var svg = dimple.newSvg(chartContainer, 380, 32);
+  var myChart = new dimple.chart(svg, statuses);
+  var x = myChart.addPctAxis("x", "frequency");
+  var y = myChart.addCategoryAxis("y", "country");
 
-  d3.bullet = function() {
-    var width = 380;
-    var height = 32;
-    var duration = 0;
+  x.hidden = true;
+  y.hidden = true;
+  myChart.x = 0;
+  myChart.width = "100%";
+  myChart.height = "100%";
+  myChart.assignColor(0, "#DFF0D8");
+  myChart.assignColor(1, "#D9EDF7");
+  myChart.assignColor(2, "#FCF8E3");
+  myChart.assignColor(3, "#F2DEDE");
+  s = myChart.addSeries("status", dimple.plot.bar);
+  s.addOrderRule([0, 1, 2, 3]); // always display segments in the same order
+  s.addEventHandler("mouseover", function (e){}); // disable tooltips
+  myChart.draw();
+};
 
-    function bullet(g) {
-      g.each( function( d, i ) {
-        var rangez = d.sort( d3.descending );
-        var g = d3.select( this );
+$(".statusBarContainer").each(function() {
+  var statuses = $(this).data("statuses");
 
-        var x1 = d3.scale.linear()
-          .domain( [ 0, 3 ] )
-          .range( [ 0, width ] );
-
-        var x0 = d3.scale.linear()
-          .domain( [ 0, Infinity ] )
-          .range( x1.range() );
-        
-        var w0 = bulletWidth( x0 );
-        var w1 = bulletWidth( x1 );
-
-        var range = g.selectAll( 'rect.range' )
-          .data( rangez );
-
-        range.enter()
-          .append( 'rect' )
-            .attr( 'class', function( d, i ) { return 'range sc' + i; } )
-            .attr( 'width', w0 )
-            .attr( 'height', height )
-            .attr( 'x', 0 )
-          .transition()
-            .duration( duration )
-            .attr( 'width', w1 )
-            .attr( 'x', 0 );
-
-        range.transition()
-          .duration( duration )
-          .attr( 'x', 0 )
-          .attr( 'width', w1 )
-          .attr( 'height', height );
-      } );
-
-      d3.timer.flush();
-    }
-
-    return bullet;
+  if (!$.isEmptyObject(statuses)) {
+    displayStatusBar(this, statuses);
   };
-
-  function bulletWidth(x) {
-    var x0 = x(0);
-    return function(d) {
-      return Math.abs(x(d) - x0);
-    };
-  }
-
-  $( '.statuses-chart' ).each( function() {
-    var $chart = $( this );
-    var todaysStatus = $chart.data( 'todaysStatus' );
-
-    var chart = d3.bullet();
-
-    d3.select( this )
-      .data( [ todaysStatus ] )
-      .call( chart );
-  } );
-} );
-
+});

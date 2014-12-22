@@ -25,9 +25,5 @@ describe ( 'countries/country' ) {
 
   it { should have_css '.media-body .media-heading', text: country.name }
 
-  it { should have_css '.media-body .statuses-chart' }
-
-  it { should have_css '.statuses-chart[data-todays-status]' }
-
-  it { should have_css '.statuses-chart[data-todays-status="[0, 0]"]' }
+  it { should have_css '.media-body .statusBarContainer' }
 }

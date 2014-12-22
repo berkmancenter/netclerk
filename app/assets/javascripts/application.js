@@ -13,4 +13,5 @@
 //= require jquery
 //= require bootstrap
 //= require d3.v3
+//= require dimple.v2.1.0.min
 //= require_tree .

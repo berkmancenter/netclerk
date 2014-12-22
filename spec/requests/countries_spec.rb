@@ -12,8 +12,6 @@ describe 'countries requests', :js => true do
       should have_css '.media-heading', text: 'Iran'
     }
 
-    it { should have_css 'svg.statuses-chart' }
-
-    it { should have_css 'svg.statuses-chart rect', count: 3 }
+    it { should have_css '.statusBarContainer svg rect', count: 3 }
   }
 end

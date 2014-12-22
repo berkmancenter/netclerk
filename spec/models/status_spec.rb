@@ -37,8 +37,20 @@ describe Status do
   it { should respond_to(:page, :country, :value, :delta) }
   it { should belong_to(:page) }
   it { should belong_to(:country) }
+  it { should validate_inclusion_of(:value).in_array(Status::VALUES.keys) }
 
   it 'has a valid factory' do
     expect(build(:status)).to be_valid
+  end
+
+  it 'defines valid status values in VALUES' do
+    expect(Status::VALUES).to eq(
+      {
+        0 => 'available',
+        1 => 'a bit different',
+        2 => 'very different',
+        3 => 'not available',
+      }
+    )
   end
 end
