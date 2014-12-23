@@ -4,7 +4,7 @@ module Favicon
   describe Cacher do
     describe '.favicon' do
       let(:file_name) { '1' }
-      let(:file_path) { Rails.root.join(FAVICON_PATH, "#{file_name}.ico") }
+      let(:file_path) { Rails.root.join(FAVICON_PATH, "#{file_name}.png") }
       let(:url) { 'http://www.example.com' }
 
       it 'calls Favicon::Retriever if the cached favicon has expired' do

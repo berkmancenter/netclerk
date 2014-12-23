@@ -1,6 +1,6 @@
 module Favicon::Cacher
   def self.cache(file_name, url)
-    file_path = Rails.root.join(FAVICON_PATH, "#{file_name}.ico")
+    file_path = Rails.root.join(FAVICON_PATH, "#{file_name}.png")
 
     if expired?(file_path)
       Favicon::Retriever.retrieve(file_path, url)
