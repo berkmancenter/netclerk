@@ -1,6 +1,11 @@
 require 'csv'
 
 namespace :netclerk do
+  desc 'Download HMA proxy list'
+  task :hma, [:dst_dir] => :environment do |task, args|
+    pop = Net::POP3.new( )
+  end
+
   desc 'Load a directory of proxy lists, (one per iso2 country code) & scan all the sites'
   task :scan, [:input_dir] => :environment do |task, args|
     task_start = Time.now
