@@ -1,6 +1,9 @@
 body.countries {
   .countries-list {
     list-style: none;
+    li {
+      clear: both;
+    }
   }
 
   .media-body {
