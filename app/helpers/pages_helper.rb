@@ -7,7 +7,7 @@ module PagesHelper
     }
 
     image_tag(
-      "favicons/#{page_id}.ico",
+      "favicons/#{page_id}.png",
       params.merge(options),
     )
   end

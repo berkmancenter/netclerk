@@ -3,7 +3,7 @@ require 'favicon/retriever'
 module Favicon
   describe Retriever do
     describe '.retrieve' do
-      let(:file_path) { Rails.root.join(FAVICON_PATH, '1.ico') }
+      let(:file_path) { Rails.root.join(FAVICON_PATH, '1.png') }
       let(:url) { 'http://www.example.com' }
       let(:file) { double }
 
