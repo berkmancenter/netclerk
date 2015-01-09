@@ -21,4 +21,12 @@ module NewestStatusFinder
 
     data
   end
+
+  def self.random(size = 50)
+    newest_status_date = Status.last.created_at.to_date
+
+    Status.where("date(created_at) = '#{newest_status_date}'")
+      .order('RANDOM()')
+      .limit(size)
+  end
 end
