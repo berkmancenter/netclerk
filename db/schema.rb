@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711174509) do
+ActiveRecord::Schema.define(version: 20150110201353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20140711174509) do
     t.string   "unproxied_ip"
     t.string   "proxied_ip"
     t.string   "local_dns_ip"
-    t.integer  "response_time"
+    t.float    "response_time"
     t.integer  "response_status"
     t.text     "response_headers"
     t.integer  "response_length"
