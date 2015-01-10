@@ -42,7 +42,8 @@ class Status < ActiveRecord::Base
         page: page,
         country: country,
         value: value,
-        delta: delta
+        delta: delta,
+        created_at: date,
       )
     end
 
