@@ -38,4 +38,19 @@ describe NewestStatusFinder do
       )
     end
   end
+
+  describe '.random' do
+    let!(:old_statuses) { create_list(:status, 2, created_at: 1.week.ago) }
+    let!(:recent_statuses) { create_list(:status, 5, created_at: Time.now) }
+    let(:size) { 3 }
+    let(:random_statuses) { NewestStatusFinder.random(size) }
+
+    it 'returns the correct number of statuses' do
+      expect(random_statuses.size).to eq(size)
+    end
+
+    it 'returns statuses from the most recent scan' do
+      expect(random_statuses.map{ |s| s.created_at.to_date }.uniq).to eq([Date.today])
+    end
+  end
 end

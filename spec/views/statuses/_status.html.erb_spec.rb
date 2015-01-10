@@ -13,7 +13,7 @@ describe ( 'statuses/status' ) {
       render status
     }
 
-    it { should have_xpath "//img[contains(@src, \"#{page.id}.png\")]" }
+    it { should have_xpath "//img[contains(@alt, \"Favicon\")]" }
 
     it {
       should have_css 'span', text: 'The White House is very different in'

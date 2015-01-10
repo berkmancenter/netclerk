@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   def index
-    @statuses = Status.where( "created_at >= '#{Date.today.to_s}'" ).order( 'RANDOM()' ).limit( 50 )
+    @statuses = NewestStatusFinder.random(50)
   end
 
   def show

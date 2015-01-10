@@ -15,7 +15,7 @@ describe ( 'pages/icon_title' ) {
     }
 
     it {
-      should have_xpath "//img[contains(@src, \"#{twitter.id}.png\")]"
+      should have_xpath "//img[contains(@alt, \"Favicon\")]"
     }
 
     it {

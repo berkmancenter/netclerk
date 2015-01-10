@@ -21,7 +21,7 @@ describe ( 'pages/page' ) {
 
   it { should have_css 'img.media-object' }
 
-  it { should have_xpath "//img[contains(@src, \"#{page.id}.png\")]" }
+  it { should have_xpath "//img[contains(@alt, \"Favicon\")]" }
 
   it { should have_css '.media-body' }
 
