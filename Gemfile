@@ -39,6 +39,9 @@ gem 'autoprefixer-rails'
 # D3
 gem 'd3_rails'
 
+# RubyZip
+gem 'rubyzip'
+
 # Google DiffMatchPatch
 gem 'diff_match_patch'
 

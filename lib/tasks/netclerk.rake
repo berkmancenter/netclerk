@@ -1,9 +1,14 @@
 require 'csv'
+require 'net/pop'
+require 'zip'
 
 namespace :netclerk do
   desc 'Download HMA proxy list'
   task :hma, [:dst_dir] => :environment do |task, args|
-    pop = Net::POP3.new( )
+    task_start = Time.now
+    netclerk_hma
+    task_end = Time.now
+    puts "*** time: #{task_end - task_start} ***"
   end
 
   desc 'Load a directory of proxy lists, (one per iso2 country code) & scan all the sites'
@@ -18,6 +23,44 @@ namespace :netclerk do
   task :status, [:date] => :environment do |task, args|
     netclerk_status args[:date]
   end
+end
+
+def netclerk_hma( )
+  pop = Net::POP3.new HMA::ADDRESS
+  pop.start HMA::ACCOUNT, HMA::PASSWORD
+  
+  puts "Count: #{pop.mails.count}"
+
+  pop.mails.each { |mail|
+    email = Mail.new mail.pop
+    if email.has_attachments?
+      puts "Subject: #{email.subject}"
+      puts "Date: #{email.date}"
+
+      a = email.attachments.first
+
+      Dir.mktmpdir { |dir|
+        zip_path = "#{dir}/proxies.zip"
+        puts "Extracting to #{dir}"
+        open( zip_path , 'wb' ) { |file| file.write a.read }
+
+        Zip::File.open( zip_path ) { |zip_file|
+          zip_file.each { |f|
+            f_path = File.join( dir, f.name )
+            puts "  #{f_path}"
+            FileUtils.mkdir_p( File.dirname( f_path ) )
+            zip_file.extract( f, f_path ) unless File.exist?( f_path )
+          }
+
+          netclerk_scan( "#{dir}/full_list/" )
+        }
+      }
+    end
+
+    mail.delete
+  }
+
+  pop.finish
 end
 
 def netclerk_scan( input_dir )
