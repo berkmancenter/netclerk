@@ -5,6 +5,12 @@ class StatusesController < ApplicationController
 
   def show
     @status = Status.find(params[:id])
-    @statuses = Status.where( country: @status.country, page: @status.page ).order( 'created_at desc' )
+    @previous_statuses =
+      PreviousStatusFinder.statuses(
+        @status.created_at,
+        @status.country_id,
+        @status.page_id,
+        5,
+      )
   end
 end

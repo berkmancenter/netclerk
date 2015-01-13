@@ -1,9 +1,12 @@
 <%= render @status.country %>
 <%= render @status.page %>
 
-<h2><%= t 'statuses.recent' %></h2>
+<%= render partial: 'statuses/availability_link', object: @status %>
 
-<div class="list-group statuses-list">
-  <%= render partial: 'statuses/availability_link', collection: @statuses %>
-</div>
+<% if @previous_statuses.any? %>
+  <h4 id="previous"><%= t 'statuses.previous' %></h4>
 
+  <div class="list-group statuses-list">
+    <%= render partial: 'statuses/availability_link', collection: @previous_statuses %>
+  </div>
+<% end %>
