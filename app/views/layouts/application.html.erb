@@ -28,9 +28,15 @@
           </div>
           <div id="navbar">
             <ul class="nav navbar-nav">
-              <li><%= link_to t( 'statuses.recent' ), statuses_path %></li>
-              <li><%= link_to t( 'models.pages' ), pages_path %></li>
-              <li><%= link_to t( 'models.countries' ), countries_path %></li>
+              <li <%= 'class="active"'.html_safe if controller.controller_name == 'statuses' %>>
+                <%= link_to t( 'statuses.recent' ), statuses_path %>
+              </li>
+              <li <%= 'class="active"'.html_safe if controller.controller_name == 'pages' %>>
+                <%= link_to t( 'models.pages' ), pages_path %>
+              </li>
+              <li <%= 'class="active"'.html_safe if controller.controller_name == 'countries' %>>
+                <%= link_to t( 'models.countries' ), countries_path %>
+              </li>
             </ul>
           </div>
         </div>
