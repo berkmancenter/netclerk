@@ -39,6 +39,7 @@ en:
 
   statuses:
     recent: 'Recent'
+    previous: 'Previous'
 
     '0': 'available'
     '1': 'a bit different'
@@ -57,5 +58,7 @@ en:
       '2': 'Very different on %{date}'
       '3': 'Not available on %{date}'
 
-
-
+  static_pages:
+    about: 'About'
+    terms: 'Terms'
+    contact: 'Contact'

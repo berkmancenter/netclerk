@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Status do
   describe( 'create_for_date' ) {
-    let( :p ) { Page.find_by_title 'The White House' }
-    let( :c ) { Country.find_by_name 'United States' }
+    let( :p ) { Page.find_by_title! 'The White House' }
+    let( :c ) { Country.find_by_name! 'United States' }
 
     it ( 'should create a status' ) {
       expect {
