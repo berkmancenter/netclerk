@@ -1,10 +1,10 @@
 require 'csv'
-require 'net/pop'
+#require 'net/pop'
 require 'zip'
 
 namespace :netclerk do
   desc 'Download HMA proxy list'
-  task :hma, [:dst_dir] => :environment do |task, args|
+  task :hma => :environment do |task, args|
     task_start = Time.now
     netclerk_hma
     task_end = Time.now
@@ -26,13 +26,15 @@ namespace :netclerk do
 end
 
 def netclerk_hma( )
-  pop = Net::POP3.new HMA::ADDRESS
-  pop.start HMA::ACCOUNT, HMA::PASSWORD
-  
-  puts "Count: #{pop.mails.count}"
+  mail_path = Rails.root.join HMA::INBOX
 
-  pop.mails.each { |mail|
-    email = Mail.new mail.pop
+  glob = Dir.glob "#{mail_path}/*.numfar"
+
+  puts "Count: #{glob.count}"
+
+  glob.each { |eml|
+    email_file = File.open eml
+    email = Mail.new email_file.read
     if email.has_attachments?
       puts "Subject: #{email.subject}"
       puts "Date: #{email.date}"
@@ -57,10 +59,9 @@ def netclerk_hma( )
       }
     end
 
-    mail.delete
+    email_file.close
+    File.delete email_file
   }
-
-  pop.finish
 end
 
 def netclerk_scan( input_dir )
@@ -90,9 +91,10 @@ def netclerk_scan( input_dir )
       country = Country.find_by_iso2 iso2
       next if country.nil?
 
-      File.open("#{input_dir}/#{f}", 'r').each_line do |line|
+      country_file = File.open("#{input_dir}/#{f}", 'r').each_line do |line|
         Proxy.create( ip_and_port: line, permanent: false, country: country ) if reliable.include? line
       end
+      country_file.close
     end
   }
 
