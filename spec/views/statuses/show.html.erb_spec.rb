@@ -8,11 +8,13 @@ describe ( 'statuses/show' ) {
     let ( :page ) { Page.find_by_title 'The White House' }
     let ( :status ) { Status.most_recent.find_by( country: c, page: page ) }
 
-    let ( :statuses ) { Status.where( country: status.country, page: status.page ).order( 'created_at desc' ) }
+    let ( :previous_statuses ) do
+      Status.where( country: status.country, page: status.page ).order( 'created_at desc' ).offset(1)
+    end
 
     before {
       assign( :status, status )
-      assign( :statuses, statuses )
+      assign( :previous_statuses, previous_statuses )
     
       render
     }
@@ -26,22 +28,13 @@ describe ( 'statuses/show' ) {
     }
 
     it { 
-      should have_css 'h2', text: 'Recent'
+      should have_css 'h4', text: 'Previous'
     }
 
     it { should have_css '.statuses-list' }
 
-    it ( 'should show status from today & yesterday' ) {
-      should have_css '.statuses-list a', count: 2
-    }
-
-    it { 
-      should_not have_css 'h2', text: 'History'
-    }
-
-    it {
-      # no need for a whole section atm
-      should_not have_css '.history-list'
+    it ( 'should show status from yesterday' ) {
+      should have_css '.statuses-list a', count: 1
     }
   }
 }

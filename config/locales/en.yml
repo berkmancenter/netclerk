@@ -39,6 +39,7 @@ en:
 
   statuses:
     recent: 'Recent'
+    previous: 'Previous'
 
     '0': 'available'
     '1': 'a bit different'
