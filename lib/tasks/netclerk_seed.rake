@@ -116,11 +116,7 @@ def seed_oni
     if f.present? && !File.directory?(f)
       puts "Loading #{f}"
 
-      skipper = 0
       CSV.open( Rails.root.join( 'db', 'data_files', 'oni', f ), { :headers => true } ).each do |line|
-        skipper = (skipper + 1) % 2
-        next if skipper == 0
-
         url = line['url']
         if Page.find_by( url: url ).nil?
           page = Page.new( url: url)
