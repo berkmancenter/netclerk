@@ -3,7 +3,7 @@ require 'net/http'
 
 class ProxyRequest
   include Sidekiq::Worker
-  sidekiq_options retry: 1, backtrace: true
+  sidekiq_options retry: false, backtrace: true
 
   def perform(country_id, page_id, proxy_id)
     country = Country.find(country_id)
