@@ -10,7 +10,10 @@ class Page < ActiveRecord::Base
   end
 
   def baseline_content
-    content = nil
+    # 11503 add this
+    #content = Rails.cache.fetch( url, expires_in: 1.day ) do
+    #end
+
     begin
       content = open( url, {
         redirect: false,
