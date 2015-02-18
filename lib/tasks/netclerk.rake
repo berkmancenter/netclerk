@@ -110,20 +110,17 @@ def netclerk_scan( input_dir )
 end
 
 def netclerk_status( date )
-  usage = "usage: rake netclerk:status['YYYY-MM-DD']"
+  date = date || Date.today.to_s
 
-  if date.nil?
-    puts usage
-    return
-  end
+  Rails.logger.info "running netclerk_status for #{date}"
 
   count = Status.count
-  Country.all.each { |c|
-    puts c.name
+  Country.having_requests_on( date ).each { |c|
+    Rails.logger.info c.name
     Page.all.each { |p|
       Status.create_for_date p, c, date
     }
   }
 
-  puts "#{Status.count - count} statuses created"
+  Rails.logger.info "#{Status.count - count} statuses created"
 end
