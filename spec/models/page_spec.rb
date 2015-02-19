@@ -38,4 +38,12 @@ describe Page do
   it 'has a valid factory' do
     expect(build(:page)).to be_valid
   end
+
+  describe( 'baseline_content' ) {
+    let( :p ) { Page.find_by_title 'The White House' }
+
+    it {
+      p.baseline_content.should_not be_nil
+    }
+  }
 end
