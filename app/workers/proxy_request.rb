@@ -6,14 +6,10 @@ class ProxyRequest
   sidekiq_options retry: false, backtrace: true
 
   def perform(country_id, page_id, proxy_id)
-    country = Country.find(country_id)
     page = Page.find(page_id)
     proxy = Proxy.find(proxy_id)
 
-    request_data = nil
-    response_length = 0
-
-    logger.info "URL: #{page.url}"
+    #logger.info "URL: #{page.url}"
     baseline_content = page.baseline_content
     return if baseline_content.nil?
 
@@ -45,13 +41,17 @@ class ProxyRequest
 
       return if proxy_content.nil?
 
-      request_data = {
+      Request.create( {
+        country_id: country_id,
+        page_id: page_id,
+        proxy_id: proxy_id,
+
         response_time: response_time,
         response_status: res.code.to_i,
         response_headers: res.to_hash.inspect,
         response_length: proxy_content.length,
         response_delta: Request.diff( baseline_content, proxy_content )
-      }
+      } )
 
 #    rescue Net::OpenTimeout
 #      rescue_time = Time.now - time_start
@@ -88,12 +88,6 @@ class ProxyRequest
 #      else
 #        logger.info "Unknown Exception: #{e.inspect}"
 #      end
-
-    request = Request.new( request_data )
-    request.country = country
-    request.page = page
-    request.proxy_id = proxy.id
-    request.save
 
     #puts request.inspect
   end
