@@ -42,8 +42,13 @@ describe Page do
   describe( 'baseline_content' ) {
     let( :p ) { Page.find_by_title 'The White House' }
 
+    before {
+      Rails.cache.delete p.url
+    }
+
     it {
       p.baseline_content.should_not be_nil
+      Rails.cache.exist?( p.url ).should be_true
     }
   }
 end
