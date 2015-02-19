@@ -15,43 +15,43 @@ class ProxyRequest
 
     time_start = Time.now
 
-      uri = URI( page.url )
+    uri = URI( page.url )
 
-      req = create_request(uri)
+    req = create_request(uri)
 
-      http = Net::HTTP.new(
-        uri.hostname,
-        uri.port,
-        proxy.ip,
-        proxy.port,
-      )
-      http.open_timeout = 5
-      http.read_timeout = 10
-      #http.set_debug_output $stderr
+    http = Net::HTTP.new(
+      uri.hostname,
+      uri.port,
+      proxy.ip,
+      proxy.port,
+    )
+    http.open_timeout = 5
+    http.read_timeout = 10
+    #http.set_debug_output $stderr
 
-      res = http.start{ |http| http.request req }
+    res = http.start{ |http| http.request req }
 
-      response_time = Time.now - time_start
+    response_time = Time.now - time_start
 
-      #logger.info "      time: #{response_time}"
-      #logger.info "      status: #{res.code.to_i}"
-      #logger.info "      headers: #{res.to_hash.inspect}"
+    #logger.info "      time: #{response_time}"
+    #logger.info "      status: #{res.code.to_i}"
+    #logger.info "      headers: #{res.to_hash.inspect}"
 
-      proxy_content = res.body.encode
+    proxy_content = res.body.encode
 
-      return if proxy_content.nil?
+    return if proxy_content.nil?
 
-      Request.create( {
-        country_id: country_id,
-        page_id: page_id,
-        proxy_id: proxy_id,
+    Request.create( {
+      country_id: country_id,
+      page_id: page_id,
+      proxy_id: proxy_id,
 
-        response_time: response_time,
-        response_status: res.code.to_i,
-        response_headers: res.to_hash.inspect,
-        response_length: proxy_content.length,
-        response_delta: Request.diff( baseline_content, proxy_content )
-      } )
+      response_time: response_time,
+      response_status: res.code.to_i,
+      response_headers: res.to_hash.inspect,
+      response_length: proxy_content.length,
+      response_delta: Request.diff( baseline_content, proxy_content )
+    } )
 
 #    rescue Net::OpenTimeout
 #      rescue_time = Time.now - time_start
