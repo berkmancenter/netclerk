@@ -44,14 +44,18 @@ def seed_test
   no_title.category = social
   no_title.save
 
+  berkman = FactoryGirl.create :berkman
+  berkman.category = social
+  berkman.save
+
   # proxies
   proxy_usa = FactoryGirl.create :proxy_usa
   proxy_usa.country = usa
   proxy_usa.save
 
-  #proxy_chn = FactoryGirl.create :proxy_chn
-  #proxy_chn.country = chn
-  #proxy_chn.save
+  proxy_chn = FactoryGirl.create :proxy_chn
+  proxy_chn.country = chn
+  proxy_chn.save
 
   #proxy_fra = FactoryGirl.create :proxy_fra
   #proxy_fra.country = fra
@@ -73,6 +77,12 @@ def seed_test
   whitehouse_usa_r02.country = usa
   whitehouse_usa_r02.proxy = proxy_usa
   whitehouse_usa_r02.save
+
+  berkman_chn_r01 = FactoryGirl.create :berkman_chn_r01
+  berkman_chn_r01.page = berkman
+  berkman_chn_r01.country = chn
+  berkman_chn_r01.proxy = proxy_chn
+  berkman_chn_r01.save
 
   # statuses
   create_status :twitter_usa, usa, twitter

@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Status do
   describe( 'create_for_date' ) {
-    let( :p ) { Page.find_by_title! 'The White House' }
-    let( :c ) { Country.find_by_name! 'United States' }
+    let( :p ) { Page.find_by_title 'The White House' }
+    let( :c ) { Country.find_by_name 'United States' }
 
     it ( 'should create a status' ) {
       expect {
@@ -30,6 +30,19 @@ describe Status do
 
       it {
         Status.last.delta.should eq( 1 )
+      }
+    }
+
+    context( 'with no pevious status' ) {
+      let( :p2 ) { Page.find_by_title 'Berkman Center' }
+      let( :c2 ) { Country.find_by_name 'China' }
+
+      before {
+        Status.create_for_date p2, c2, '2014-07-11'
+      }
+
+      it {
+        Status.last.delta.should eq( 0 )
       }
     }
   }

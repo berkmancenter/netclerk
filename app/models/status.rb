@@ -36,7 +36,7 @@ class Status < ActiveRecord::Base
 
       prev_status = Status.where( "page_id = #{page.id} and country_id = #{country.id} and created_at < '#{date.to_s}'" ).order( 'created_at desc' ).first
 
-      delta = ( prev_status.present? ? value - prev_status.value : value )
+      delta = ( prev_status.present? ? value - prev_status.value : 0 )
 
       status = Status.create(
         page: page,

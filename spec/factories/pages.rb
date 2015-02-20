@@ -20,5 +20,11 @@ FactoryGirl.define do
       title nil
       #category social
     end
+
+    factory :berkman do
+      url 'http://cyber.law.harvard.edu'
+      title 'Berkman Center'
+      #category social
+    end
   end
 end
