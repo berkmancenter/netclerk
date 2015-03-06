@@ -84,6 +84,8 @@ def netclerk_scan( input_dir )
   reliable_list = "#{input_dir}/_reliable_list.txt"
   reliable = File.exists?( reliable_list ) ? File.readlines( reliable_list ) : []
 
+  country_proxies = {}
+
   ent = Dir.entries input_dir
   ent.each { |f| 
     if f.present? && !File.directory?(f) && File.extname(f) == '.txt'
@@ -91,20 +93,22 @@ def netclerk_scan( input_dir )
       country = Country.find_by_iso2 iso2
       next if country.nil?
 
+      proxies = []
+
       country_file = File.open("#{input_dir}/#{f}", 'r').each_line do |line|
-        Proxy.create( ip_and_port: line, permanent: false, country: country ) if reliable.include? line
+        proxies << line.strip if reliable.include? line
       end
       country_file.close
+
+      country_proxies[country] = proxies if proxies.any?
     end
   }
 
-  Page.all.each do |page|
-    Country.all.each do |country|
-      next unless country.proxies.count > 0
-      puts "  #{country.name}: #{country.proxies.count} proxies"
-      country.proxies.each do |proxy|
-        ProxyRequest.perform_async(country.id, page.id, proxy.id)
-      end
+  country_proxies.each do |country, proxies|
+    puts "  #{country.name}: #{ActionController::Base.helpers.pluralize(proxies.count, 'proxy')}"
+
+    Page.all.each do |page|
+      proxies.each { |proxy| ProxyRequest.perform_async(country.id, page.id, proxy) }
     end
   end
 end

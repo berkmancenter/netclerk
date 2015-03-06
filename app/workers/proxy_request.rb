@@ -5,9 +5,16 @@ class ProxyRequest
   include Sidekiq::Worker
   sidekiq_options retry: false, backtrace: true
 
-  def perform(country_id, page_id, proxy_id)
+  def perform(country_id, page_id, proxy_id_or_address)
+    country = Country.find(country_id)
     page = Page.find(page_id)
-    proxy = Proxy.find(proxy_id)
+
+    proxy =
+      if Proxy.exists?(proxy_id_or_address)
+        Proxy.find(proxy_id_or_address)
+      else
+        Proxy.new(ip_and_port: proxy_id_or_address, country: country, permanent: false)
+      end
 
     #logger.info "URL: #{page.url}"
     baseline_content = page.baseline_content
