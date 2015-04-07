@@ -80,6 +80,9 @@ def netclerk_scan( input_dir )
   # delete all old non-permanent proxies
   Proxy.where( permanent: false ).delete_all
 
+  # delete old sidekiq queue (we didn't get to it yesterday)
+  Sidekiq::Queue.new.clear
+
   # read _reliable_list
   reliable_list = "#{input_dir}/_reliable_list.txt"
   reliable = File.exists?( reliable_list ) ? File.readlines( reliable_list ) : []
@@ -105,7 +108,7 @@ def netclerk_scan( input_dir )
   }
 
   country_proxies.each do |country, proxies|
-    puts "  #{country.name}: #{ActionController::Base.helpers.pluralize(proxies.count, 'proxy')}"
+    #puts "  #{country.name}: #{ActionController::Base.helpers.pluralize(proxies.count, 'proxy')}"
 
     Page.all.each do |page|
       proxies.each { |proxy| ProxyRequest.perform_async(country.id, page.id, proxy) }
