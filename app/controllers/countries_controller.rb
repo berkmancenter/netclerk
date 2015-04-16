@@ -3,7 +3,7 @@ class CountriesController < ApplicationController
 
   def index
     @cache_key = Status.order(created_at: :desc).first.try(:created_at).try(:to_i)
-    @countries = Country.all
+    @countries = Country.has_statuses.all
   end
 
   def show
