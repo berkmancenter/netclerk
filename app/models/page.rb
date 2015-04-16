@@ -66,4 +66,8 @@ class Page < ActiveRecord::Base
       }
     }
   end
+
+  def failed_locally?
+    baseline_content.nil?
+  end
 end
