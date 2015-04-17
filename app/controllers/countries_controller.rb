@@ -6,7 +6,11 @@ class CountriesController < ApplicationController
   end
 
   def show
-    @statuses = @country.statuses.group_by { |s| s.value }.sort_by { |sg| -sg[0] }
+    @statuses = @country.statuses.includes(:page).select(
+      'distinct on (page_id) *'
+    ).order(
+      page_id: :asc, created_at: :desc
+    ).group_by { |s| s.value }.sort_by { |sg| -sg[0] }
   end
 
   private
