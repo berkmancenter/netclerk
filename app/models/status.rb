@@ -41,13 +41,17 @@ class Status < ActiveRecord::Base
 
       delta = ( prev_status.present? ? value - prev_status.value : 0 )
 
-      status = Status.create(
-        page: page,
-        country: country,
-        value: value,
-        delta: delta,
-        created_at: date,
+      status = Status.where(
+        page_id: page.id, country_id: country.id, created_at: date
+      ).first_or_create(
+        value: value, delta: delta
       )
+      if [value, delta] != [status.value, status.delta]
+        status.update_attributes!(
+          value: value,
+          delta: delta,
+        )
+      end
     end
 
     status
