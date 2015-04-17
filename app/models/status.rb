@@ -49,4 +49,12 @@ class Status < ActiveRecord::Base
 
     status
   end
+
+  def requests
+    Request.where(id: request_ids)
+  end
+
+  def requests=(array)
+    self.request_ids = array.collect(&:id)
+  end
 end
