@@ -81,7 +81,9 @@ def netclerk_scan( input_dir )
   Proxy.where( permanent: false ).delete_all
 
   # delete old sidekiq queue (we didn't get to it yesterday)
-  Sidekiq::Queue.new.clear
+  if Sidekiq::Queue.all.any?
+    Sidekiq::Queue.all.first.clear
+  end
 
   # read _reliable_list
   reliable_list = "#{input_dir}/_reliable_list.txt"
