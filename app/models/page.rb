@@ -5,6 +5,8 @@ class Page < ActiveRecord::Base
   belongs_to :category
   has_many :statuses
 
+  validates :url, length: { maximum: 2048 }
+
   def self.proxy_request_data(country, proxy, url)
     ProxyRequest.perform_async(country.id, self.id, proxy.id)
   end
