@@ -11,9 +11,9 @@ gem 'sqlite3'
 group :test do
   gem 'rspec-rails', '~> 2.99.0'
   gem 'capybara', '~> 2.4.0'
-  gem 'phantomjs', '~> 1.9.0'
   gem 'poltergeist', '~> 1.6.0'
   gem 'shoulda-matchers', '~> 2.7.0', require: false
+  gem 'webmock', '~> 1.21.0', require: false
 end
 
 gem 'factory_girl_rails'

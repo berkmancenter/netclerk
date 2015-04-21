@@ -13,7 +13,7 @@ describe Country do
     it { Country.should respond_to( :having_requests_on ) }
 
     it 'should scope to request date' do
-      Country.having_requests_on( '2014-07-11' ).count.should eq( 1 )
+      Country.having_requests_on( '2014-07-11' ).count.should eq( 2 )
     end
   end
 end

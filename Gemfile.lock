@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (4.0.2.1)
       execjs
@@ -52,6 +53,8 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     connection_pool (2.1.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     d3_rails (3.5.2)
       railties (>= 3.1.0)
     diff-lcs (1.2.5)
@@ -87,7 +90,6 @@ GEM
       mini_portile (~> 0.6.0)
     pg (0.17.1)
     pg (0.17.1-x86-mingw32)
-    phantomjs (1.9.8.0)
     poltergeist (1.6.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -136,6 +138,7 @@ GEM
       rspec-expectations (~> 2.99.0)
       rspec-mocks (~> 2.99.0)
     rubyzip (1.1.7)
+    safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -183,6 +186,9 @@ GEM
     uglifier (2.6.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    webmock (1.21.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
     websocket-driver (0.5.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -205,7 +211,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
-  phantomjs (~> 1.9.0)
   poltergeist (~> 1.6.0)
   rails (= 4.1.1)
   rspec-rails (~> 2.99.0)
@@ -218,3 +223,4 @@ DEPENDENCIES
   sqlite3
   tzinfo-data
   uglifier (>= 1.3.0)
+  webmock (~> 1.21.0)

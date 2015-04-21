@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/poltergeist'
 require 'shoulda/matchers'
+require 'webmock/rspec'
 
 def snap
   save_screenshot("tmp/screenshots/#{(Time.now.to_f * 1000).floor}.png")
@@ -51,4 +52,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  WebMock.disable_net_connect!(allow_localhost: true)
 end
