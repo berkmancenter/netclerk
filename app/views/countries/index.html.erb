@@ -1,5 +1,7 @@
-<h1>Countries</h1>
+<% cache_if(@cache_key.present?, "countries/index/#{@cache_key}", expires_in: cache_duration) do %>
+  <h1>Countries</h1>
 
-<ul class="countries-list">
-  <%= render partial: 'shared/list_item', collection: @countries %>
-</ul>
+  <ul class="countries-list">
+    <%= render partial: 'shared/list_item', collection: @countries %>
+  </ul>
+<% end %>

@@ -1,9 +1,11 @@
-<%= render @page %>
+<% cache_if(@cache_key.present?, "pages/#{@page.id}/#{@cache_key}", expires_in: cache_duration) do %>
+  <%= render @page %>
 
-<h2><%= t 'pages.recent' %></h2>
+  <h2><%= t 'pages.recent' %></h2>
 
-<% if @statuses.any? %>
-  <%= render 'recent_statuses' %>
-<% else %>
-  <p>No recent statuses.</p>
+  <% if @statuses.any? %>
+    <%= render 'recent_statuses' %>
+  <% else %>
+    <p>No recent statuses.</p>
+  <% end %>
 <% end %>

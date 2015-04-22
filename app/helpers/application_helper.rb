@@ -6,4 +6,8 @@ module ApplicationHelper
       page.title
     end
   end
+
+  def cache_duration
+    8.hours
+  end
 end

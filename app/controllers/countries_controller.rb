@@ -2,10 +2,12 @@ class CountriesController < ApplicationController
   before_action :set_country, only: :show
 
   def index
+    @cache_key = Status.order(created_at: :desc).first.try(:created_at).try(:to_i)
     @countries = Country.all
   end
 
   def show
+    @cache_key = @country.statuses.order(created_at: :desc).first.try(:created_at).try(:to_i)
     @statuses = @country.statuses.includes(:page).select(
       'distinct on (page_id) *'
     ).order(
