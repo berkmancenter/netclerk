@@ -50,7 +50,7 @@ describe NewestStatusFinder do
     end
 
     it 'returns statuses from the most recent scan' do
-      expect(random_statuses.map{ |s| s.created_at.to_date }.uniq).to eq([Date.today])
+      expect(random_statuses.map{ |s| s.created_at.to_date }.uniq).to eq([Status.order(:created_at).last.created_at.to_date])
     end
   end
 end
