@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Page do
   it { should belong_to :category }
   it { should have_many :statuses }
+  it { should ensure_length_of(:url).is_at_most(2048) }
 
   context( 'valid attributes' ) {
     let( :twitter ) { Page.find_by_title 'Twitter' }
