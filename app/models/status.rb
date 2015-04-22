@@ -23,6 +23,9 @@ class Status < ActiveRecord::Base
     statuses.created_at = s2.max_id")
   }
 
+  scope :all_recent, -> { where("date(\"#{table_name}\".\"created_at\") = '#{newest_date}'") }
+  scope :changed, -> { where.not(delta: 0) }
+
   def self.create_for_date( page, country, date )
     status = nil
     date = Date.parse( date ) if date.is_a? String
@@ -56,5 +59,9 @@ class Status < ActiveRecord::Base
 
   def requests=(array)
     self.request_ids = array.collect(&:id)
+  end
+
+  def self.newest_date
+    exists? ? select(:created_at).order(:created_at).last.created_at.to_date : Date.today
   end
 end

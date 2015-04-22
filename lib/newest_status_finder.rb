@@ -23,16 +23,12 @@ module NewestStatusFinder
   end
 
   def self.random(size = 50)
-    if Status.any?
-      newest_status_date = Status.last.created_at.to_date
-    else
-      newest_status_date = Date.today
-    end
+    Status.all_recent.order('RANDOM()').limit(size)
+  end
 
-
-
-    Status.where("date(created_at) = '#{newest_status_date}'")
-      .order('RANDOM()')
-      .limit(size)
+  def self.changed
+    Status.all_recent.changed.includes(:page, :country).references(
+      :pages, :countries
+    ).order("countries.name, pages.title, pages.url")
   end
 end
