@@ -1,12 +1,14 @@
-<%= render @status.country %>
-<%= render @status.page %>
+<% cache(@status, expires_in: cache_duration) do %>
+  <%= render @status.country %>
+  <%= render @status.page %>
 
-<%= render partial: 'statuses/availability_link', object: @status %>
+  <%= render partial: 'statuses/availability_link', object: @status %>
 
-<% if @previous_statuses.any? %>
-  <h4 id="previous"><%= t 'statuses.previous' %></h4>
+  <% if @previous_statuses.any? %>
+    <h4 id="previous"><%= t 'statuses.previous' %></h4>
 
-  <div class="list-group statuses-list">
-    <%= render partial: 'statuses/availability_link', collection: @previous_statuses %>
-  </div>
+    <div class="list-group statuses-list">
+      <%= render partial: 'statuses/availability_link', collection: @previous_statuses %>
+    </div>
+  <% end %>
 <% end %>
