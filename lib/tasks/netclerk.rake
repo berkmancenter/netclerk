@@ -113,7 +113,9 @@ def netclerk_scan( input_dir )
     #puts "  #{country.name}: #{ActionController::Base.helpers.pluralize(proxies.count, 'proxy')}"
 
     Page.all.each do |page|
-      proxies.each { |proxy| ProxyRequest.perform_async(country.id, page.id, proxy) }
+      unless page.failed_locally?
+        proxies.each { |proxy| ProxyRequest.perform_async(country.id, page.id, proxy) }
+      end
     end
   end
 end
