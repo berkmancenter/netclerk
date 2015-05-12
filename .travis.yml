@@ -1,4 +1,11 @@
 language: ruby
-rvm:
-  - 2.1.2
-
+rvm: 2.0.0
+addons:
+  postgresql: "9.2"
+services: postgresql
+before_script:
+  - psql -c 'create database netclerk_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - rake db:schema:load RAILS_ENV=test
+  - rake netclerk:seed:test RAILS_ENV=test
+script: bundle exec rspec spec
