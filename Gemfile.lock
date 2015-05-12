@@ -213,6 +213,7 @@ DEPENDENCIES
   pg
   poltergeist (~> 1.6.0)
   rails (= 4.1.1)
+  rake
   rspec-rails (~> 2.99.0)
   rubyzip
   sass-rails (= 4.0.3)

@@ -9,6 +9,7 @@ gem 'pg'
 gem 'sqlite3'
 
 group :test do
+  gem 'rake' # required for Travis CI
   gem 'rspec-rails', '~> 2.99.0'
   gem 'capybara', '~> 2.4.0'
   gem 'poltergeist', '~> 1.6.0'
