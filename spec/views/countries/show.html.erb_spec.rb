@@ -25,7 +25,7 @@ describe ( 'countries/show' ) {
     it { should have_css '.media-body .media-heading', text: c.name }
 
     describe ( 'changed' ) {
-      it { pending "should have_css 'h2', text: 'Changed since yesterday'" }
+      it { skip "should have_css 'h2', text: 'Changed since yesterday'" }
     }
 
     describe ( 'recent' ) {
