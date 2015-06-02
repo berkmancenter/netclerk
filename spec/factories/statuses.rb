@@ -99,5 +99,13 @@ FactoryGirl.define do
       delta 0
       created_at '2014-07-11'
     end
+
+    factory :whitehouse_bra_yesterday do
+      #country bra
+      #page whitehouse
+      value 0
+      delta 0
+      created_at '2014-07-10'
+    end
   end
 end

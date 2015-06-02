@@ -4,7 +4,7 @@ describe ( 'countries/index' ) {
   subject { rendered }
 
   context ( 'default view' ) {
-    let ( :countries ) { Country.all }
+    let ( :countries ) { Country.has_statuses }
 
     before {
       assign( :countries, countries )

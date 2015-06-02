@@ -26,6 +26,8 @@ def seed_test
   chn = FactoryGirl.create :chn
   fra = FactoryGirl.create :fra
   irn = FactoryGirl.create :irn
+  bra = FactoryGirl.create :bra
+  nos = FactoryGirl.create :nos
 
   # categories
   social = FactoryGirl.create :social
@@ -100,6 +102,8 @@ def seed_test
   create_status :twitter_irn, irn, twitter
   create_status :whitehouse_irn, irn, whitehouse
   create_status :no_title_irn, irn, no_title
+
+  create_status :whitehouse_bra_yesterday, bra, whitehouse
 end
 
 def create_status( factory, country, page )

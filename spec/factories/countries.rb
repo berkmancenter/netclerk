@@ -29,5 +29,17 @@ FactoryGirl.define do
       iso2 'IR'
       iso3 'IRN'
     end
+
+    factory :bra do
+      name 'Brazil'
+      iso2 'BR'
+      iso3 'BRA'
+    end
+
+    factory :nos do
+      name 'No Status'
+      iso2 'NS'
+      iso3 'NOS'
+    end
   end
 end
