@@ -13,6 +13,11 @@ describe Status do
       }.by( 1 )
     }
 
+    it ( 'should set request_ids' ) {
+      s = Status.create_for_date p, c, '2014-07-12'
+      s.requests.empty?.should be false
+    }
+
     context( 'with value somewhat different' ) {
       before {
         Status.create_for_date p, c, '2014-07-12'

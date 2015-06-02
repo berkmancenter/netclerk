@@ -44,12 +44,13 @@ class Status < ActiveRecord::Base
       status = Status.where(
         page_id: page.id, country_id: country.id, created_at: date
       ).first_or_create(
-        value: value, delta: delta
+        value: value, delta: delta, requests: requests
       )
       if [value, delta] != [status.value, status.delta]
         status.update_attributes!(
           value: value,
           delta: delta,
+          requests: requests
         )
       end
     end
