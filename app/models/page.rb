@@ -15,19 +15,23 @@ class Page < ActiveRecord::Base
     Rails.cache.fetch( url, expires_in: 18.hours ) do
       bc = nil
       begin
-        bc = open( url, {
-          redirect: false,
-          'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-          #'Accept-Encoding' => 'gzip,deflate', # added automatically by Net::HTTP
-          'Accept-Language' => 'en-US,en;q=0.8',
-          'Connection' => 'close',
-          'User-Agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36',
-        } ).read.encode
+        Timeout::timeout( 2 ) {
+          bc = open( url, {
+            redirect: false,
+            'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            #'Accept-Encoding' => 'gzip,deflate', # added automatically by Net::HTTP
+            'Accept-Language' => 'en-US,en;q=0.8',
+            'Connection' => 'close',
+            'User-Agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36',
+          } ).read.encode
+        }
       rescue OpenURI::HTTPRedirect => e
         # update our url and try again another day
         Rails.logger.info "Redirect: #{url} => #{e.uri}"
         self.url = e.uri.to_s
         save
+      rescue Timeout::error
+        Rails.logger.error "Timeout::error (baseline_content): #{url} (consider removing from NetClerk)"
       rescue OpenURI::HTTPError => e
         Rails.logger.error "HTTPError (baseline_content): #{url} (consider removing from NetClerk)"
       rescue OpenSSL::SSL::SSLError => e
