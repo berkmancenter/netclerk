@@ -32,10 +32,16 @@ class Page < ActiveRecord::Base
         Rails.logger.error "HTTPError (baseline_content): #{url} (consider removing from NetClerk)"
       rescue OpenSSL::SSL::SSLError => e
         Rails.logger.error "OpenSSL::SSL::SSLError (baseline_content): #{url} (consider removing from NetClerk)"
+      rescue Errno::ECONNRESET => e
+        Rails.logger.error "Errno::ECONNRESET (baseline_content): #{url} (consider removing from NetClerk)"
+      rescue Errno::ECONNREFUSED => e
+        Rails.logger.error "Errno::ECONNREFUSED (baseline_content): #{url} (consider removing from NetClerk)"
       rescue Errno::ETIMEDOUT => e
         Rails.logger.error "Errno::ETIMEDOUT (baseline_content): #{url} (consider removing from NetClerk)"
       rescue SocketError
         Rails.logger.error "SocketError (baseline_content): #{url} (consider removing from NetClerk)"
+      rescue Exception => e
+        Rails.logger.error "Exception #{e.inspect} (baseline_content): #{url} (consider removing from NetClerk)"
       end
       bc
     end
