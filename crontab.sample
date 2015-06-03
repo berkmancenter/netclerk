@@ -1,0 +1,32 @@
+# read today's HMA proxy list
+# this can now take up to 20 minutes due to downloading each page's
+# baseline_content at this step
+10 2 * * * /usr/local/rvm/wrappers/ruby-2.1.2@netclerk/rake -f /web/numfar/railsdev-ruby2/docs/netclerk-dev/Rakefile netclerk:hma > /dev/null
+
+# get sidekiq going today
+# conf in config/sidekiq.yml
+# pid in tmp/sidekiq.pid
+# log in log/sidekiq.log
+BUNDLE_GEMFILE=/web/numfar/railsdev-ruby2/docs/netclerk-dev/Gemfile
+
+31 2 * * * /usr/local/rvm/wrappers/ruby-2.1.2@netclerk/bundle exec /usr/local/rvm/gems/ruby-2.1.2@netclerk/bin/sidekiq -d -r /web/numfar/railsdev-ruby2/docs/netclerk-dev -C /web/numfar/railsdev-ruby2/docs/netclerk-dev/config/sidekiq.yml -P /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid -L /web/numfar/railsdev-ruby2/docs/netclerk-dev/log/sidekiq.log > /dev/null
+29 3 * * * kill $(cat /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid) > /dev/null
+
+31 3 * * * /usr/local/rvm/wrappers/ruby-2.1.2@netclerk/bundle exec /usr/local/rvm/gems/ruby-2.1.2@netclerk/bin/sidekiq -d -r /web/numfar/railsdev-ruby2/docs/netclerk-dev -C /web/numfar/railsdev-ruby2/docs/netclerk-dev/config/sidekiq.yml -P /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid -L /web/numfar/railsdev-ruby2/docs/netclerk-dev/log/sidekiq.log > /dev/null
+29 4 * * * kill $(cat /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid) > /dev/null
+
+31 4 * * * /usr/local/rvm/wrappers/ruby-2.1.2@netclerk/bundle exec /usr/local/rvm/gems/ruby-2.1.2@netclerk/bin/sidekiq -d -r /web/numfar/railsdev-ruby2/docs/netclerk-dev -C /web/numfar/railsdev-ruby2/docs/netclerk-dev/config/sidekiq.yml -P /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid -L /web/numfar/railsdev-ruby2/docs/netclerk-dev/log/sidekiq.log > /dev/null
+29 5 * * * kill $(cat /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid) > /dev/null
+
+31 5 * * * /usr/local/rvm/wrappers/ruby-2.1.2@netclerk/bundle exec /usr/local/rvm/gems/ruby-2.1.2@netclerk/bin/sidekiq -d -r /web/numfar/railsdev-ruby2/docs/netclerk-dev -C /web/numfar/railsdev-ruby2/docs/netclerk-dev/config/sidekiq.yml -P /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid -L /web/numfar/railsdev-ruby2/docs/netclerk-dev/log/sidekiq.log > /dev/null
+29 6 * * * kill $(cat /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid) > /dev/null
+
+31 6 * * * /usr/local/rvm/wrappers/ruby-2.1.2@netclerk/bundle exec /usr/local/rvm/gems/ruby-2.1.2@netclerk/bin/sidekiq -d -r /web/numfar/railsdev-ruby2/docs/netclerk-dev -C /web/numfar/railsdev-ruby2/docs/netclerk-dev/config/sidekiq.yml -P /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid -L /web/numfar/railsdev-ruby2/docs/netclerk-dev/log/sidekiq.log > /dev/null
+29 7 * * * kill $(cat /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid) > /dev/null
+
+31 7 * * * /usr/local/rvm/wrappers/ruby-2.1.2@netclerk/bundle exec /usr/local/rvm/gems/ruby-2.1.2@netclerk/bin/sidekiq -d -r /web/numfar/railsdev-ruby2/docs/netclerk-dev -C /web/numfar/railsdev-ruby2/docs/netclerk-dev/config/sidekiq.yml -P /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid -L /web/numfar/railsdev-ruby2/docs/netclerk-dev/log/sidekiq.log > /dev/null
+29 8 * * * kill $(cat /web/numfar/railsdev-ruby2/docs/netclerk-dev/tmp/sidekiq.pid) > /dev/null
+
+# create status objects for all valid requests created today
+0 9 * * * /usr/local/rvm/wrappers/ruby-2.1.2@netclerk/rake -f /web/numfar/railsdev-ruby2/docs/netclerk-dev/Rakefile netclerk:status > /dev/null
+
