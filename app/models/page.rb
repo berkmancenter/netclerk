@@ -28,8 +28,12 @@ class Page < ActiveRecord::Base
         Rails.logger.info "Redirect: #{url} => #{e.uri}"
         self.url = e.uri.to_s
         save
+      rescue OpenURI::HTTPError => e
+        Rails.logger.error "HTTPError (baseline_content): #{url} (consider removing from NetClerk)"
+      rescue OpenSSL::SSL::SSLError => e
+        Rails.logger.error "OpenSSL::SSL::SSLError (baseline_content): #{url} (consider removing from NetClerk)"
       rescue SocketError
-        Rails.logger.error "SocketError: #{url} (consider removing from NetClerk)"
+        Rails.logger.error "SocketError (baseline_content): #{url} (consider removing from NetClerk)"
       end
       bc
     end
