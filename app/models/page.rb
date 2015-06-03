@@ -32,6 +32,8 @@ class Page < ActiveRecord::Base
         Rails.logger.error "HTTPError (baseline_content): #{url} (consider removing from NetClerk)"
       rescue OpenSSL::SSL::SSLError => e
         Rails.logger.error "OpenSSL::SSL::SSLError (baseline_content): #{url} (consider removing from NetClerk)"
+      rescue Errno::ETIMEDOUT => e
+        Rails.logger.error "Errno::ETIMEDOUT (baseline_content): #{url} (consider removing from NetClerk)"
       rescue SocketError
         Rails.logger.error "SocketError (baseline_content): #{url} (consider removing from NetClerk)"
       end
