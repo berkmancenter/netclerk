@@ -89,7 +89,7 @@ def netclerk_scan( input_dir )
   reliable_list = "#{input_dir}/_reliable_list.txt"
   reliable = File.exists?( reliable_list ) ? File.readlines( reliable_list ) : []
 
-  country_proxies = {}
+  country_proxies = []
 
   ent = Dir.entries input_dir
   ent.each { |f| 
@@ -105,11 +105,18 @@ def netclerk_scan( input_dir )
       end
       country_file.close
 
-      country_proxies[country] = proxies if proxies.any?
+      if proxies.any?
+        country_proxies << { country: country, proxies: proxies } 
+      end
     end
   }
 
-  country_proxies.each do |country, proxies|
+  puts country_proxies.sort_by { |cp| cp[ :proxies ].count }
+
+  country_proxies.sort_by { |cp| cp[ :proxies ].count }.each do |cp|
+    country = cp[ :country ]
+    proxies = cp[ :proxies ]
+
     #puts "  #{country.name}: #{ActionController::Base.helpers.pluralize(proxies.count, 'proxy')}"
 
     Page.all.each do |page|
