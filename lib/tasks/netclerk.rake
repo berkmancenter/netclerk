@@ -111,8 +111,6 @@ def netclerk_scan( input_dir )
     end
   }
 
-  puts country_proxies.sort_by { |cp| cp[ :proxies ].count }
-
   country_proxies.sort_by { |cp| cp[ :proxies ].count }.each do |cp|
     country = cp[ :country ]
     proxies = cp[ :proxies ]
