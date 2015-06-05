@@ -43,6 +43,10 @@ gem 'rubyzip'
 # Google DiffMatchPatch
 gem 'diff_match_patch'
 
+# Use rabl for JSON API
+gem 'rabl'
+gem 'oj'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
