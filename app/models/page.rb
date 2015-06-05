@@ -30,22 +30,17 @@ class Page < ActiveRecord::Base
         Rails.logger.info "Redirect: #{url} => #{e.uri}"
         self.url = e.uri.to_s
         save
-      rescue Timeout::Error => e
-        Rails.logger.error "Timeout::error (baseline_content): #{url} (consider removing from NetClerk)"
-      rescue OpenURI::HTTPError => e
-        Rails.logger.error "HTTPError (baseline_content): #{url} (consider removing from NetClerk)"
-      rescue OpenSSL::SSL::SSLError => e
-        Rails.logger.error "OpenSSL::SSL::SSLError (baseline_content): #{url} (consider removing from NetClerk)"
-      rescue Errno::ECONNRESET => e
-        Rails.logger.error "Errno::ECONNRESET (baseline_content): #{url} (consider removing from NetClerk)"
-      rescue Errno::ECONNREFUSED => e
-        Rails.logger.error "Errno::ECONNREFUSED (baseline_content): #{url} (consider removing from NetClerk)"
-      rescue Errno::ETIMEDOUT => e
-        Rails.logger.error "Errno::ETIMEDOUT (baseline_content): #{url} (consider removing from NetClerk)"
-      rescue SocketError
-        Rails.logger.error "SocketError (baseline_content): #{url} (consider removing from NetClerk)"
-      rescue Exception => e
-        Rails.logger.error "Exception #{e.inspect} (baseline_content): #{url} (consider removing from NetClerk)"
+      rescue StandardError => e
+        recognized = [
+          Timeout::Error,
+          OpenURI::HTTPError,
+          OpenSSL::SSL::SSLError,
+          Errno::ECONNRESET,
+          Errno::ECONNREFUSED,
+          Errno::ETIMEDOUT,
+          SocketError
+        ].include?(e.class)
+        Rails.logger.error "#{recognized ? e.class : "Exception #{e.inspect}"} (baseline_content): #{url} (consider removing from NetClerk)"
       end
       bc
     end
