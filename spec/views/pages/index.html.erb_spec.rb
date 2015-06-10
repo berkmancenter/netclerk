@@ -15,7 +15,7 @@ describe ( 'pages/index' ) {
     it { should have_css 'h1', text: 'URLs' }
 
     it {
-      should have_css '.pages-help', text: 'Check the availability'
+      should have_css '.pages-help'
     }
 
     it { should have_css '.pages-list' }

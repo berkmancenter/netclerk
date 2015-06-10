@@ -1,8 +1,5 @@
-<h1><%= t 'statuses.recent' %></h1>
+<h1><%= t 'statuses.changed' %></h1>
 
-<% {'statuses.changed' => @changed, 'statuses.random' => @statuses}.each do |k, c| %>
-<h2><%= t k %></h2>
 <div class="list-group statuses-list">
-  <%= render partial: 'statuses/group_link', collection: c %>
+  <%= render partial: 'statuses/group_link', collection: @statuses %>
 </div>
-<% end %>

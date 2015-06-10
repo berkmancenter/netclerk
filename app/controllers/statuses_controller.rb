@@ -1,7 +1,6 @@
 class StatusesController < ApplicationController
   def index
-    @changed = NewestStatusFinder.changed
-    @statuses = NewestStatusFinder.random(50)
+    @statuses = NewestStatusFinder.changed
   end
 
   def show

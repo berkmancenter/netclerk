@@ -4,7 +4,7 @@ describe ( 'statuses/index' ) {
   subject { rendered }
 
   context ( 'default view' ) {
-    let ( :statuses ) { Status.all }
+    let ( :statuses ) { NewestStatusFinder.changed }
 
     before {
       assign( :statuses, statuses )
@@ -12,7 +12,7 @@ describe ( 'statuses/index' ) {
       render
     }
 
-    it { should have_css 'h1', text: 'Recent' }
+    it { should have_css 'h1', text: 'Recently Changed' }
 
     it { should have_css '.statuses-list' }
 

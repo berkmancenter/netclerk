@@ -40,7 +40,7 @@ en:
 
   statuses:
     recent: 'Recent'
-    changed: 'Changed'
+    changed: 'Recently Changed'
     random: 'Random'
     previous: 'Previous'
 

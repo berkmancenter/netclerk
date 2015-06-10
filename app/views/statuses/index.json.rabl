@@ -1,4 +1,4 @@
-collection @changed
+collection @statuses
 attributes :value, :delta
 node(:created) { |t| t.created_at }
 child :page do
