@@ -1,1 +1,29 @@
-static_pages#about
+<%= render partial: 'static_pages/clerk_row' %>
+
+<div class="row">
+  <div class="col-sm-8">
+    <h1><%= t 'static_pages.about.hello' %></h1>
+
+    <p class="lead"><%= t 'static_pages.about.welcome' %></p>
+  </div>
+</div>
+
+<%= render partial: 'shared/tpanel', locals: {
+  title: 'static_pages.about.what_q',
+  body: 'static_pages.about.what_a'
+} %>
+
+<%= render partial: 'shared/tpanel', locals: {
+  title: 'static_pages.about.how_countries_q',
+  body: 'static_pages.about.how_countries_a'
+} %>
+
+<%= render partial: 'shared/tpanel', locals: {
+  title: 'static_pages.about.how_compare_q',
+  body: 'static_pages.about.how_compare_a'
+} %>
+
+<%#= render partial: 'shared/tpanel', locals: {
+  title: 'static_pages.about.how__q',
+  body: 'static_pages.about.how__a'
+} %>

@@ -62,6 +62,31 @@ en:
       '3': 'Not available on %{date}'
 
   static_pages:
-    about: 'About'
-    terms: 'Terms'
-    contact: 'Contact'
+    about:
+      title: 'About'
+      hello: 'Hello!'
+      welcome: 'I am The Net Clerk. How may I help you?'
+      what_q: 'What do you do?'
+      what_a: 'I check thousands of web pages from a bunch of countries every day in an attempt to determine if content is being censored.'
+      how_countries_q: 'How do you check web pages from other countries?'
+      how_countries_a: 'We use proxy servers set up on different ISPs in different countries and request content through them.'
+      how_compare_q: 'How do you determine if content is being censored?'
+      how_compare_a: "We measure the similarity in content returned from the proxy servers with baseline content, grabbed just before each test, every day. The similarity is based on Google's Match & Patch algorithm. We also take into account other response data such as status code and headers."
+
+    terms:
+      title: 'Terms'
+      header: 'Terms & Privacy'
+      summary: "Pretty standard stuff that we both agree to while you're using this site."
+      use_header: 'Terms of Use'
+      privacy_header: 'Privacy Policy'
+
+    contact:
+      title: 'Contact'
+      robot: 'I am automated!'
+      welcome: 'However, if you would like to make contact with a human, you can do so in the following ways.'
+
+      email_header: 'By Email'
+      email: 'Please email <a href="mailto:info@thenetmonitor.org">info@thenetmonitor.org</a> with general questions or comments about the project or our data.'
+      
+      github_header: 'On GitHub'
+      github: 'NetClerk is an open-source project! You can submit specific suggestions and issues or help us with development on our project repository: <a href="https://github.com/berkmancenter/netclerk">https://github.com/berkmancenter/netclerk</a>.'

@@ -1,1 +1,20 @@
-static_pages#contact
+<%= render partial: 'static_pages/clerk_row' %>
+
+<div class="row">
+  <div class="col-sm-8">
+    <h1><%= t 'static_pages.contact.robot' %></h1>
+
+    <p class="lead"><%= t 'static_pages.contact.welcome' %></p>
+  </div>
+</div>
+
+<%= render partial: 'shared/tpanel', locals: {
+  title: 'static_pages.contact.email_header',
+  body: 'static_pages.contact.email'
+} %>
+
+<%= render partial: 'shared/tpanel', locals: {
+  title: 'static_pages.contact.github_header',
+  body: 'static_pages.contact.github'
+} %>
+

@@ -1,1 +1,30 @@
-static_pages#terms
+<%= render partial: 'static_pages/clerk_row' %>
+
+<div class="row">
+  <div class="col-sm-8">
+    <h1><%= t 'static_pages.terms.header' %></h1>
+
+    <p class="lead"><%= t 'static_pages.terms.summary' %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h2 id="use" class="panel-title"><%= t 'static_pages.terms.use_header' %></h2>
+    </div>
+
+    <div class="panel-body"><%= render partial: 'static_pages/use' %></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h2 id="privacy" class="panel-title"><%= t 'static_pages.terms.privacy_header' %></h2>
+    </div>
+
+    <div class="panel-body"><%= render partial: 'static_pages/privacy' %></div>
+  </div>
+</div>
+

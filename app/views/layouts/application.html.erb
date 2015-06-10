@@ -38,13 +38,13 @@
                 <%= link_to t( 'models.countries' ), countries_path %>
               </li>
               <li <%= 'class="active"'.html_safe if current_page?(about_path) %>>
-                <%= link_to t('static_pages.about'), about_path %>
+                <%= link_to t('static_pages.about.title'), about_path %>
               </li>
               <li <%= 'class="active"'.html_safe if current_page?(terms_path) %>>
-                <%= link_to t('static_pages.terms'), terms_path %>
+                <%= link_to t('static_pages.terms.title'), terms_path %>
               </li>
               <li <%= 'class="active"'.html_safe if current_page?(contact_path) %>>
-                <%= link_to t('static_pages.contact'), contact_path %>
+                <%= link_to t('static_pages.contact.title'), contact_path %>
               </li>
             </ul>
           </div>
