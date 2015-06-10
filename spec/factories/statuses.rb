@@ -100,6 +100,14 @@ FactoryGirl.define do
       created_at '2014-07-11'
     end
 
+    factory :playboy_irn do
+      #country irn
+      #page playboy
+      value 3
+      delta 0
+      created_at '2014-07-11'
+    end
+
     factory :no_title_irn do
       #country irn
       #page no_title

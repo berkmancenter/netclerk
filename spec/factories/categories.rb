@@ -9,5 +9,9 @@ FactoryGirl.define do
     factory :political do
       name 'political'
     end
+
+    factory :pornography do
+      name 'pornography'
+    end
   end
 end

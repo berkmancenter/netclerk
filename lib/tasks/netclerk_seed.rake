@@ -32,6 +32,7 @@ def seed_test
   # categories
   social = FactoryGirl.create :social
   political = FactoryGirl.create :political
+  pornography = FactoryGirl.create :pornography
 
   # pages
   twitter = FactoryGirl.create :twitter
@@ -41,6 +42,10 @@ def seed_test
   whitehouse = FactoryGirl.create :whitehouse
   whitehouse.category = political
   whitehouse.save
+
+  playboy = FactoryGirl.create :playboy
+  playboy.category = pornography
+  playboy.save
 
   no_title = FactoryGirl.create :no_title
   no_title.category = social
@@ -102,6 +107,7 @@ def seed_test
   create_status :twitter_irn_yesterday, irn, twitter
   create_status :twitter_irn, irn, twitter
   create_status :whitehouse_irn, irn, whitehouse
+  create_status :playboy_irn, irn, playboy
   create_status :no_title_irn, irn, no_title
 
   create_status :whitehouse_bra_yesterday, bra, whitehouse

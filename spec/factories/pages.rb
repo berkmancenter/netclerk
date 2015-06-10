@@ -15,6 +15,12 @@ FactoryGirl.define do
       #category political
     end
 
+    factory :playboy do
+      url 'http://www.playboy.com'
+      title 'Playboy'
+      #category pornography
+    end
+
     factory :no_title do
       url 'http://www.no-title.com'
       title nil
