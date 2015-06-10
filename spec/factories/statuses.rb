@@ -79,9 +79,17 @@ FactoryGirl.define do
     factory :twitter_irn do
       #country irn
       #page twitter
-      value 3
+      value 2
       delta -1
       created_at '2014-07-11'
+    end
+
+    factory :twitter_irn_yesterday do
+      #country irn
+      #page twitter
+      value 3
+      delta 0
+      created_at '2014-07-10'
     end
 
     factory :whitehouse_irn do
