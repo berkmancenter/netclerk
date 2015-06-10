@@ -33,7 +33,8 @@ en:
     recent: 'Recent'
 
   pages:
-    help: 'Check the availability of any URL by using the box above, or, try one of these:'
+    #help: 'Check the availability of any URL by using the box above, or, try one of these:'
+    help: 'Here are a few random URLs, click on them to check their availability in different countries.'
     todays_status: "Today's status"
     recent: 'Recent'
 
