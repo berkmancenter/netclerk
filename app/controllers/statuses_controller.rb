@@ -1,5 +1,6 @@
 class StatusesController < ApplicationController
   def index
+    response.headers[ 'Access-Control-Allow-Origin' ] = '*'
     @statuses = NewestStatusFinder.changed
   end
 
