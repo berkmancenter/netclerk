@@ -1,5 +1,7 @@
 <h1><%= t 'statuses.changed' %></h1>
 
-<div class="list-group statuses-list">
-  <%= render partial: 'statuses/group_link', collection: @statuses %>
-</div>
+<% cache(@statuses, expires_in: cache_duration) do %>
+  <div class="list-group statuses-list">
+    <%= render partial: 'statuses/group_link', collection: @statuses %>
+  </div>
+<% end %>
