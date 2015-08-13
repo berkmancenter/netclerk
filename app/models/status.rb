@@ -23,6 +23,11 @@ class Status < ActiveRecord::Base
     statuses.created_at = s2.max_id")
   }
 
+  # faster than .most_recent.where country: c?
+  scope :most_recent_for_country, ->( country ) {
+    where("country_id = #{country.id} AND created_at = '#{newest_date_for_country( country )}'")
+  }
+
   scope :all_recent, -> { where("date(\"#{table_name}\".\"created_at\") = '#{newest_date}'") }
   scope :changed, -> { where.not(delta: 0) }
 
@@ -68,5 +73,9 @@ class Status < ActiveRecord::Base
 
   def self.newest_date
     exists? ? select(:created_at).order(:created_at).last.created_at.to_date : Date.today
+  end
+
+  def self.newest_date_for_country( country )
+    exists? ? where( country: country ).select(:created_at).order(:created_at).last.created_at.to_date : Date.today
   end
 end

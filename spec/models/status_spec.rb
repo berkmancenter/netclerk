@@ -71,4 +71,25 @@ describe Status do
       }
     )
   end
+
+  describe( 'scopes' ) {
+    let( :p ) { Page.find_by_title 'Twitter' }
+    let( :c ) { Country.find_by_iso3 'IRN' }
+
+    describe( 'most_recent' ) {
+      let( :most_recent ) { Status.most_recent }
+
+      it { most_recent.exists?( Status.find_by( page: p, country: c, created_at: '2014-07-10' ) ).should be false }
+
+      it { most_recent.exists?( Status.find_by( page: p, country: c, created_at: '2014-07-11' ) ).should be true }
+    }
+
+    describe( 'most_recent_for_country' ) {
+      let( :most_recent ) { Status.most_recent_for_country c }
+
+      it { most_recent.exists?( Status.find_by( page: p, country: c, created_at: '2014-07-10' ) ).should be false }
+
+      it { most_recent.exists?( Status.find_by( page: p, country: c, created_at: '2014-07-11' ) ).should be true }
+    }
+  }
 end

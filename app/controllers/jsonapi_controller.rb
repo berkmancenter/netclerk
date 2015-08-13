@@ -1,7 +1,13 @@
 class JsonapiController < ApplicationController
   def index
     response.headers[ 'Access-Control-Allow-Origin' ] = '*'
-    @statuses = NewestStatusFinder.changed
+
+    urls = params[ :url ]
+    urls = [ urls ] unless urls.is_a?( Array )
+
+    c = Country.find_by iso2: params[ :country ]
+
+    @statuses = Status.most_recent_for_country( c )
 
     api_data = {
       data: @statuses.map { |s|
