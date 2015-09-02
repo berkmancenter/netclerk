@@ -5,9 +5,9 @@ class JsonapiController < ApplicationController
     urls = params[ :url ]
     urls = [ urls ] unless urls.is_a?( Array )
 
-    c = Country.find_by iso2: params[ :country ]
+    c = Country.find_by iso2: params[ :country ].upcase unless params[ :country ].nil?
 
-    @statuses = Status.most_recent_for_country( c )
+    @statuses = c.present? ? Status.most_recent_for_country( c ) : NewestStatusFinder.changed
 
     api_data = {
       data: @statuses.map { |s|
