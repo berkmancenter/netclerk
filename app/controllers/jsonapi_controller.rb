@@ -2,12 +2,16 @@ class JsonapiController < ApplicationController
   def index
     response.headers[ 'Access-Control-Allow-Origin' ] = '*'
 
+    c = Country.find_by iso2: params[ :country ].upcase unless params[ :country ].nil?
+
+    @statuses = c.present? ? Status.most_recent_for_country( c ) : Status.all_recent
+
     urls = params[ :url ]
     urls = [ urls ] unless urls.is_a?( Array )
 
-    c = Country.find_by iso2: params[ :country ].upcase unless params[ :country ].nil?
-
-    @statuses = c.present? ? Status.most_recent_for_country( c ) : NewestStatusFinder.changed
+    if urls.any?
+      # filter statuses by page
+    end
 
     api_data = {
       data: @statuses.map { |s|
