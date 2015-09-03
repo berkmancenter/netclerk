@@ -10,7 +10,7 @@ class JsonapiController < ApplicationController
     urls = [ urls ] unless urls.is_a?( Array )
 
     if urls.any?
-      # filter statuses by page
+      @statuses = @statuses.joins( :page ).where( "pages.url in ( '#{urls.join( "','" )}' )" )
     end
 
     api_data = {

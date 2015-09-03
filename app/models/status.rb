@@ -25,7 +25,7 @@ class Status < ActiveRecord::Base
 
   # faster than .most_recent.where country: c?
   scope :most_recent_for_country, ->( country ) {
-    where("country_id = #{country.id} AND created_at = '#{newest_date_for_country( country )}'")
+    where("country_id = #{country.id} AND #{table_name}.created_at = '#{newest_date_for_country( country )}'")
   }
 
   scope :all_recent, -> { where("date(\"#{table_name}\".\"created_at\") = '#{newest_date}'") }
