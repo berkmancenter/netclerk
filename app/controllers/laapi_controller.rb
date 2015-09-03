@@ -1,4 +1,4 @@
-class JsonapiController < ApplicationController
+class LaapiController < ApplicationController
   def index
     response.headers[ 'Access-Control-Allow-Origin' ] = '*'
 

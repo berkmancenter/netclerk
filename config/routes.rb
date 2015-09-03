@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
-  get 'jsonapi' => 'jsonapi#index'
+  get 'laapi' => 'laapi#index'
 
   get 'about' => 'static_pages#about'
   get 'terms' => 'static_pages#terms'
