@@ -21,6 +21,19 @@ describe Page do
     }
   }
 
+  context( 'trailing slash removed' ) {
+    let( :p ) { Page.new url: 'http://trailing-slash.com/' }
+
+    it {
+      p.should be_valid
+    }
+
+    it {
+      p.valid?
+      p.url[-1].should_not eq( '/' )
+    }
+  }
+
   describe( 'create_proxy_requests' ) {
     let( :p ) { Page.find_by_title 'The White House' }
 

@@ -6,9 +6,18 @@ class Page < ActiveRecord::Base
   has_many :statuses
 
   validates :url, length: { maximum: 2048 }
+  validates_format_of :url, without: /\/\Z/
+
+  before_validation :strip_trailing_slash
 
   def self.proxy_request_data(country, proxy, url)
     ProxyRequest.perform_async(country.id, self.id, proxy.id)
+  end
+
+  def strip_trailing_slash
+    if url[-1] == '/'
+      self.url = url[0..-2]
+    end
   end
 
   def baseline_content

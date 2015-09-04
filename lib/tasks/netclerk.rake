@@ -11,6 +11,11 @@ namespace :netclerk do
     puts "*** time: #{task_end - task_start} ***"
   end
 
+  desc 'Remove trailing slashes from existing pages'
+  task :remove_slashes => :environment do |task, args|
+    netclerk_remove_slashes
+  end
+
   desc 'Load a directory of proxy lists, (one per iso2 country code) & scan all the sites'
   task :scan, [:input_dir] => :environment do |task, args|
     task_start = Time.now
@@ -61,6 +66,12 @@ def netclerk_hma( )
 
     email_file.close
     File.delete email_file
+  }
+end
+
+def netclerk_remove_slashes( )
+  Page.where( "url like '%/'" ).each { |p|
+    p.update url: p.url[0..-2]
   }
 end
 
