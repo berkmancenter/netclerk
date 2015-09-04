@@ -12,6 +12,14 @@ class LaapiController < ApplicationController
     urls = [ urls ] unless urls.is_a?( Array )
 
     if urls.any?
+      urls = urls.map { |u|
+        if u[-1] == '/'
+         u[0..-2]
+        else
+          u
+        end
+      }
+
       @statuses = @statuses.joins( :page ).where( "pages.url in ( '#{urls.join( "','" )}' )" )
     end
 
