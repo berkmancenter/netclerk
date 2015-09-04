@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   get 'laapi' => 'laapi#index'
+  post 'laapi' => 'laapi#index'
 
   get 'about' => 'static_pages#about'
   get 'terms' => 'static_pages#terms'
