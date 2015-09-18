@@ -21,7 +21,7 @@ class Page < ActiveRecord::Base
   end
 
   def baseline_content
-    Rails.cache.fetch( url, expires_in: 18.hours ) do
+    Rails.cache.fetch( url, expires_in: 6.hours ) do
       bc = nil
       begin
         Timeout::timeout( 2 ) {
