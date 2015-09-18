@@ -1,8 +1,10 @@
 Link Availability API
 =====================
 
-Amber can check links against any server supporting this API. This API
+Third parties can check links against any server supporting this API. This API
 adheres to the JSON API 1.0 specification: http://jsonapi.org/
+
+NetClerk's Link Availability API endpoint is at /laapi. For example, to query statuses, send a GET request to /laapi/statuses.
 
 query
 -----
@@ -180,4 +182,5 @@ Date & time the URL was last checked in the given country.
 The server may return more attributes not defined in this spec. The
 attributes can be specific to the server’s method of testing and
 implementation.
+
 
