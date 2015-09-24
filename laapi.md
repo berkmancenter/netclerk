@@ -151,8 +151,8 @@ in the country requested, however, it is not unreasonabe for a client
 (such as Amber) to try again with the same URL/country pair at a later
 date.
 
-response attributes
--------------------
+status attributes
+-----------------
 
 ### url
 
@@ -194,13 +194,14 @@ All POSTs to /requests will have the Content-Type multipart/form-data. The follo
 
 * url
 * country
+* request_ip
 * request_headers
 * response_time
 * response_status
 * response_headers
 * response_content
 
-The server will respond with a JSON respresentation of the new request including its unique id. However, note that the test data you submitted may not automatically affect the data in /statuses as further analysis may be scheduled for a later time.
+The server will respond with a JSON respresentation of the new request including its unique id. However, note that the test data you submitted may not immediately affect the data in /statuses as further analysis may be scheduled for a later time.
 
 ### Example: sending a test you performed to NetClerk
 
@@ -259,9 +260,13 @@ The server will respond with a JSON respresentation of the new request including
     Keep-Alive: timeout=5, max=100
     Connection: Keep-Alive
     --~~~~--
-    Content-Disposition: form-data; name="response_time"
+    Content-Disposition: form-data; name="headers_time"
 
-    5.56
+    1.56
+    --~~~~--
+    Content-Disposition: form-data; name="content_time"
+
+    4.56
     --~~~~--
     Content-Disposition: form-data; name="response_status"
     
@@ -316,7 +321,40 @@ The server will respond with a JSON respresentation of the new request including
     1f8bfe73f6458f5f9e70678ef06e89f0eb7b89678b068906b0896b68900...
     --~~~~--
     
+request attributes
+------------------
 
-    
+### url
 
+The URL which was tested.
+
+### country
+
+The ISO2 code for the country from where the test was performed.
+
+### isp
+
+If known, the ISP to which the testing computer is connected. This is **not** the ISP of the hosted website being tested.
+
+### dns_ip
+
+If known, the IP address of the DNS server used by the testing machine to look up IP addresses by name.
+
+### request_ip
+
+The IP address of the URL which was tested, as seen by the testing server.
+
+### request_headers
+
+The headers you sent to the web server of a URL being tested as part of the request, most importantly: Accept, Accept-Language, and User-Agent.
+
+### redirect_headers
+
+All HTTP headers of the entire redirect chain. Separate multiple redirect responses with an empty CRLF (similar in style to HTTP/1.1 spec).
+
+### headers_time
+
+### 
+
+The time, in seconds, between sending the test request and downloading all of the response content.
 
