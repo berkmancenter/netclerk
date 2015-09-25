@@ -260,17 +260,13 @@ The server will respond with a JSON respresentation of the new request including
     Keep-Alive: timeout=5, max=100
     Connection: Keep-Alive
     --~~~~--
-    Content-Disposition: form-data; name="headers_time"
-
-    1.56
-    --~~~~--
-    Content-Disposition: form-data; name="content_time"
-
-    4.56
-    --~~~~--
     Content-Disposition: form-data; name="response_status"
     
     200
+    --~~~~--
+    Content-Disposition: form-data; name="response_headers_time"
+
+    1560
     --~~~~--
     Content-Disposition: form-data; name="response_headers"
     
@@ -292,9 +288,9 @@ The server will respond with a JSON respresentation of the new request including
     Connection: Keep-Alive
     Transfer-Encoding: chunked
     --~~~~--
-    Content-Disposition: form-data; name="response_length"
+    Content-Disposition: form-data; name="response_content_time"
 
-    9323
+    4560
     --~~~~--
     Content-Disposition: form-data; name="response_content"; filename="response.html"
     Content-Type: text/html
@@ -320,6 +316,10 @@ The server will respond with a JSON respresentation of the new request including
     
     1f8bfe73f6458f5f9e70678ef06e89f0eb7b89678b068906b0896b68900...
     --~~~~--
+    
+### Example: POST an error
+
+Network errors are important information as well.
     
 request attributes
 ------------------
@@ -352,9 +352,35 @@ The headers you sent to the web server of a URL being tested as part of the requ
 
 All HTTP headers of the entire redirect chain. Separate multiple redirect responses with an empty CRLF (similar in style to HTTP/1.1 spec).
 
-### headers_time
+### response_status
 
-### 
+The HTTP status code returned in the response.
 
-The time, in seconds, between sending the test request and downloading all of the response content.
+### response_headers_time
+
+The time, in milliseconds, between sending the test request and reading all of the response headers. This should be measured before attempts are made to download the response content from the connection. If that is not possible or not part of your current testing process, omit this attribute and use response_content_time only.
+
+### response_headers
+
+All headers recieved from the final connection, i.e., do not include headers from redirect responses.
+
+### response_content_time
+
+The time, in milliseconds, between recieving the headers and downloading all of the response content. However, if your testing process does not distinguish between header response and content download, use this field only and supply the total time for the entire non-redirected response.
+
+### response_content
+
+If the response Content-Type is HTML, this attribute should be the complete, unmodified, content as returned by the final connection. Otherwise, omit this attribute.
+
+### page_complete
+
+If available, this is a gzip of all content required to reproduce the page locally. All content linked to by the response should be downloaded and paths inside the response content should be updated to have relative paths to the local copies.
+
+If a WARC is available, please send it instead. Do not send both page_complete and page_warc attributes.
+
+### page_warc
+
+If available, a web archive (WARC) which allows playback of loading the page and all content linked to by the page.
+
+If a WARC is available, please send it instead. Do not send both page_complete and page_warc attributes.
 
