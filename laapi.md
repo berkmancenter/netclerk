@@ -193,10 +193,9 @@ Before submitting request data to us, you will have to sign into NetClerk and re
 All POSTs to /requests will have the Content-Type multipart/form-data. The following attributes are required when submitting a successful test of a web page:
 
 * url
-* country
 * request_ip
 * request_headers
-* response_time
+* response_content_time
 * response_status
 * response_headers
 * response_content
