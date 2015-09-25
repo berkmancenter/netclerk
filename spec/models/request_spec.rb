@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe( 'request model' ) {
+  let(:request) { create(:request) }
+
+  it 'has a valid factory' do
+    expect(request).to be_valid
+  end
+
   context( 'valid attributes' ) {
     let( :request ) { Request.first }
 
