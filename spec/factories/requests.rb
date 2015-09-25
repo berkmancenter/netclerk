@@ -1,5 +1,9 @@
 FactoryGirl.define do
   factory :request do
+    response_time 100 # ms
+    response_length 71_396
+    response_delta 0.05
+
     factory :whitehouse_usa_r01 do
       #page whitehouse
       #country usa

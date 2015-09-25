@@ -1,56 +1,8 @@
-require 'spec_helper'
-
 describe Status do
-  describe( 'create_for_date' ) {
-    let( :p ) { Page.find_by_title 'The White House' }
-    let( :c ) { Country.find_by_name 'United States' }
-
-    it ( 'should create a status' ) {
-      expect {
-        Status.create_for_date p, c, '2014-07-12'
-      }.to change {
-        Status.count
-      }.by( 1 )
-    }
-
-    it ( 'should set request_ids' ) {
-      s = Status.create_for_date p, c, '2014-07-12'
-      s.requests.empty?.should be false
-    }
-
-    context( 'with value somewhat different' ) {
-      before {
-        Status.create_for_date p, c, '2014-07-12'
-      }
-
-      it {
-        Status.last.value.should eq( 1 )
-      }
-    }
-
-    context( 'with delta eq 1' ) {
-      before {
-        Status.create_for_date p, c, '2014-07-12'
-      }
-
-      it {
-        Status.last.delta.should eq( 1 )
-      }
-    }
-
-    context( 'with no pevious status' ) {
-      let( :p2 ) { Page.find_by_title 'Berkman Center' }
-      let( :c2 ) { Country.find_by_name 'China' }
-
-      before {
-        Status.create_for_date p2, c2, '2014-07-11'
-      }
-
-      it {
-        Status.last.delta.should eq( 0 )
-      }
-    }
-  }
+  let(:page) { create(:page) }
+  let(:country) { create(:country) }
+  let!(:yesterday_request) { create(:request, page: page, country: country, response_status: '200', created_at: Date.yesterday) }
+  let!(:today_request) { create(:request, page: page, country: country, response_status: '404', created_at: Date.today) }
 
   it { should respond_to(:page, :country, :value, :delta) }
   it { should belong_to(:page) }
@@ -63,33 +15,66 @@ describe Status do
 
   it 'defines valid status values in VALUES' do
     expect(Status::VALUES).to eq(
-      {
-        0 => 'available',
-        1 => 'a bit different',
-        2 => 'very different',
-        3 => 'not available',
-      }
+      0 => 'available',
+      1 => 'a bit different',
+      2 => 'very different',
+      3 => 'not available'
     )
   end
 
-  describe( 'scopes' ) {
-    let( :p ) { Page.find_by_title 'Twitter' }
-    let( :c ) { Country.find_by_iso3 'IRN' }
+  describe '.create_for_date' do
+    let(:yesterday_status) { Status.create_for_date(page, country, Date.yesterday) }
+    let(:today_status) { Status.create_for_date(page, country, Date.today) }
 
-    describe( 'most_recent' ) {
-      let( :most_recent ) { Status.most_recent }
+    it 'creates a status' do
+      expect { yesterday_status }.to change { Status.count }.by(1)
+    end
 
-      it { most_recent.exists?( Status.find_by( page: p, country: c, created_at: '2014-07-10' ) ).should be false }
+    it 'sets request_ids' do
+      expect(yesterday_status.requests).not_to be_empty
+    end
 
-      it { most_recent.exists?( Status.find_by( page: p, country: c, created_at: '2014-07-11' ) ).should be true }
-    }
+    it 'sets the status value' do
+      expect(yesterday_status.value).to be(0)
+      expect(today_status.value).to be(3)
+    end
 
-    describe( 'most_recent_for_country' ) {
-      let( :most_recent ) { Status.most_recent_for_country c }
+    context 'with a previous status' do
+      it 'calculates the delta of the status by comparing it to the previous status' do
+        yesterday_status
 
-      it { most_recent.exists?( Status.find_by( page: p, country: c, created_at: '2014-07-10' ) ).should be false }
+        expect(today_status.delta).to eq(3)
+      end
+    end
 
-      it { most_recent.exists?( Status.find_by( page: p, country: c, created_at: '2014-07-11' ) ).should be true }
-    }
-  }
+    context 'without a previous status' do
+      it 'sets delta to 0' do
+        expect(today_status.delta).to eq(0)
+      end
+    end
+  end
+
+  describe 'scopes' do
+    let!(:status) { Status.create_for_date(page, country, Date.today) }
+    let(:other_country) { create(:country) }
+    let!(:other_country_request) { create(:request, page: page, country: other_country, created_at: Date.today) }
+    let!(:other_country_status) { Status.create_for_date(page, other_country, Date.today) }
+
+    describe '.most_recent' do
+      let(:most_recent) { Status.most_recent }
+
+      it 'returns a collection containing the most recent statuses' do
+        expect(most_recent).to include(status, other_country_status)
+      end
+    end
+
+    describe '.most_recent_for_country' do
+      let(:most_recent_for_country) { Status.most_recent_for_country(country) }
+
+      it 'returns a collection containing the most recent statuses for a country' do
+        expect(most_recent_for_country).to include(status)
+        expect(most_recent_for_country).not_to include(other_country_status)
+      end
+    end
+  end
 end
