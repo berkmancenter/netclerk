@@ -1,10 +1,12 @@
 Link Availability API
 =====================
 
-Third parties can check links against any server supporting this API. This API
-adheres to the JSON API 1.0 specification: http://jsonapi.org/
+Third parties can check the availability of links against any server supporting this API.
+Registered third parties can improve this service by posting data about sites they have tested from their own location.
 
 The NetClerk Link Availability API endpoint is at /laapi. For example, to query statuses send a GET request to /laapi/statuses, and to tell us of a request you have made send a POST request to /laapi/requests.
+
+This API adheres to the JSON API 1.0 specification: http://jsonapi.org/
 
 query statuses
 --------------
