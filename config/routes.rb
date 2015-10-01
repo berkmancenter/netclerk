@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
-  get 'laapi' => 'laapi#index'
-  post 'laapi' => 'laapi#index'
+  get 'laapi/statuses' => 'laapi#index'
+  post 'laapi/statuses' => 'laapi#index'
 
   get 'about' => 'static_pages#about'
   get 'terms' => 'static_pages#terms'
