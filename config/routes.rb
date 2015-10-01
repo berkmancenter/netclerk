@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
   # Link Availability API
-  namespace 'laapi' do
-    get 'statuses' => 'statuses#index'
+  namespace :laapi do
+    resources :statuses, only: [ :index, :show ]
     post 'statuses' => 'statuses#index'
 
-    post 'requests' => 'requests#create'
+    resources :requests, only: [ :create, :show ]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

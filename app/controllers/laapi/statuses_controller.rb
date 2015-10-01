@@ -23,8 +23,26 @@ class Laapi::StatusesController < ApplicationController
       @statuses = @statuses.joins( :page ).where( "pages.url in ( '#{urls.join( "','" )}' )" )
     end
 
-    api_data = {
-      data: @statuses.map { |s|
+    api_data = map_statuses @statuses
+      
+    response.headers[ 'Content-Type' ] = 'application/vnd.api+json'
+    render json: api_data
+  end
+
+  def show
+    response.headers[ 'Access-Control-Allow-Origin' ] = '*'
+
+    api_data = map_statuses [ Status.find(params[:id]) ]
+      
+    response.headers[ 'Content-Type' ] = 'application/vnd.api+json'
+    render json: api_data[ :data ][ 0 ]
+  end
+
+  private
+
+  def map_statuses( statuses )
+    {
+      data: statuses.map { |s|
         {
           type: 'statuses',
           id: s.id.to_s,
@@ -35,13 +53,13 @@ class Laapi::StatusesController < ApplicationController
             probability: s.value.to_f / 3.0,
             available: s.value.to_f >= 2.0,
             created: s.created_at
+          },
+          links: {
+            'self' => "#{request.protocol}#{request.host}/laapi/statuses/#{s.id}"
           }
         }
 
       }
     }
-      
-    response.headers[ 'Content-Type' ] = 'application/vnd.api+json'
-    render json: api_data
   end
 end
