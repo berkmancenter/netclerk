@@ -190,9 +190,13 @@ tell us about a request (successful or not)
 
 Send POST requests to /requests to let us know that you have tested the availability of a URL from a country and logged some info about the response. Anything you can do to help us will help others know more about what is available online around the world.
 
-Before submitting request data to us, you will have to sign into NetClerk and request an API key. If you cannot sign into NetClerk, please email help@netclerk.thenetnomitor.org.
+Before submitting request data to us, you will have to sign into NetClerk and request an API key. If you cannot sign into NetClerk, please email info@thenetnomitor.org.
 
-POSTs to /requests should have the Content-Type multipart/form-data if you are able to send page_complete or page_warc. If not, the POST request should have the Content-Type application/vnd.api+json. The following attributes are required when submitting a successful test of a web page:
+POSTs to /requests should have the Content-Type multipart/form-data if you are able to send page_complete or page_warc. If not, the POST request should have the Content-Type application/vnd.api+json.
+
+As per JSON API 1.0, the type attribute is required and must be the string 'requests'.
+
+The following extra attributes are also required when submitting a successful test of a web page:
 
 * url
 * request_ip
@@ -322,6 +326,34 @@ The server will respond with a JSON respresentation of the new request including
     1f8bfe73f6458f5f9e70678ef06e89f0eb7b89678b068906b0896b68900...
     --~~~~--
     
+### Example: sending a test you performed to NetClerk using appliction/vnd.api+JSON
+
+Note that all header attributes have a CRLF between lines. This should be how the raw headers were returned to you via HTTP.
+
+    POST /requests HTTP/1.1
+    Content-Type: application/vnd.api+JSON
+    Accept: application/vnd.api+JSON
+
+    {
+      "data": {
+        "type": "requests",
+        "attributes": {
+          "url": "http://cyber.law.harvard.edu",
+          "country": "IR",
+          "isp": "Harvard University",
+          "dns_ip": "8.8.8.8",
+          "request_ip": "128.103.65.74",
+          "request_headers": "GET / HTTP/1.1\r\nHost: cyber.law.harvard.edu\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36\r\nAccept-Language: en-US,en;q=0.8",
+          "redirect_headers": "HTTP/1.1 301 Moved Permanently\r\nDate: Tue, 22 Sep 2015 18:09:23 GMT\r\nServer: Apache/2.4.7 (Ubuntu)\r\nLocation: https://cyber.law.harvard.edu",
+          "response_status": 200,
+          "response_headers_time": 1560,
+          "response_headers": "HTTP/1.1 200 OK\r\nDate: Tue, 22 Sep 2015 18:09:23 GMT\r\nServer: Apache/2.4.7 (Ubuntu)\r\nContent-Language: en\r\nContent-Encoding: gzip\r\nContent-Type: text/html; charset=utf-8",
+          "response_content_time": 4560,
+          "response_content": "<!DOCTYPE html> <html lang=\"en\" dir=\"ltr\"> <head> <title>Berkman Center</title> </head> <body> ...  </body> </html>"
+        }
+      }
+    }
+
 ### Example: POST an error
 
 Network errors are important information as well.
