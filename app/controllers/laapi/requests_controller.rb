@@ -11,14 +11,14 @@ class Laapi::RequestsController < ApplicationController
   end
 
   def create
-    data = params[ :data ]
+    #data = params[ :data ]
 
-    respond_to { |f|
-      f.json {
+    #respond_to { |f|
+    #  f.json {
         #puts data.inspect
-        render json: ( { data: 'ok' } ).as_json, status: 200
-      }
-    }
+        render json: { data: 'ok' }, status: 200
+    #  }
+    #}
 
   end
 
