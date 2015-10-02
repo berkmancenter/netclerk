@@ -10,6 +10,18 @@ class Laapi::RequestsController < ApplicationController
     render json: api_data[ :data ][ 0 ]
   end
 
+  def create
+    data = params[ :data ]
+
+    respond_to { |f|
+      f.json {
+        #puts data.inspect
+        render json: ( { data: 'ok' } ).as_json, status: 200
+      }
+    }
+
+  end
+
   def map_requests( requests )
     {
       data: requests.map { |r|
