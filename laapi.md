@@ -192,7 +192,7 @@ Send POST requests to /requests to let us know that you have tested the availabi
 
 Before submitting request data to us, you will have to sign into NetClerk and request an API key. If you cannot sign into NetClerk, please email help@netclerk.thenetnomitor.org.
 
-All POSTs to /requests will have the Content-Type multipart/form-data. The following attributes are required when submitting a successful test of a web page:
+POSTs to /requests should have the Content-Type multipart/form-data if you are able to send page_complete or page_warc. If not, the POST request should have the Content-Type application/vnd.api+json. The following attributes are required when submitting a successful test of a web page:
 
 * url
 * request_ip
@@ -204,34 +204,38 @@ All POSTs to /requests will have the Content-Type multipart/form-data. The follo
 
 The server will respond with a JSON respresentation of the new request including its unique id. However, note that the test data you submitted may not immediately affect the data in /statuses as further analysis may be scheduled for a later time.
 
-### Example: sending a test you performed to NetClerk
+### Example: sending a test you performed to NetClerk using multipart/form-data
 
-    POST /requests
+    POST /requests HTTP/1.1
     Content-Type: multipart/form-data; boundary=~~~~--
     Accept: application/vnd.api+json
     
     --~~~~--
-    Content-Disposition: form-data; name="url"
+    Content-Disposition: form-data; name="data[type]"
+    
+    requests
+    --~~~~--
+    Content-Disposition: form-data; name="data[attributes][url]"
     
     http://cyber.law.harvard.edu
     --~~~~--
-    Content-Disposition: form-data; name="country"
+    Content-Disposition: form-data; name="data[attributes][country]"
     
     IR
     --~~~~--
-    Content-Disposition: form-data; name="isp"
+    Content-Disposition: form-data; name="data[attributes][isp]"
     
     Harvard University
     --~~~~--
-    Content-Disposition: form-data; name="dns_ip"
+    Content-Disposition: form-data; name="data[attributes][dns_ip]"
     
     8.8.8.8
     --~~~~--
-    Content-Disposition: form-data; name="request_ip"
+    Content-Disposition: form-data; name="data[attributes][request_ip]"
     
     128.103.65.74
     --~~~~--
-    Content-Disposition: form-data; name="request_headers"
+    Content-Disposition: form-data; name="data[attributes][request_headers]"
 
     GET / HTTP/1.1
     Host: cyber.law.harvard.edu
@@ -243,7 +247,7 @@ The server will respond with a JSON respresentation of the new request including
     Accept-Encoding: gzip, deflate, sdch
     Accept-Language: en-US,en;q=0.8
     --~~~~--
-    Content-Disposition: form-data; name="redirect_headers"
+    Content-Disposition: form-data; name="data[attributes][redirect_headers]"
     
     HTTP/1.1 301 Moved Permanently
     Date: Tue, 22 Sep 2015 18:09:23 GMT
@@ -261,15 +265,15 @@ The server will respond with a JSON respresentation of the new request including
     Keep-Alive: timeout=5, max=100
     Connection: Keep-Alive
     --~~~~--
-    Content-Disposition: form-data; name="response_status"
+    Content-Disposition: form-data; name="data[attributes][response_status]"
     
     200
     --~~~~--
-    Content-Disposition: form-data; name="response_headers_time"
+    Content-Disposition: form-data; name="data[attributes][response_headers_time]"
 
     1560
     --~~~~--
-    Content-Disposition: form-data; name="response_headers"
+    Content-Disposition: form-data; name="data[attributes][response_headers]"
     
     HTTP/1.1 200 OK
     Date: Tue, 22 Sep 2015 18:09:23 GMT
@@ -289,11 +293,11 @@ The server will respond with a JSON respresentation of the new request including
     Connection: Keep-Alive
     Transfer-Encoding: chunked
     --~~~~--
-    Content-Disposition: form-data; name="response_content_time"
+    Content-Disposition: form-data; name="data[attributes][response_content_time]"
 
     4560
     --~~~~--
-    Content-Disposition: form-data; name="response_content"; filename="response.html"
+    Content-Disposition: form-data; name="data[attributes][response_content]"; filename="response.html"
     Content-Type: text/html
     
     <!DOCTYPE html>
