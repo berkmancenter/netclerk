@@ -11,16 +11,25 @@ class Laapi::RequestsController < ApplicationController
   end
 
   def create
-    #data = params[ :data ]
+    validate_required params
 
-    #respond_to { |f|
-    #  f.json {
-        #puts data.inspect
-        render json: { data: 'ok' }, status: 200
-    #  }
-    #}
+    data = params[ :data ]
+
+    if data.nil?
+      render json: {
+        status: '400',
+        title: 'Parameter missing',
+        source: { parameter: 'data' }
+      }, status: 400 and return
+    end
+
+    attributes = data[ :attributes ]
+    url = data[ :url ]
+    render json: data, status: 200
 
   end
+
+  private
 
   def map_requests( requests )
     {
@@ -50,5 +59,9 @@ class Laapi::RequestsController < ApplicationController
 
       }
     }
+  end
+
+  def validate_required( params )
+    params.require( :data )
   end
 end
