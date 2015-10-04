@@ -11,22 +11,18 @@ class Laapi::RequestsController < ApplicationController
   end
 
   def create
-    validate_required params
+    attributes = request_params[ :attributes ]
 
-    data = params[ :data ]
+    url = attributes[ :url ]
 
-    if data.nil?
-      render json: {
-        status: '400',
-        title: 'Parameter missing',
-        source: { parameter: 'data' }
-      }, status: 400 and return
-    end
+    page = Page.find_by_url url
 
-    attributes = data[ :attributes ]
-    url = data[ :url ]
-    render json: data, status: 200
+    request = Request.new( {
+      page: page,
+      country: Country.first
+    } )
 
+    render json: request_params, status: 200
   end
 
   private
@@ -61,7 +57,7 @@ class Laapi::RequestsController < ApplicationController
     }
   end
 
-  def validate_required( params )
-    params.require( :data )
+  def request_params
+    params.require( :data ).permit( :type, :attributes => [ :url, :country, :isp, :dns_ip, :request_ip, :request_headers, :redirect_headers, :response_status, :response_headers_time, :response_headers, :response_content_time, :response_content ] )
   end
 end
