@@ -11,18 +11,33 @@ class Laapi::RequestsController < ApplicationController
   end
 
   def create
+    response.headers[ 'Content-Type' ] = 'application/vnd.api+json'
+
     attributes = request_params[ :attributes ]
 
     url = attributes[ :url ]
-
-    page = Page.find_by_url url
+    page = Page.find_or_create_by url: url
 
     request = Request.new( {
       page: page,
-      country: Country.first
+      country: Country.find_by( iso2: 'US' ),
+      unproxied_ip: nil, # request locally
+      proxied_ip: attributes[ :request_ip ],
+      local_dns_ip: attributes[ :dns_ip ],
+      response_time: attributes[ :response_content_time ],
+      response_status: attributes[ :response_status ],
+      response_headers: attributes[ :response_headers ],
+      response_length: nil, # extract from header
+      response_delta: 0 # compare to baseline_content
     } )
 
-    render json: request_params, status: 200
+    if request.save
+      api_data = map_requests [ request ]
+
+      render json: api_data[ :data ][ 0 ]
+    else
+      render json: { error: 500 }, status: 500
+    end
   end
 
   private
