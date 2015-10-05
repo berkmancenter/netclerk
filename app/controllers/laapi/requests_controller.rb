@@ -11,6 +11,7 @@ class Laapi::RequestsController < ApplicationController
   end
 
   def create
+    response.headers[ 'Access-Control-Allow-Origin' ] = '*'
     response.headers[ 'Content-Type' ] = 'application/vnd.api+json'
 
     attributes = request_params[ :attributes ]
