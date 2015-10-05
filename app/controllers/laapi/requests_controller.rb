@@ -19,7 +19,7 @@ class Laapi::RequestsController < ApplicationController
     url = attributes[ :url ]
     page = Page.find_or_create_by url: url
 
-    request = Request.new( {
+    @request = Request.new( {
       page: page,
       country: Country.find_by( iso2: 'US' ),
       unproxied_ip: nil, # request locally
@@ -32,21 +32,14 @@ class Laapi::RequestsController < ApplicationController
       response_delta: 0 # compare to baseline_content
     } )
 
-    if request.save
-      api_data = map_requests [ request ]
-
-      render json: api_data[ :data ][ 0 ]
+    if @request.save
+      render json: @request.to_laapi
     else
       render json: { error: 500 }, status: 500
     end
   end
 
   private
-
-  def map_requests( requests )
-    {
-    }
-  end
 
   def request_params
     params.require( :data ).permit( :type, :attributes => [ :url, :country, :isp, :dns_ip, :request_ip, :request_headers, :redirect_headers, :response_status, :response_headers_time, :response_headers, :response_content_time, :response_content ] )
