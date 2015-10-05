@@ -66,4 +66,20 @@ describe( 'request model' ) {
       }
     }
   }
+
+  context ( 'laapi' ) {
+    describe ( 'to method' ) {
+      it {
+        request.should respond_to :to_laapi
+      }
+    }
+
+    describe ( 'attributes' ) {
+      let( :r ) { request.to_laapi }
+
+      it {
+        r[ :type ].should eq( 'requests' )
+      }
+    }
+  }
 }

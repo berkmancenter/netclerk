@@ -97,4 +97,29 @@ class Request < ActiveRecord::Base
       0.0
     end
   end
+
+  def to_laapi
+    {
+      type: 'requests',
+      id: id.to_s,
+      attributes: {
+        url: page.present? ? page.url : nil,
+        country: country.present? ? country.iso2 : nil,
+        isp: nil,
+        dns_ip: local_dns_ip,
+        request_ip: proxied_ip,
+        request_headers: nil,
+        redirect_headers: nil,
+        response_status: response_status,
+        response_headers_time: nil,
+        response_headers: response_headers,
+        response_content_time: response_time,
+        response_content: nil,
+        created: created_at
+      },
+      links: {
+        'self' => NetClerk::Application.routes.url_helpers.laapi_request_url( id )
+      }
+    }
+  end
 end
