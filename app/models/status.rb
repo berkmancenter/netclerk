@@ -1,9 +1,9 @@
 class Status < ActiveRecord::Base
   VALUES = {
-    0 => 'available',
-    1 => 'a bit different',
-    2 => 'very different',
-    3 => 'not available',
+    0 => 'not available',
+    1 => 'very different',
+    2 => 'a bit different',
+    3 => 'available'
   }
 
   belongs_to :page

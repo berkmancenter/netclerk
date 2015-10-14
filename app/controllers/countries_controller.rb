@@ -12,7 +12,7 @@ class CountriesController < ApplicationController
       'distinct on (page_id) *'
     ).order(
       page_id: :asc, created_at: :desc
-    ).group_by { |s| s.value }.sort_by { |sg| -sg[0] }
+    ).group_by(&:value).sort_by { |sg| sg[0] }
   end
 
   private

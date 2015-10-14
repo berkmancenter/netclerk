@@ -52,17 +52,17 @@ class Request < ActiveRecord::Base
     }
 
     if info_by_status[ '200' ][ :count ] == 0 || info_by_status[ '404' ][ :count ] > info_by_status[ '200' ][ :count ]
-      return 3
+      return 0
     end
 
     avg_delta = info_by_status[ '200' ][ :delta ]
 
     if avg_delta > 0.75
-      return 2
-    elsif avg_delta > 0.40
       return 1
+    elsif avg_delta > 0.40
+      return 2
     else
-      return 0
+      return 3
     end
   end
 

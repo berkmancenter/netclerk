@@ -1,5 +1,5 @@
 module StatusesHelper
   def status_context_class( status )
-    %w{success info warning danger}[ status.value ]
+    %w(danger warning info success)[status.value]
   end
 end
