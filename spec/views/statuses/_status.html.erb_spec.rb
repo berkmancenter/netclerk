@@ -1,40 +1,24 @@
 require 'spec_helper'
 
-describe ( 'statuses/status' ) {
+describe 'statuses/status' do
   subject { rendered }
 
-  let ( :country ) { Country.find_by_name 'Iran' }
+  context 'for a normal status' do
+    let(:status) { create(:status) }
 
-  context ( 'normal status' ) {
-    let ( :page ) { Page.find_by_title 'The White House' }
-    let ( :status ) { Status.most_recent.find_by( country: country, page: page ) }
-    
-    before {
-      render status
-    }
+    before { render status }
 
     it { should have_xpath "//img[contains(@alt, \"Favicon\")]" }
+    it { should have_css 'span', text: "#{status.page_title} is #{Status::VALUES[status.value]} in #{status.country_name}" }
+    it { should have_css 'b', status.country_name }
+  end
 
-    it {
-      should have_css 'span', text: 'The White House is very different in'
-    }
-    
-    it {
-      should have_css 'b', 'Iran'
-    }
-  }
+  context 'for a status without a page title' do
+    let(:page) { create(:page, title: nil) }
+    let(:status) { create(:status, page: page) }
 
-  context ( 'without title' ) {
-    let ( :page ) { Page.find_by_url 'http://www.no-title.com' }
-    let ( :status ) { Status.most_recent.find_by( country: country, page: page ) }
-    
-    before {
-      render status
-    }
+    before { render status }
 
-    it {
-      should have_css 'span', text: 'www.no-title.com'
-    }
-    
-  }
-}
+    it { should have_css 'span', text: status.page_url }
+  end
+end
