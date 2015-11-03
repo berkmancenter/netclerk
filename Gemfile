@@ -16,6 +16,10 @@ group :test do
   gem 'webmock', '~> 1.21.0', require: false
 end
 
+group :development do
+  gem 'terminal-table'
+end
+
 gem 'factory_girl_rails'
 
 # Use SCSS for stylesheets

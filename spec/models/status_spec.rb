@@ -15,10 +15,10 @@ describe Status do
 
   it 'defines valid status values in VALUES' do
     expect(Status::VALUES).to eq(
-      0 => 'available',
-      1 => 'a bit different',
-      2 => 'very different',
-      3 => 'not available'
+      0 => 'not available',
+      1 => 'very different',
+      2 => 'a bit different',
+      3 => 'available'
     )
   end
 
@@ -35,15 +35,15 @@ describe Status do
     end
 
     it 'sets the status value' do
-      expect(yesterday_status.value).to be(0)
-      expect(today_status.value).to be(3)
+      expect(yesterday_status.value).to be(3)
+      expect(today_status.value).to be(0)
     end
 
     context 'with a previous status' do
       it 'calculates the delta of the status by comparing it to the previous status' do
         yesterday_status
 
-        expect(today_status.delta).to eq(3)
+        expect(today_status.delta).to eq(-3)
       end
     end
 

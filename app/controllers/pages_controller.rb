@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   def show
     query = NewestStatusFinder.per_country_for_page(@page)
     @cache_key = query.first.try(:created_at).try(:to_i)
-    @statuses = query.group_by { |s| s.value }.sort_by { |sg| -sg[0] }
+    @statuses = query.group_by(&:value).sort_by { |sg| sg[0] }
   end
 
   def new

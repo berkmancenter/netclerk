@@ -31,10 +31,8 @@ describe( 'request model' ) {
     let( :p ) { Page.find_by_title 'The White House' }
     let( :c ) { Country.find_by_name 'United States' }
     let( :rs ) { Request.where( page: p, country: c, created_at: '2014-07-12' ) }
-      
-    it {
-      Request.value( rs ).should eq( 1 )
-    }
+
+    it { Request.value(rs).should eq(2) }
   }
 
   describe( 'diff' ) {
