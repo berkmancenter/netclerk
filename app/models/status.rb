@@ -9,6 +9,9 @@ class Status < ActiveRecord::Base
   belongs_to :page
   belongs_to :country
 
+  delegate :url, :title, to: :page, prefix: true
+  delegate :name, to: :country, prefix: true
+
   validates :value, inclusion: { in: VALUES.keys }
 
   scope :most_recent, -> {

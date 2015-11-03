@@ -1,48 +1,43 @@
 require 'spec_helper'
 
-describe ( 'countries/show' ) {
+describe 'countries/show' do
   subject { rendered }
 
-  context ( 'default view' ) {
-    let ( :p ) { Page.find_by_title 'The White House' }
-    let ( :c ) { Country.find_by_name 'Iran' }
-    let ( :ss ) {
-      Status.most_recent.where( country: c ).group_by { |s| s.value }
-    }
-    let ( :s ) {
-      Status.most_recent.find_by( page: p, country: c )
-    }
+  context 'default view' do
+    let(:country) { create(:country) }
+    let(:page) { create(:page, title: nil) }
+    let(:statuses) { create_pair(:status, country: country, page: page) }
+    let(:status_groups) { statuses.group_by(&:value) }
 
-    before {
-      assign( :country, c )
-      assign( :statuses, ss )
-    
+    before do
+      assign(:country, country)
+      assign(:statuses, status_groups)
+
       render
-    }
+    end
 
-    it { should have_css '.media .media-body' }
+    it { should have_css('.media .media-body') }
+    it { should have_css('.media-body .media-heading', text: country.name) }
 
-    it { should have_css '.media-body .media-heading', text: c.name }
-
-    describe ( 'changed' ) {
+    describe 'changed' do
       it { skip "should have_css 'h2', text: 'Changed since yesterday'" }
-    }
+    end
 
-    describe ( 'recent' ) {
-      it { should have_css 'h2', text: 'Recent' }
+    describe 'recent' do
+      it { should have_css('h2', text: 'Recent') }
+      it { should have_css('.list-group', count: status_groups.count) }
 
-      it {
-        # Iran has a 0, 2, & 3
-        should have_css '.list-group', count: 3
-      }
+      it 'should link to statuses' do
+        expect(rendered).to have_css(
+          ".pages-status-success a.list-group-item[href*='#{status_path(statuses.first)}']",
+          text: statuses.first.page_title,
+          count: 1
+        )
+      end
 
-      it ( 'should link to statuses' ) {
-        should have_css %(.pages-status-warning a.list-group-item[href*="#{status_path s}"]), text: p.title, count: 1
-      }
-
-      it ( 'should show the url for a page w/o a title' ) {
-        should have_css '.list-group-item', text: 'www.no-title.com'
-      }
-    }
-  }
-}
+      it 'should show the url for a page w/o a title' do
+        expect(rendered).to have_css('.list-group-item', text: statuses.last.page_url)
+      end
+    end
+  end
+end

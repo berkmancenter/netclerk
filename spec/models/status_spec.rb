@@ -4,7 +4,7 @@ describe Status do
   let!(:yesterday_request) { create(:request, page: page, country: country, response_status: '200', created_at: Date.yesterday) }
   let!(:today_request) { create(:request, page: page, country: country, response_status: '404', created_at: Date.today) }
 
-  it { should respond_to(:page, :country, :value, :delta) }
+  it { should respond_to(:value, :delta, :page_url, :page_title, :country_name) }
   it { should belong_to(:page) }
   it { should belong_to(:country) }
   it { should validate_inclusion_of(:value).in_array(Status::VALUES.keys) }

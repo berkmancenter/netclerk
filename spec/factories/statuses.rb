@@ -3,6 +3,8 @@ FactoryGirl.define do
     value 3
     delta 0
     created_at '2014-11-19'
+    country
+    page
 
     factory :twitter_usa do
       #country usa
