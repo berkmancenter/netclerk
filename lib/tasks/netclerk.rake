@@ -122,15 +122,22 @@ def netclerk_scan( input_dir )
     end
   }
 
+  page_ids = []
+  Page.find_in_batches(batch_size: 30) do |group|
+    queued = group.collect do |p|
+      Thread.new { page_ids << p.id if p.baseline_content }
+    end
+    while queued.any? { |thr| thr.alive? } do
+      sleep 0.1
+    end
+  end
+
   country_proxies.sort_by { |cp| cp[ :proxies ].count }.each do |cp|
     country = cp[ :country ]
     proxies = cp[ :proxies ]
-
-    #puts "  #{country.name}: #{ActionController::Base.helpers.pluralize(proxies.count, 'proxy')}"
-
-    Page.all.each do |page|
-      unless page.failed_locally?
-        proxies.each { |proxy| ProxyRequest.perform_async(country.id, page.id, proxy) }
+    page_ids.in_groups_of(100, false).each do |group|
+      proxies.each do |proxy|
+        PageGroup.perform_async(country.id, group, proxy)
       end
     end
   end
