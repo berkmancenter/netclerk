@@ -18,4 +18,16 @@ body.countries {
       margin: 0;
     }
   }
+
+  &.show {
+    #accordion {
+      a {
+        text-decoration: none;
+      }
+
+      span.badge {
+        float: right;
+      }
+    }
+  }
 }
