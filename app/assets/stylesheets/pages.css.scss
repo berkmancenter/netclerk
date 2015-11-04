@@ -8,6 +8,10 @@ body.pages {
       height: 16px;
       width: 16px;
     }
+
+    button#new-page {
+      margin-bottom: 20px;
+    }
   }
 
   &.show {
@@ -15,6 +19,10 @@ body.pages {
       .list-group-item:first-child {
         text-transform: capitalize;
       }
+    }
+
+    form.delete {
+      display: inline-block;
     }
   }
 }

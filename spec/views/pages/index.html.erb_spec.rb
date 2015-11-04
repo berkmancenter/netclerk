@@ -1,29 +1,20 @@
 require 'spec_helper'
 
-describe ( 'pages/index' ) {
+describe 'pages/index' do
   subject { rendered }
 
-  context ( 'default view' ) {
-    let ( :pages ) { Page.all }
+  let(:pages) { create_list(:page, 10) }
 
-    before {
-      assign( :pages, pages )
-    
-      render
-    }
+  before do
+    assign(:pages, pages)
 
-    it { should have_css 'h1', text: 'URLs' }
+    render
+  end
 
-    it {
-      should have_css '.pages-help'
-    }
-
-    it { should have_css '.pages-list' }
-
-    it { should have_css '.list-group.pages-list' }
-
-    it {
-      should have_css '.pages-list a', count: pages.count
-    }
-  }
-}
+  it { should have_css('h1', text: 'URLs') }
+  it { should have_css('.pages-help') }
+  it { should have_css('.pages-list') }
+  it { should have_css('.list-group.pages-list') }
+  it { should have_css('.pages-list a', count: pages.count) }
+  it { should have_css('button#new-page') }
+end

@@ -75,3 +75,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # sidekiq for all the requests
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', :require => nil
+
+gem 'simple_form', '~> 3.2.0'
