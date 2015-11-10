@@ -10,6 +10,8 @@ class Page < ActiveRecord::Base
 
   before_validation :strip_trailing_slash
 
+  scope :requestable, -> { where('fail_count < 3') }
+
   def self.proxy_request_data(country, proxy, url)
     ProxyRequest.perform_async(country.id, self.id, proxy.id)
   end
@@ -94,5 +96,17 @@ class Page < ActiveRecord::Base
 
   def failed_locally?
     baseline_content.nil?
+  end
+
+  def mark_as_failed_today!
+    return if failed_at == Date.today
+
+    self.failed_at = Date.today
+    self.fail_count += 1
+    self.save!
+  end
+
+  def reset_failures!
+    self.update!(failed_at: nil, fail_count: 0)
   end
 end
