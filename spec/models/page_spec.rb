@@ -4,7 +4,7 @@ describe Page do
   it { should belong_to :category }
   it { should have_many :statuses }
   it { should ensure_length_of(:url).is_at_most(2048) }
-  it { should respond_to(:url, :title) }
+  it { should respond_to(:url, :title, :failed_at, :fail_count) }
 
   it 'has a valid factory' do
     expect(build(:page)).to be_valid
@@ -57,6 +57,54 @@ describe Page do
 
     it 'caches the page\'s baseline content' do
       expect(Rails.cache.exist?(page.url)).to be(true)
+    end
+  end
+
+  describe 'scope: requestable' do
+    let!(:failing_page) { create(:page, fail_count: 3) }
+    let!(:requestable_page) { create(:page, fail_count: 0) }
+    let!(:borderline_page) { create(:page, fail_count: 2) }
+
+    it 'returns records with fail_count < 3' do
+      expect(Page.requestable.count).to eq(Page.count - 1)
+    end
+  end
+
+  describe '#mark_as_failed_today!' do
+    let(:page) { create(:page) }
+
+    context 'when failed_at equals the current date' do
+      let(:page) { create(:page, failed_at: Date.today) }
+
+      it 'does not increment fail_count' do
+        expect { page.mark_as_failed_today! }.not_to change { page.fail_count }
+      end
+
+      it 'does not change failed_at' do
+        expect { page.mark_as_failed_today! }.not_to change { page.failed_at }
+      end
+    end
+
+    context 'when failed_at does not equal the current date' do
+      it 'increments fail_count' do
+        expect { page.mark_as_failed_today! }.to change { page.fail_count }.by(1)
+      end
+
+      it 'sets failed_at to the current date' do
+        expect { page.mark_as_failed_today! }.to change { page.failed_at }.from(nil).to(Date.today)
+      end
+    end
+  end
+
+  describe '#reset_failures!' do
+    let(:page) { create(:page, failed_at: Date.yesterday, fail_count: 3) }
+
+    it 'resets failed_at to nil' do
+      expect { page.reset_failures! }.to change { page.failed_at }.from(Date.yesterday).to(nil)
+    end
+
+    it 'resets fail_count to 0' do
+      expect { page.reset_failures! }.to change { page.fail_count }.from(3).to(0)
     end
   end
 end
