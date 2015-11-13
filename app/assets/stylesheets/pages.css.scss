@@ -18,3 +18,27 @@ body.pages {
     }
   }
 }
+
+.page.media {
+  display: table;
+  max-width: 1000px;
+  white-space: nowrap;
+
+  .favicon-container {
+    display: table-cell;
+    min-width: 24px;
+  }
+
+  .media-body {
+    display: table-cell;
+
+    p.truncated-url {
+      cursor: zoom-in;
+    }
+
+    p.full-url {
+      cursor: zoom-out;
+      display: none;
+    }
+  }
+}
