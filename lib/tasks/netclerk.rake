@@ -132,8 +132,13 @@ def netclerk_scan( input_dir )
       if page.failed_locally?
         page.mark_as_failed_today!
         next
-      else
-        page.reset_failures!
+      end
+
+      page.reset_failures!
+
+      if page.title.blank?
+        title = Nokogiri::HTML(page.baseline_content).css('title').text.truncate(255)
+        page.update!(title: title) if title.present?
       end
 
       proxies.each { |proxy| ProxyRequest.perform_async(country.id, page.id, proxy) }

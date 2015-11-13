@@ -204,6 +204,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri (~> 1.6.6)
   oj
   pg
   poltergeist (~> 1.6.0)

@@ -75,3 +75,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # sidekiq for all the requests
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', :require => nil
+
+# Nokogiri for parsing HTML
+gem 'nokogiri', '~> 1.6.6'
