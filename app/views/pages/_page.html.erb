@@ -1,8 +1,18 @@
 <div class="page media">
-  <%= link_to favicon_tag(page.id, class: 'media-object'), page_path(page), class: 'pull-left' %>
+  <div class="favicon-container">
+    <%= link_to favicon_tag(page.id, class: 'media-object'), page_path(page) %>
+  </div>
+
   <div class="media-body">
     <h4 class="media-heading"><%= page.title %></h4>
-    <p><%= page.url %></p>
+
+    <% if page.url.length > 60 %>
+      <p class="truncated-url"><%= truncate(page.url, length: 80) %></p>
+      <p class="full-url"><%= page.url %></p>
+    <% else %>
+      <p class="url"><%= page.url %></p>
+    <% end %>
+
     <p><%= page.category.name unless page.category.nil? %></p>
   </div>
 </div>

@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :page do
     url 'http://example.com'
     title 'Example'
+    category
 
     factory :twitter do
       url 'https://twitter.com'
@@ -31,6 +32,10 @@ FactoryGirl.define do
       url 'http://cyber.law.harvard.edu'
       title 'Berkman Center'
       #category social
+    end
+
+    factory :page_with_long_url do
+      url "https://example.com/?query=#{SecureRandom.hex(100)}"
     end
   end
 end
