@@ -22,6 +22,22 @@ describe Status do
     )
   end
 
+  describe 'a created status' do
+    let(:today_status_first) { create(:status, page: page, country: country, created_at: Date.today) }
+    let(:today_status_second) { build(:status, page: page, country: country, created_at: Date.today) }
+    let(:yesterday_status) { create(:status, page: page, country: country, created_at: Date.yesterday) }
+
+    it 'is invalid without a unique combination of page, country, and date' do
+      expect(today_status_first).to be_valid
+      expect { today_status_second.save! }.to raise_error
+    end
+
+    it 'is valid with a unique combination of page, country, and date' do
+      expect(today_status_first).to be_valid
+      expect(yesterday_status).to be_valid
+    end
+  end
+
   describe '.create_for_date' do
     let(:yesterday_status) { Status.create_for_date(page, country, Date.yesterday) }
     let(:today_status) { Status.create_for_date(page, country, Date.today) }

@@ -1,8 +1,12 @@
 FactoryGirl.define do
+  sequence :created_at do |n|
+    Date.today.prev_day(n)
+  end
+
   factory :status do
     value 3
     delta 0
-    created_at '2014-11-19'
+    created_at
     country
     page
 

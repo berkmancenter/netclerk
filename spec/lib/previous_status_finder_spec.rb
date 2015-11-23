@@ -2,8 +2,8 @@ describe PreviousStatusFinder do
   describe '.statuses' do
     let(:country) { create(:country) }
     let(:page) { create(:page) }
-    let!(:older_statuses) { create_list(:status, 10, country: country, page: page, created_at: 1.day.ago) }
-    let(:newest_status) { create(:status, country: country, page: page, created_at: Time.now) }
+    let!(:older_statuses) { create_list(:status, 10, country: country, page: page) }
+    let(:newest_status) { create(:status, country: country, page: page, created_at: Date.today) }
     let(:limit) { 4 }
     let(:previous_statuses) do
       PreviousStatusFinder.statuses(
