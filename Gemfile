@@ -77,3 +77,5 @@ gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', :require => nil
 
 gem 'simple_form', '~> 3.2.0'
+# Nokogiri for parsing HTML
+gem 'nokogiri', '~> 1.6.6'
