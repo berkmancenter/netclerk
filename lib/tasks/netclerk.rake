@@ -147,7 +147,7 @@ def netclerk_scan( input_dir )
 end
 
 def netclerk_status( date )
-  date = date || Date.today.to_s
+  date = date || Date.current.to_s
 
   Rails.logger.info "running netclerk_status for #{date}"
 

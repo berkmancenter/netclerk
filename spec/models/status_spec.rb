@@ -2,7 +2,7 @@ describe Status do
   let(:page) { create(:page) }
   let(:country) { create(:country) }
   let!(:yesterday_request) { create(:request, page: page, country: country, response_status: '200', created_at: Date.yesterday) }
-  let!(:today_request) { create(:request, page: page, country: country, response_status: '404', created_at: Date.today) }
+  let!(:today_request) { create(:request, page: page, country: country, response_status: '404', created_at: Date.current) }
 
   it { should respond_to(:value, :delta, :page_url, :page_title, :country_name) }
   it { should belong_to(:page) }
@@ -40,7 +40,7 @@ describe Status do
 
   describe '.create_for_date' do
     let(:yesterday_status) { Status.create_for_date(page, country, Date.yesterday) }
-    let(:today_status) { Status.create_for_date(page, country, Date.today) }
+    let(:today_status) { Status.create_for_date(page, country, Date.current) }
 
     it 'creates a status' do
       expect { yesterday_status }.to change { Status.count }.by(1)
@@ -71,10 +71,10 @@ describe Status do
   end
 
   describe 'scopes' do
-    let!(:status) { Status.create_for_date(page, country, Date.today) }
+    let!(:status) { Status.create_for_date(page, country, Date.current) }
     let(:other_country) { create(:country) }
-    let!(:other_country_request) { create(:request, page: page, country: other_country, created_at: Date.today) }
-    let!(:other_country_status) { Status.create_for_date(page, other_country, Date.today) }
+    let!(:other_country_request) { create(:request, page: page, country: other_country, created_at: Date.current) }
+    let!(:other_country_status) { Status.create_for_date(page, other_country, Date.current) }
 
     describe '.most_recent' do
       let(:most_recent) { Status.most_recent }
