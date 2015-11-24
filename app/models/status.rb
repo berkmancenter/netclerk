@@ -75,10 +75,10 @@ class Status < ActiveRecord::Base
   end
 
   def self.newest_date
-    exists? ? select(:created_at).order(:created_at).last.created_at.to_date : Date.today
+    exists? ? select(:created_at).order(:created_at).last.created_at.to_date : Date.current
   end
 
   def self.newest_date_for_country( country )
-    exists? ? where( country: country ).select(:created_at).order(:created_at).last.created_at.to_date : Date.today
+    exists? ? where( country: country ).select(:created_at).order(:created_at).last.created_at.to_date : Date.current
   end
 end

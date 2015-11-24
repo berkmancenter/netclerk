@@ -74,7 +74,7 @@ describe Page do
     let(:page) { create(:page) }
 
     context 'when failed_at equals the current date' do
-      let(:page) { create(:page, failed_at: Date.today) }
+      let(:page) { create(:page, failed_at: Date.current) }
 
       it 'does not increment fail_count' do
         expect { page.mark_as_failed_today! }.not_to change { page.fail_count }
@@ -91,7 +91,7 @@ describe Page do
       end
 
       it 'sets failed_at to the current date' do
-        expect { page.mark_as_failed_today! }.to change { page.failed_at }.from(nil).to(Date.today)
+        expect { page.mark_as_failed_today! }.to change { page.failed_at }.from(nil).to(Date.current)
       end
     end
   end

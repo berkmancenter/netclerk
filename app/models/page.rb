@@ -99,9 +99,9 @@ class Page < ActiveRecord::Base
   end
 
   def mark_as_failed_today!
-    return if failed_at == Date.today
+    return if failed_at == Date.current
 
-    self.failed_at = Date.today
+    self.failed_at = Date.current
     self.fail_count += 1
     self.save!
   end
