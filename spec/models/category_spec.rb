@@ -1,13 +1,7 @@
-require 'spec_helper'
+describe Category do
+  it 'has a valid factory' do
+    expect(create(:category)).to be_valid
+  end
 
-describe( 'category model' ) {
-  context( 'valid attributes' ) {
-    let( :social ) { Category.find_by_name 'social' }
-
-    it {
-      social.should be_valid
-
-      social.should respond_to :name
-    }
-  }
-}
+  it { is_expected.to respond_to(:name) }
+end

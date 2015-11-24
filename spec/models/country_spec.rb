@@ -1,32 +1,34 @@
-require 'spec_helper'
-
 describe Country do
-  it { should have_many(:statuses) }
-  it { should have_many(:proxies) }
-  it { should respond_to(:name, :iso3, :local_dns) }
+  it { is_expected.to have_many(:statuses) }
+  it { is_expected.to have_many(:proxies) }
+  it { is_expected.to respond_to(:name, :iso3, :local_dns) }
 
   it 'has a valid factory' do
     expect(build(:country)).to be_valid
   end
 
-  describe 'having_requests_on' do
-    it { Country.should respond_to( :having_requests_on ) }
+  describe 'scope: having_requests_on' do
+    let(:scope) { Country.having_requests_on(Date.current) }
+    let!(:today_requests) { create_pair(:request) }
+    let!(:yesterday_requests) { create_list(:request, 3, created_at: Date.yesterday) }
 
     it 'should scope to request date' do
-      Country.having_requests_on( '2014-07-11' ).count.should eq( 2 )
+      expect(scope.size).to eq(today_requests.size)
     end
   end
 
-  describe 'has_statuses' do
-    it { Country.should respond_to( :has_statuses ) }
+  describe 'scope: has_statuses' do
+    let(:scope) { Country.has_statuses }
+    let!(:statuses) { create_list(:status, 3) }
+    let!(:country_without_status) { create(:country) }
 
     it 'should include all countries having statuses' do
       # not just having most recent statuses
-      Country.has_statuses.include?( Country.find_by_iso3( 'BRA' ) ).should be true
+      expect(scope.pluck(:id)).to include(*statuses.map(&:country_id))
     end
 
     it 'should not include countries without a single status' do
-      Country.has_statuses.include?( Country.find_by_iso3( 'NOS' ) ).should be false
+      expect(scope.pluck(:id)).not_to include(country_without_status.id)
     end
   end
 end

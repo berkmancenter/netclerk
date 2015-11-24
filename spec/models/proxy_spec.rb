@@ -1,24 +1,25 @@
-require 'spec_helper'
+describe Proxy do
+  let(:proxy) { create(:proxy, ip_and_port: '127.0.0.1:8080') }
 
-describe( 'proxy model' ) {
-  context( 'valid attributes' ) {
-    let( :proxy_usa ) { Proxy.first }
+  it 'has a valid factory' do
+    expect(create(:proxy)).to be_valid
+  end
 
-    it {
-      proxy_usa.should be_valid
+  it { is_expected.to respond_to(:ip_and_port, :permanent, :country) }
 
-      proxy_usa.should respond_to :ip_and_port
-      proxy_usa.should respond_to :permanent
-      proxy_usa.should respond_to :country
-    }
+  describe '#ip' do
+    let(:ip) { proxy.ip }
 
-    it {
-      split = proxy_usa.ip_and_port.split( ':' )
-      split.count.should eq( 2 )
-    }
+    it 'returns the ip segment of an ip and port string' do
+      expect(ip).to eq('127.0.0.1')
+    end
+  end
 
-    it {
-      proxy_usa.country.iso3.should eq 'USA'
-    }
-  }
-}
+  describe '#port' do
+    let(:port) { proxy.port }
+
+    it 'returns the port segment of an ip and port string' do
+      expect(port).to eq(8080)
+    end
+  end
+end
