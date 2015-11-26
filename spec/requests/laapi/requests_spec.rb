@@ -27,7 +27,7 @@ describe ( 'requests requests' ) {
 
         it {
           #puts page.source
-          pending 'page.status_code.should eq( 200 )'
+          skip 'page.status_code.should eq( 200 )'
         }
       }
     }
