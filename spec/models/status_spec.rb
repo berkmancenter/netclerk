@@ -23,8 +23,8 @@ describe Status do
   end
 
   describe 'a created status' do
-    let(:today_status_first) { create(:status, page: page, country: country, created_at: Date.today) }
-    let(:today_status_second) { build(:status, page: page, country: country, created_at: Date.today) }
+    let(:today_status_first) { create(:status, page: page, country: country, created_at: Date.current) }
+    let(:today_status_second) { build(:status, page: page, country: country, created_at: Date.current) }
     let(:yesterday_status) { create(:status, page: page, country: country, created_at: Date.yesterday) }
 
     it 'is invalid without a unique combination of page, country, and date' do
