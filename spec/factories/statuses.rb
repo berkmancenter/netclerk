@@ -1,6 +1,6 @@
 FactoryGirl.define do
   sequence :created_at do |n|
-    Date.today.prev_day(n)
+    Date.current.prev_day(n)
   end
 
   factory :status do

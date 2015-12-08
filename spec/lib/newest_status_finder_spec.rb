@@ -3,8 +3,8 @@ describe NewestStatusFinder do
   let(:countries) { create_pair(:country) }
   let!(:old_status_1) { create(:status, country: countries[0], page: page, created_at: 1.month.ago) }
   let!(:old_status_2) { create(:status, country: countries[1], page: page, created_at: 1.month.ago) }
-  let!(:today_status_1) { create(:status, country: countries[0], page: page, created_at: Time.now) }
-  let!(:today_status_2) { create(:status, country: countries[1], page: page, created_at: Time.now) }
+  let!(:today_status_1) { create(:status, country: countries[0], page: page, created_at: Date.current) }
+  let!(:today_status_2) { create(:status, country: countries[1], page: page, created_at: Date.current) }
 
   describe '.per_country_for_page' do
     let(:statuses) { NewestStatusFinder.per_country_for_page(page) }
