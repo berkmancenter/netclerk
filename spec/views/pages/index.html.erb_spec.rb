@@ -4,9 +4,11 @@ describe 'pages/index' do
   subject { rendered }
 
   let(:pages) { create_list(:page, 10) }
+  let(:categories) { create_pair(:category) }
 
   before do
     assign(:pages, pages)
+    assign(:categories, categories)
 
     render
   end

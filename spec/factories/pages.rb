@@ -2,7 +2,6 @@ FactoryGirl.define do
   factory :page do
     url 'http://example.com'
     title 'Example'
-    category
 
     factory :twitter do
       url 'https://twitter.com'
@@ -36,6 +35,16 @@ FactoryGirl.define do
 
     factory :page_with_long_url do
       url "https://example.com/?query=#{SecureRandom.hex(100)}"
+    end
+
+    factory :page_with_categories do
+      transient do
+        categories_count 3
+      end
+
+      after(:create) do |page, evaluator|
+        create_list(:category, evaluator.categories_count, pages: [page])
+      end
     end
   end
 end

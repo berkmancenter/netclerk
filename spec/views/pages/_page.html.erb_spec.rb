@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'pages/_page' do
   subject { rendered }
 
-  let(:page) { create(:page) }
+  let(:page) { create(:page_with_categories) }
 
   before { render page }
 
@@ -15,7 +15,7 @@ describe 'pages/_page' do
   it { should have_xpath("//img[contains(@alt, \"Favicon\")]") }
   it { should have_css('.media-body') }
   it { should have_css('.media-body .media-heading', text: page.title) }
-  it { should have_css('.media-body p', text: page.category.name) }
+  it { should have_css('.media-body p', text: page.categories.first.name) }
 
   context 'for a page with a short URL' do
     it { should have_css('p.url', text: page.url) }

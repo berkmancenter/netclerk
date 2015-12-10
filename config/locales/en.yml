@@ -26,6 +26,7 @@ en:
     countries: 'Countries'
     pages: 'URLs'
     statuses: 'Status'
+    categories: 'Categories'
 
   countries:
     changed_since: 'Changed since yesterday'

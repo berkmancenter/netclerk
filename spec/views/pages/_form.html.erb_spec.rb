@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'pages/form' do
   subject { rendered }
 
-  let(:page) { create(:page) }
+  let(:page) { create(:page_with_categories) }
 
   before do
     assign(:page, page)
@@ -13,5 +13,5 @@ describe 'pages/form' do
 
   it { should have_field('page_url') }
   it { should have_field('page_title') }
-  it { should have_field('page_category_id') }
+  it { should have_field('page[category_ids][]') }
 end

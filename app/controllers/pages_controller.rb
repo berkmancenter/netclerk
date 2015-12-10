@@ -2,7 +2,14 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pages = Page.order( 'RANDOM()' ).limit( 50 )
+    @categories = Category.has_pages.order(:name)
+
+    if params[:category].present?
+      @pages = Page.category(params[:category])
+      return
+    end
+
+    @pages = Page.order('RANDOM()').limit(50)
   end
 
   def show
@@ -51,6 +58,6 @@ class PagesController < ApplicationController
   end
 
   def page_params
-    params.require(:page).permit(:url, :title, :category_id)
+    params.require(:page).permit(:url, :title, category_ids: [])
   end
 end

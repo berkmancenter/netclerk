@@ -2,7 +2,7 @@ require 'open-uri'
 require 'net/http'
 
 class Page < ActiveRecord::Base
-  belongs_to :category
+  has_and_belongs_to_many :categories
   has_many :statuses
 
   validates :url, length: { maximum: 2048 }
@@ -11,6 +11,7 @@ class Page < ActiveRecord::Base
   before_validation :strip_trailing_slash
 
   scope :requestable, -> { where('fail_count < 3') }
+  scope :category, -> (category_name) { joins(:categories).where("categories.name = ?", category_name) }
 
   def self.proxy_request_data(country, proxy, url)
     ProxyRequest.perform_async(country.id, self.id, proxy.id)
@@ -108,5 +109,9 @@ class Page < ActiveRecord::Base
 
   def reset_failures!
     self.update!(failed_at: nil, fail_count: 0)
+  end
+
+  def category_names
+    categories.pluck(:name)
   end
 end
