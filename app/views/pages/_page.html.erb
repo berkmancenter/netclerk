@@ -13,6 +13,8 @@
       <p class="url"><%= page.url %></p>
     <% end %>
 
-    <p><%= page.category.name unless page.category.nil? %></p>
+    <p>
+      <%= page.category_names.join(', ') %>
+    </p>
   </div>
 </div>

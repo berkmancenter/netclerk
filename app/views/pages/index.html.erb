@@ -6,6 +6,26 @@
   </button>
 <% end %>
 
+<div class="btn-group pull-right">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <% if params[:category].present? %>
+      Category: <%= params[:category] %>
+    <% else %>
+      Filter by Category
+    <% end %>
+
+    <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu">
+    <% @categories.each do |category| %>
+      <li>
+        <a href="?category=<%= category.name %>"><%= category.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
 <p class="pages-help alert alert-info"><%= t 'pages.help' %></p>
 
 <div class="list-group pages-list">

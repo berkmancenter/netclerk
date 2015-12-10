@@ -1,7 +1,7 @@
 <%= simple_form_for(@page, html: { class: 'form-horizontal' }) do |f| %>
   <%= f.input :url %>
   <%= f.input :title %>
-  <%= f.association :category %>
+  <%= f.association :categories, as: :check_boxes %>
   <%= f.button :submit %>
   <%= link_to :back do %>
     <button type="button" class="btn btn-default">

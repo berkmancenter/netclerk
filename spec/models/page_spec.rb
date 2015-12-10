@@ -1,13 +1,17 @@
 require 'spec_helper'
 
 describe Page do
-  it { should belong_to :category }
-  it { should have_many :statuses }
-  it { should ensure_length_of(:url).is_at_most(2048) }
-  it { should respond_to(:url, :title, :failed_at, :fail_count) }
+  it { is_expected.to have_and_belong_to_many :categories }
+  it { is_expected.to have_many :statuses }
+  it { is_expected.to ensure_length_of(:url).is_at_most(2048) }
+  it { is_expected.to respond_to(:url, :title, :failed_at, :fail_count) }
 
   it 'has a valid factory' do
     expect(build(:page)).to be_valid
+  end
+
+  it 'has a factory for creating a page with associated categories' do
+    expect(create(:page_with_categories, categories_count: 5).categories.size).to eq(5)
   end
 
   describe '#strip_trailing_slash' do
@@ -70,6 +74,18 @@ describe Page do
     end
   end
 
+  describe 'scope: category' do
+    let(:category) { create(:category) }
+    let!(:page_without_category) { create(:page) }
+    let!(:pages_with_category) { create_pair(:page, categories: [category]) }
+    let(:scope) { Page.category(category.name) }
+
+    it 'filters pages by category' do
+      expect(scope).not_to include(page_without_category)
+      expect(scope).to include(*pages_with_category)
+    end
+  end
+
   describe '#mark_as_failed_today!' do
     let(:page) { create(:page) }
 
@@ -105,6 +121,16 @@ describe Page do
 
     it 'resets fail_count to 0' do
       expect { page.reset_failures! }.to change { page.fail_count }.from(3).to(0)
+    end
+  end
+
+  describe '#category_names' do
+    let(:categories) { create_list(:category, 3) }
+    let(:page) { create(:page, categories: categories) }
+    let(:category_names) { page.category_names }
+
+    it 'returns an array of names of categories associated with the page' do
+      expect(category_names).to match_array(categories.map(&:name))
     end
   end
 end

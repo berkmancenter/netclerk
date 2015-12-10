@@ -30,29 +30,29 @@ def seed_test
   nos = FactoryGirl.create :nos
 
   # categories
-  social = FactoryGirl.create :social
-  political = FactoryGirl.create :political
-  pornography = FactoryGirl.create :pornography
+  social = Category.create(name: 'social')
+  political = Category.create(name: 'political')
+  pornography = Category.create(name: 'pornography')
 
   # pages
   twitter = FactoryGirl.create :twitter
-  twitter.category = social
+  twitter.categories << social
   twitter.save
 
   whitehouse = FactoryGirl.create :whitehouse
-  whitehouse.category = political
+  whitehouse.categories << political
   whitehouse.save
 
   playboy = FactoryGirl.create :playboy
-  playboy.category = pornography
+  playboy.categories << pornography
   playboy.save
 
   no_title = FactoryGirl.create :no_title
-  no_title.category = social
+  no_title.categories << social
   no_title.save
 
   berkman = FactoryGirl.create :berkman
-  berkman.category = social
+  berkman.categories << social
   berkman.save
 
   # proxies
