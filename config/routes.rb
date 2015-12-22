@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'terms' => 'static_pages#terms'
   get 'contact' => 'static_pages#contact'
+  
+  controller :sessions do
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
 
   # Link Availability API
   namespace :laapi do
