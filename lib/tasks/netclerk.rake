@@ -5,10 +5,7 @@ require 'zip'
 namespace :netclerk do
   desc 'Download HMA proxy list'
   task :hma => :environment do |task, args|
-    task_start = Time.now
     netclerk_hma
-    task_end = Time.now
-    puts "*** time: #{task_end - task_start} ***"
   end
 
   desc 'Remove trailing slashes from existing pages'
@@ -18,10 +15,7 @@ namespace :netclerk do
 
   desc 'Load a directory of proxy lists, (one per iso2 country code) & scan all the sites'
   task :scan, [:input_dir] => :environment do |task, args|
-    task_start = Time.now
     netclerk_scan args[:input_dir]
-    task_end = Time.now
-    puts "*** time: #{task_end - task_start} ***"
   end
 
   desc 'Create the statuses for all country/page pairs for a given date'
@@ -35,26 +29,26 @@ def netclerk_hma( )
 
   glob = Dir.glob "#{mail_path}/*.numfar"
 
-  puts "Count: #{glob.count}"
+  Rails.logger.info "netclerk_hma start: #{Time.now}"
+
+  Rails.logger.debug "netclerk_hma count: #{glob.count}"
 
   glob.each { |eml|
     email_file = File.open eml
     email = Mail.new email_file.read
     if email.has_attachments?
-      puts "Subject: #{email.subject}"
-      puts "Date: #{email.date}"
+      Rails.logger.debug "netclerk_hma subject: #{email.subject}, date: #{email.date}"
 
       a = email.attachments.first
 
       Dir.mktmpdir { |dir|
         zip_path = "#{dir}/proxies.zip"
-        puts "Extracting to #{dir}"
+        Rails.logger.debug "netclerk_hma extracting_to: #{dir}"
         open( zip_path , 'wb' ) { |file| file.write a.read }
 
         Zip::File.open( zip_path ) { |zip_file|
           zip_file.each { |f|
             f_path = File.join( dir, f.name )
-            puts "  #{f_path}"
             FileUtils.mkdir_p( File.dirname( f_path ) )
             zip_file.extract( f, f_path ) unless File.exist?( f_path )
           }
@@ -88,13 +82,12 @@ def netclerk_scan( input_dir )
     return
   end
 
-  # delete all old non-permanent proxies
-  Proxy.where( permanent: false ).delete_all
+  Rails.logger.info "netclerk_scan start: #{Time.now}"
 
-  # delete old sidekiq queue (we didn't get to it yesterday)
-  if Sidekiq::Queue.all.any?
-    Sidekiq::Queue.all.first.clear
-  end
+  # delete all old non-permanent proxies
+  old_proxies = Proxy.where( permanent: false )
+  Rails.logger.info "netclerk_scan old_proxies: #{old_proxies.count}"
+  old_proxies.delete_all
 
   # read _reliable_list
   reliable_list = "#{input_dir}/_reliable_list.txt"
@@ -112,38 +105,15 @@ def netclerk_scan( input_dir )
       proxies = []
 
       country_file = File.open("#{input_dir}/#{f}", 'r').each_line do |line|
-        proxies << line.strip if reliable.include? line
+        if reliable.include? line
+          ip_and_port = line.strip
+          Rails.logger.info "netclerk_scan proxy_create country: #{country.name}, ip: #{ip_and_port}"
+          p = Proxy.create( ip_and_port: ip_and_port, permanent: false, country: country )
+        end
       end
       country_file.close
-
-      if proxies.any?
-        country_proxies << { country: country, proxies: proxies } 
-      end
     end
   }
-
-  country_proxies.sort_by { |cp| cp[ :proxies ].count }.each do |cp|
-    country = cp[ :country ]
-    proxies = cp[ :proxies ]
-
-    #puts "  #{country.name}: #{ActionController::Base.helpers.pluralize(proxies.count, 'proxy')}"
-
-    Page.requestable.find_each do |page|
-      if page.failed_locally?
-        page.mark_as_failed_today!
-        next
-      end
-
-      page.reset_failures!
-
-      if page.title.blank?
-        title = Nokogiri::HTML(page.baseline_content).css('title').text.truncate(255)
-        page.update!(title: title) if title.present?
-      end
-
-      proxies.each { |proxy| ProxyRequest.perform_async(country.id, page.id, proxy) }
-    end
-  end
 end
 
 def netclerk_status( date )
