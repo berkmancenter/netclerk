@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:dbp/browserid-rails.git
+  revision: a3cbb2bb60a23be717b4f206c9afe75341911edb
+  specs:
+    browserid-rails (0.5.2)
+      jquery-rails
+      railties (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +53,13 @@ GEM
     celluloid (0.16.0)
       timers (~> 4.0.0)
     cliver (0.3.2)
+    coffee-rails (4.0.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.10.0)
     connection_pool (2.2.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
@@ -197,7 +212,9 @@ DEPENDENCIES
   autoprefixer-rails
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.0)
+  browserid-rails!
   capybara (~> 2.4.0)
+  coffee-rails (~> 4.0.0)
   d3_rails
   diff_match_patch
   factory_girl_rails
