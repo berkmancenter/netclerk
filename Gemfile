@@ -7,6 +7,9 @@ gem 'rails', '4.1.1'
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
 
+# load environment
+gem 'dotenv-rails'
+
 group :test do
   gem 'rake' # required for Travis CI
   gem 'rspec-rails', '~> 2.99.0'
@@ -75,6 +78,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # sidekiq for all the requests
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', :require => nil
+
+# bunny for im_core
+gem 'bunny', '~> 2.2.1'
 
 gem 'simple_form', '~> 3.2.0'
 # Nokogiri for parsing HTML
