@@ -86,7 +86,7 @@ def netclerk_scan( input_dir )
 
   # delete all old non-permanent proxies
   old_proxies = Proxy.where( permanent: false )
-  old_proxies.delete_all
+  old_proxies.destroy_all
 
   # read _reliable_list
   reliable_list = "#{input_dir}/_reliable_list.txt"
@@ -105,18 +105,8 @@ def netclerk_scan( input_dir )
 
       country_file = File.open("#{input_dir}/#{f}", 'r').each_line do |line|
         if reliable.include? line
-          Rails.logger.info "netclerk_scan proxy_create country: #{country.name}, ip: #{line}"
           ip_and_port = line.strip.split( ':' )
           p = Proxy.create( ip: ip_and_port[0], port: ip_and_port[1].to_i, permanent: false, country: country )
-
-          message = {
-            event: 'up',
-            ip: p.ip,
-            nodeSource: ENV['IM_CORE_USERNAME'],
-            countryCode: iso2,
-            idFromSource: p.id
-          }
-          $rabbitmq_exchange.publish(message.to_json, routing_key: ENV['IM_CORE_QUEUE_NAME'], content_type: 'application/json')
         end
       end
       country_file.close
