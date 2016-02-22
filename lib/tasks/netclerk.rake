@@ -105,14 +105,13 @@ def netclerk_scan( input_dir )
 
       country_file = File.open("#{input_dir}/#{f}", 'r').each_line do |line|
         if reliable.include? line
-          ip_and_port = line.strip
-          Rails.logger.info "netclerk_scan proxy_create country: #{country.name}, ip: #{ip_and_port}"
-          p = Proxy.create( ip_and_port: ip_and_port, permanent: false, country: country )
+          Rails.logger.info "netclerk_scan proxy_create country: #{country.name}, ip: #{line}"
+          ip_and_port = line.strip.split( ':' )
+          p = Proxy.create( ip: ip_and_port[0], port: ip_and_port[1].to_i, permanent: false, country: country )
 
-          ip = ip_and_port.split( ':' )[0]
           message = {
             event: 'up',
-            ip: ip,
+            ip: p.ip,
             nodeSource: ENV['IM_CORE_USERNAME'],
             countryCode: iso2,
             idFromSource: p.id
