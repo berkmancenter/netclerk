@@ -1,5 +1,5 @@
 def connect_to_rabbitmq
-  $rabbitmq_connection = Bunny.new(:host => "localhost", :port => 5683, :vhost => "/im", :user => "netclerk", :password => Rails.application.secrets.im_core_password)
+  $rabbitmq_connection = Bunny.new(:host => ENV['IM_CORE_HOST'], :port => ENV['IM_CORE_PORT'], :vhost => ENV['IM_CORE_VHOST'], :user => ENV['IM_CORE_USERNAME'], :password => ENV['IM_CORE_PASSWORD'])
   $rabbitmq_connection.start
   $rabbitmq_channel = $rabbitmq_connection.create_channel
   $rabbitmq_exchange = $rabbitmq_channel.topic("IM.Exchange", auto_delete: true)

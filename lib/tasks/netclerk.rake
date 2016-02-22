@@ -31,19 +31,19 @@ def netclerk_hma( )
 
   Rails.logger.info "netclerk_hma start: #{Time.now}"
 
-  Rails.logger.debug "netclerk_hma count: #{glob.count}"
+  Rails.logger.info "netclerk_hma count: #{glob.count}"
 
   glob.each { |eml|
     email_file = File.open eml
     email = Mail.new email_file.read
     if email.has_attachments?
-      Rails.logger.debug "netclerk_hma subject: #{email.subject}, date: #{email.date}"
+      Rails.logger.info "netclerk_hma subject: #{email.subject}, date: #{email.date}"
 
       a = email.attachments.first
 
       Dir.mktmpdir { |dir|
         zip_path = "#{dir}/proxies.zip"
-        Rails.logger.debug "netclerk_hma extracting_to: #{dir}"
+        Rails.logger.info "netclerk_hma extracting_to: #{dir}"
         open( zip_path , 'wb' ) { |file| file.write a.read }
 
         Zip::File.open( zip_path ) { |zip_file|
@@ -59,7 +59,7 @@ def netclerk_hma( )
     end
 
     email_file.close
-    File.delete email_file
+    #File.delete email_file
   }
 end
 
@@ -86,7 +86,6 @@ def netclerk_scan( input_dir )
 
   # delete all old non-permanent proxies
   old_proxies = Proxy.where( permanent: false )
-  Rails.logger.info "netclerk_scan old_proxies: #{old_proxies.count}"
   old_proxies.delete_all
 
   # read _reliable_list
@@ -109,6 +108,16 @@ def netclerk_scan( input_dir )
           ip_and_port = line.strip
           Rails.logger.info "netclerk_scan proxy_create country: #{country.name}, ip: #{ip_and_port}"
           p = Proxy.create( ip_and_port: ip_and_port, permanent: false, country: country )
+
+          ip = ip_and_port.split( ':' )[0]
+          message = {
+            event: 'up',
+            ip: ip,
+            nodeSource: ENV['IM_CORE_USERNAME'],
+            countryCode: iso2,
+            idFromSource: p.id
+          }
+          $rabbitmq_exchange.publish(message.to_json, routing_key: ENV['IM_CORE_QUEUE_NAME'], content_type: 'application/json')
         end
       end
       country_file.close
