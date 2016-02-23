@@ -1,8 +1,12 @@
 def connect_to_rabbitmq
-  $rabbitmq_connection = Bunny.new(:host => ENV['IM_CORE_HOST'], :port => ENV['IM_CORE_PORT'], :vhost => ENV['IM_CORE_VHOST'], :user => ENV['IM_CORE_USERNAME'], :password => ENV['IM_CORE_PASSWORD'])
-  $rabbitmq_connection.start
-  $rabbitmq_channel = $rabbitmq_connection.create_channel
-  $rabbitmq_exchange = $rabbitmq_channel.topic("IM.Exchange", auto_delete: true)
+  begin
+    $rabbitmq_connection = Bunny.new(:host => ENV['IM_CORE_HOST'], :port => ENV['IM_CORE_PORT'], :vhost => ENV['IM_CORE_VHOST'], :user => ENV['IM_CORE_USERNAME'], :password => ENV['IM_CORE_PASSWORD'])
+    $rabbitmq_connection.start
+    $rabbitmq_channel = $rabbitmq_connection.create_channel
+    $rabbitmq_exchange = $rabbitmq_channel.topic("IM.Exchange", auto_delete: true)
+  rescue
+    Rails.logger.info 'could not connect to RabbitMQ'
+  end
 end
 
 if defined?(PhusionPassenger) # otherwise it breaks rake commands if you put this in an initializer
