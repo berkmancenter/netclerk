@@ -14,7 +14,7 @@ class Proxy < ActiveRecord::Base
     im_core_change( {
       event: 'down',
       ip: ip,
-      nodeSource: ENV['IM_CORE_USERNAME']
+      nodeSource: ImCore::USERNAME
     } )
   end
 
@@ -22,7 +22,7 @@ class Proxy < ActiveRecord::Base
     im_core_change( {
       event: 'up',
       ip: ip,
-      nodeSource: ENV['IM_CORE_USERNAME'],
+      nodeSource: ImCore::USERNAME,
       countryCode: country.iso2,
       idFromSource: id
     } )
@@ -31,10 +31,6 @@ class Proxy < ActiveRecord::Base
   def im_core_change( message )
     Rails.logger.info "proxy #{message[:event]} country: #{country.iso2}, ip: #{ip}"
 
-    $rabbitmq_exchange.publish( message.to_json, routing_key: ENV['IM_CORE_QUEUE_NAME'], content_type: 'application/json' )
+    $rabbitmq_exchange.publish( message.to_json, routing_key: ImCore::QUEUE_NAME, content_type: 'application/json' )
   end
-
-
-
-
 end
