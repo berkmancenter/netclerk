@@ -59,7 +59,7 @@ def netclerk_hma( )
     end
 
     email_file.close
-    #File.delete email_file
+    File.delete email_file
   }
 end
 
