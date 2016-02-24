@@ -45,11 +45,13 @@ class Proxy < ActiveRecord::Base
   end
 
   def start_listener
-    @queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-    @queue.bind( $rabbitmq_exchange, routing_key: @queue.name )
-
     @listener_thread = Thread.new {
-      @consumer = @queue.subscribe( block: true ) { | delivery_info, metadata, payload |
+      Rails.logger.info "creating queue: #{job_queue}"
+      queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
+      Rails.logger.info "created queue.name: #{queue.name}"
+      queue.bind( $rabbitmq_exchange, routing_key: queue.name )
+
+      consumer = queue.subscribe( block: true ) { | delivery_info, metadata, payload |
         Rails.logger.info "Received #{payload}"
         message = JSON.parse(payload)
 
@@ -91,11 +93,12 @@ class Proxy < ActiveRecord::Base
   end
 
   def end_listener
-    @consumer.cancel
-    @listener_thread.kill
-    @queue.purge
-    @queue.unbind
-    @queue.delete
+    @listener_thread.kill if @listener_thread.present?
+
+    queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
+    queue.purge
+    queue.unbind $rabbitmq_exchange
+    queue.delete
   end
 
   def im_core_change( message )
