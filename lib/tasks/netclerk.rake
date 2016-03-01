@@ -106,7 +106,17 @@ def netclerk_scan( input_dir )
       country_file = File.open("#{input_dir}/#{f}", 'r').each_line do |line|
         if reliable.include? line
           ip_and_port = line.strip.split( ':' )
-          p = Proxy.create( ip: ip_and_port[0], port: ip_and_port[1].to_i, permanent: false, country: country )
+          message = {
+            event: 'pending',
+            ip: ip_and_port[0],
+            port: ip_and_port[1].to_i,
+            countryCode: iso2
+          }
+
+          queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
+          queue.bind( $rabbitmq_exchange, routing_key: queue.name )
+          $rabbitmq_exchange.publish( message.to_json, routing_key: queue.name, content_type: 'application/json' )
+          #p = Proxy.create( ip: ip_and_port[0], port: ip_and_port[1].to_i, permanent: false, country: country )
         end
       end
       country_file.close
