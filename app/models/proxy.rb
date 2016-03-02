@@ -46,15 +46,32 @@ class Proxy < ActiveRecord::Base
 
   def start_listener
     @listener_thread = Thread.new {
-      j_queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-      j_queue.bind( $rabbitmq_exchange, routing_key: j_queue.name )
+      job_q = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
+      job_q.bind( $rabbitmq_exchange, routing_key: job_q.name )
 
-      consumer = j_queue.subscribe( block: true ) { | delivery_info, metadata, payload |
-        Rails.logger.info "queue: #{j_queue.name}, payload: #{payload}"
+      job_status_q = $rabbitmq_channel.queue( job_status_queue, auto_delete: false, durable: true )
+      job_status_q.bind( $rabbitmq_exchange, routing_key: job_status_q.name )
+
+      consumer = job_q.subscribe( block: true ) { | delivery_info, metadata, payload |
+        Rails.logger.info "queue: #{job_q.name}, payload: #{payload}"
 
         message = JSON.parse payload
 
-        #ImCore.send_message( 
+        ImCore.send_message( job_status_q.name, {
+          event: 'start',
+          requestId: message[ 'requestId' ],
+          responseId: message[ 'responseId' ]
+        } )
+
+        sleep 5
+
+        ImCore.send_message( job_status_q.name, {
+          event: 'error',
+          requestId: message[ 'requestId' ],
+          responseId: message[ 'responseId' ],
+          errorCode: 501,
+          message: 'Not Implemented'
+        } )
 
 
 
@@ -98,9 +115,9 @@ class Proxy < ActiveRecord::Base
   def end_listener
     @listener_thread.kill if @listener_thread.present?
 
-    j_queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-    j_queue.purge
-    j_queue.unbind $rabbitmq_exchange
-    j_queue.delete
+    job_q = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
+    job_q.purge
+    job_q.unbind $rabbitmq_exchange
+    job_q.delete
   end
 end
