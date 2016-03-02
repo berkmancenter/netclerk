@@ -23,7 +23,7 @@ class Proxy < ActiveRecord::Base
   private
 
   def im_core_down
-    im_core_change( {
+    ImCore.send_message( ImCore::QUEUE_NAME, {
       event: 'down',
       ip: ip,
       nodeSource: ImCore::USERNAME
@@ -33,7 +33,7 @@ class Proxy < ActiveRecord::Base
   end
 
   def im_core_up
-    im_core_change( {
+    ImCore.send_message( ImCore::QUEUE_NAME, {
       event: 'up',
       ip: ip,
       nodeSource: ImCore::USERNAME,
@@ -46,14 +46,15 @@ class Proxy < ActiveRecord::Base
 
   def start_listener
     @listener_thread = Thread.new {
-      Rails.logger.info "creating queue: #{job_queue}"
       queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-      Rails.logger.info "created queue.name: #{queue.name}"
       queue.bind( $rabbitmq_exchange, routing_key: queue.name )
 
       consumer = queue.subscribe( block: true ) { | delivery_info, metadata, payload |
-        Rails.logger.info "Received #{payload}"
-        message = JSON.parse(payload)
+        Rails.logger.info "queue: #{queue.name}, payload: #{payload}"
+
+        message = JSON.parse payload
+
+
 
   #      form_data = {
   #        'probe_url' => message['url'],
@@ -99,11 +100,5 @@ class Proxy < ActiveRecord::Base
     queue.purge
     queue.unbind $rabbitmq_exchange
     queue.delete
-  end
-
-  def im_core_change( message )
-    Rails.logger.debug "proxy #{message[:event]} country: #{country.iso2}, ip: #{ip}"
-
-    $rabbitmq_exchange.publish( message.to_json, routing_key: ImCore::QUEUE_NAME, content_type: 'application/json' )
   end
 end

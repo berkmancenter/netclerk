@@ -34,6 +34,11 @@ module ImCore
     }
   end
 
+  def self.send_message( queue_name, message )
+    Rails.logger.debug "queue: #{queue_name}, message: #{message}"
+
+    $rabbitmq_exchange.publish( message.to_json, routing_key: queue_name, content_type: 'application/json' )
+  end
 end
 
 if defined?(PhusionPassenger) # otherwise it breaks rake commands if you put this in an initializer
