@@ -72,42 +72,6 @@ class Proxy < ActiveRecord::Base
           errorCode: 501,
           message: 'Not Implemented'
         } )
-
-
-
-  #      form_data = {
-  #        'probe_url' => message['url'],
-  #        'postback_url' => message['postTo'],
-  #        'data_types' => [
-  #          'headers', 'timeline', 'errors', 'screenshot', 'resources',
-  #          'dns_detail', 'http_detail', 'pcap'
-  #        ],
-  #        'useragent' => Rails.configuration.x.dyn.user_agents.sample,
-  #        'collectors': { node.id_from_source => {} }
-  #      }
-  #
-  #      puts 'Sending job'
-  #      puts form_data
-  #
-  #      response = nil
-  #      in_session(SEND_JOB_URL) do |http|
-  #        request = Net::HTTP::Post.new(SEND_JOB_URL)
-  #        request.content_type = 'application/json'
-  #        request.body = JSON.dump(form_data)
-  #        response = http.request(request)
-  #      end
-  #      puts response.inspect
-  #      puts response.body
-  #
-  #      start_message = {
-  #        event: 'start',
-  #        requestId: message['requestId'],
-  #        responseId: message['responseId']
-  #      }
-  #      $rabbitmq_exchange.publish(start_message.to_json,
-  #                                 routing_key: node.job_status_queue,
-  #                                 content_type: 'application/json')
-  #
       }
     }
   end
@@ -119,5 +83,10 @@ class Proxy < ActiveRecord::Base
     job_q.purge
     job_q.unbind $rabbitmq_exchange
     job_q.delete
+
+    job_status_q = $rabbitmq_channel.queue( job_status_queue, auto_delete: false, durable: true )
+    job_status_q.purge
+    job_status_q.unbind $rabbitmq_exchange
+    job_status_q.delete
   end
 end
