@@ -14,24 +14,22 @@ module ImCore
       $rabbitmq_channel = $rabbitmq_connection.create_channel
       $rabbitmq_exchange = $rabbitmq_channel.topic("IM.Exchange", auto_delete: true)
     rescue
-      Rails.logger.info 'could not connect to RabbitMQ'
+      Rails.logger.error 'could not connect to RabbitMQ'
     end
   end
 
   def self.start_pending_listener
     Thread.new {
-      Rails.logger.info "creating pending queue: #{ImCore::PENDING_QUEUE_NAME}"
       queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
-      Rails.logger.info "created queue.name: #{queue.name}"
       queue.bind( $rabbitmq_exchange, routing_key: queue.name )
 
       consumer = queue.subscribe( block: true ) { | delivery_info, metadata, payload |
-        Rails.logger.info "Received #{payload}"
+        Rails.logger.debug "queue: #{queue.name}, payload: #{payload}"
+
         message = JSON.parse(payload)
+        country = Country.find_by_iso2 message[ 'countryCode' ]
 
-        country = Country.find_by_iso2 message[ :countryCode ]
-        Proxy.create( ip: message[ :ip ], port: message[ :port ], permanent: false, country: country )
-
+        Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
       }
     }
   end
