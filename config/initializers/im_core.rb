@@ -18,13 +18,14 @@ module ImCore
     end
   end
 
-  def self.start_pending_listener
+  def self.start_listeners
+    # start pending listener
     Thread.new {
       queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
       queue.bind( $rabbitmq_exchange, routing_key: queue.name )
 
       consumer = queue.subscribe( block: true ) { | delivery_info, metadata, payload |
-        Rails.logger.debug "queue: #{queue.name}, payload: #{payload}"
+        Rails.logger.info "queue: #{queue.name}, payload: #{payload}"
 
         message = JSON.parse(payload)
         country = Country.find_by_iso2 message[ 'countryCode' ]
@@ -32,10 +33,13 @@ module ImCore
         Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
       }
     }
+
+    # start listeners for existing proxies
+    Proxy.all.each( &:im_core_up )
   end
 
   def self.send_message( queue_name, message )
-    Rails.logger.debug "queue: #{queue_name}, message: #{message}"
+    Rails.logger.info "queue: #{queue_name}, message: #{message}"
 
     $rabbitmq_exchange.publish( message.to_json, routing_key: queue_name, content_type: 'application/json' )
   end
@@ -47,14 +51,14 @@ if defined?(PhusionPassenger) # otherwise it breaks rake commands if you put thi
       # We’re in a smart spawning mode
       # Now is a good time to connect to RabbitMQ
       ImCore.connect_to_rabbitmq
-      ImCore.start_pending_listener
+      ImCore.start_listeners
     end
   end
 else
   ImCore.connect_to_rabbitmq
   if Rails.const_defined?( 'Server' )
     # Local development/WEBrick
-    ImCore.start_pending_listener
+    ImCore.start_listeners
   end
 end
 

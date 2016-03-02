@@ -85,8 +85,8 @@ def netclerk_scan( input_dir )
   Rails.logger.info "netclerk_scan start: #{Time.now}"
 
   # delete all old non-permanent proxies
-  old_proxies = Proxy.where( permanent: false )
-  old_proxies.destroy_all
+  # old_proxies = Proxy.where( permanent: false )
+  # old_proxies.destroy_all
 
   # read _reliable_list
   reliable_list = "#{input_dir}/_reliable_list.txt"
@@ -116,7 +116,6 @@ def netclerk_scan( input_dir )
           queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
           queue.bind( $rabbitmq_exchange, routing_key: queue.name )
           $rabbitmq_exchange.publish( message.to_json, routing_key: queue.name, content_type: 'application/json' )
-          #p = Proxy.create( ip: ip_and_port[0], port: ip_and_port[1].to_i, permanent: false, country: country )
         end
       end
       country_file.close

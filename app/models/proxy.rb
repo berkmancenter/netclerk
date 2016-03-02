@@ -20,8 +20,6 @@ class Proxy < ActiveRecord::Base
     "#{job_queue}.status"
   end
 
-  private
-
   def im_core_down
     ImCore.send_message( ImCore::QUEUE_NAME, {
       event: 'down',
@@ -44,15 +42,19 @@ class Proxy < ActiveRecord::Base
     start_listener
   end
 
+  private
+
   def start_listener
     @listener_thread = Thread.new {
-      queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-      queue.bind( $rabbitmq_exchange, routing_key: queue.name )
+      j_queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
+      j_queue.bind( $rabbitmq_exchange, routing_key: j_queue.name )
 
-      consumer = queue.subscribe( block: true ) { | delivery_info, metadata, payload |
-        Rails.logger.info "queue: #{queue.name}, payload: #{payload}"
+      consumer = j_queue.subscribe( block: true ) { | delivery_info, metadata, payload |
+        Rails.logger.info "queue: #{j_queue.name}, payload: #{payload}"
 
         message = JSON.parse payload
+
+        #ImCore.send_message( 
 
 
 
@@ -96,9 +98,9 @@ class Proxy < ActiveRecord::Base
   def end_listener
     @listener_thread.kill if @listener_thread.present?
 
-    queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-    queue.purge
-    queue.unbind $rabbitmq_exchange
-    queue.delete
+    j_queue = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
+    j_queue.purge
+    j_queue.unbind $rabbitmq_exchange
+    j_queue.delete
   end
 end
