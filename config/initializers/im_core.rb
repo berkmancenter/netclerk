@@ -45,20 +45,21 @@ module ImCore
   end
 end
 
-if defined?(PhusionPassenger) # otherwise it breaks rake commands if you put this in an initializer
-  PhusionPassenger.on_event(:starting_worker_process) do |forked|
-    if forked
-      # We’re in a smart spawning mode
-      # Now is a good time to connect to RabbitMQ
-      ImCore.connect_to_rabbitmq
+unless NetClerk.maintenance?
+  if defined?(PhusionPassenger) # otherwise it breaks rake commands if you put this in an initializer
+    PhusionPassenger.on_event(:starting_worker_process) do |forked|
+      if forked
+        # We’re in a smart spawning mode
+        # Now is a good time to connect to RabbitMQ
+        ImCore.connect_to_rabbitmq
+        ImCore.start_listeners
+      end
+    end
+  else
+    ImCore.connect_to_rabbitmq
+    if Rails.const_defined?( 'Server' )
+      # Local development/WEBrick
       ImCore.start_listeners
     end
   end
-else
-  ImCore.connect_to_rabbitmq
-  if Rails.const_defined?( 'Server' )
-    # Local development/WEBrick
-    ImCore.start_listeners
-  end
 end
-

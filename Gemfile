@@ -85,3 +85,6 @@ gem 'bunny', '~> 2.2.1'
 gem 'simple_form', '~> 3.2.0'
 # Nokogiri for parsing HTML
 gem 'nokogiri', '~> 1.6.6'
+
+# shut it all down
+gem 'turnout'
