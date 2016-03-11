@@ -28,9 +28,18 @@ module ImCore
         Rails.logger.info "queue: #{queue.name}, payload: #{payload}"
 
         message = JSON.parse(payload)
-        country = Country.find_by_iso2 message[ 'countryCode' ]
 
-        Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
+        if message[ 'event' ] == 'down'
+          id = message[ 'id' ]
+          if Proxy.where( id: id ).empty?
+            Rails.logger.info "[pending] down message for missing proxy id: #{id}"
+          else
+            Proxy.find( id ).destroy
+          end
+        else # up
+          country = Country.find_by_iso2 message[ 'countryCode' ]
+          Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
+        end
       }
     }
 
@@ -45,7 +54,7 @@ module ImCore
   end
 end
 
-unless NetClerk.maintenance?
+unless NetClerk.maintenance? || Rails.const_defined?( 'Console' )
   if defined?(PhusionPassenger) # otherwise it breaks rake commands if you put this in an initializer
     PhusionPassenger.on_event(:starting_worker_process) do |forked|
       if forked

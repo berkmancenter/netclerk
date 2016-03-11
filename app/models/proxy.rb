@@ -8,12 +8,8 @@ class Proxy < ActiveRecord::Base
     "#{ip}:#{port}"
   end
 
-  def queue_name
-    "#{ImCore::QUEUE_NAME}.#{ip}"
-  end
-
   def job_queue
-    "#{queue_name}.jobs"
+    "im.jobs.#{ImCore::USERNAME}.#{ip}"
   end
 
   def job_status_queue
@@ -45,48 +41,47 @@ class Proxy < ActiveRecord::Base
   private
 
   def start_listener
-    @listener_thread = Thread.new {
-      job_q = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-      job_q.bind( $rabbitmq_exchange, routing_key: job_q.name )
+    if @listener_thread.nil?
+      @listener_thread = Thread.new {
+        job_q = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
+        job_q.bind( $rabbitmq_exchange, routing_key: job_q.name )
 
-      job_status_q = $rabbitmq_channel.queue( job_status_queue, auto_delete: false, durable: true )
-      job_status_q.bind( $rabbitmq_exchange, routing_key: job_status_q.name )
+        job_status_q = $rabbitmq_channel.queue( job_status_queue, auto_delete: false, durable: true )
+        job_status_q.bind( $rabbitmq_exchange, routing_key: job_status_q.name )
 
-      consumer = job_q.subscribe( block: true ) { | delivery_info, metadata, payload |
-        Rails.logger.info "queue: #{job_q.name}, payload: #{payload}"
+        consumer = job_q.subscribe( block: true ) { | delivery_info, metadata, payload |
+          Rails.logger.info "queue: #{job_q.name}, payload: #{payload}"
 
-        message = JSON.parse payload
+          message = JSON.parse payload
 
-        ImCore.send_message( job_status_q.name, {
-          event: 'start',
-          requestId: message[ 'requestId' ],
-          responseId: message[ 'responseId' ]
-        } )
+          ImCore.send_message( job_status_q.name, {
+            event: 'start',
+            requestId: message[ 'requestId' ],
+            responseId: message[ 'responseId' ]
+          } )
 
-        sleep 5
+          sleep 5
 
-        ImCore.send_message( job_status_q.name, {
-          event: 'error',
-          requestId: message[ 'requestId' ],
-          responseId: message[ 'responseId' ],
-          errorCode: 501,
-          message: 'Not Implemented'
-        } )
+          ImCore.send_message( job_status_q.name, {
+            event: 'error',
+            requestId: message[ 'requestId' ],
+            responseId: message[ 'responseId' ],
+            errorCode: 501,
+            message: 'Not Implemented'
+          } )
+        }
       }
-    }
+    end
   end
 
   def end_listener
-    @listener_thread.kill if @listener_thread.present?
-
     job_q = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-    job_q.purge
-    job_q.unbind $rabbitmq_exchange
     job_q.delete
 
     job_status_q = $rabbitmq_channel.queue( job_status_queue, auto_delete: false, durable: true )
-    job_status_q.purge
-    job_status_q.unbind $rabbitmq_exchange
     job_status_q.delete
+
+    @listener_thread.kill if @listener_thread.present?
+    @listener_thread = nil
   end
 end
