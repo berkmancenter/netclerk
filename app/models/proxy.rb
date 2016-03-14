@@ -24,7 +24,7 @@ class Proxy < ActiveRecord::Base
     ImCore.send_message( ImCore::QUEUE_NAME, {
       event: 'down',
       ip: ip,
-      nodeSource: ImCore::USERNAME
+      source: ImCore::USERNAME
     } )
 
     end_listener
@@ -34,8 +34,10 @@ class Proxy < ActiveRecord::Base
     ImCore.send_message( ImCore::QUEUE_NAME, {
       event: 'up',
       ip: ip,
-      nodeSource: ImCore::USERNAME,
-      countryCode: country.iso2,
+      source: ImCore::USERNAME,
+      location: {
+        countryCode: country.iso2
+      },
       idFromSource: id
     } )
 
@@ -52,6 +54,8 @@ class Proxy < ActiveRecord::Base
       job_status_q = $rabbitmq_channel.queue( job_status_queue, auto_delete: false, durable: true )
       job_status_q.bind( $rabbitmq_exchange, routing_key: job_status_q.name )
 
+      # TODO: only need one listener for all of NetClerk, check out routing_keys in dyn
+      # queue_name can be anything, routing_key is the messages we want to listen on
       consumer = job_q.subscribe( block: true ) { | delivery_info, metadata, payload |
         Rails.logger.info "queue: #{job_q.name}, payload: #{payload}"
 
@@ -59,19 +63,12 @@ class Proxy < ActiveRecord::Base
 
         ImCore.send_message( job_status_q.name, {
           event: 'start',
-          requestId: message[ 'requestId' ],
-          responseId: message[ 'responseId' ]
+          id: message[ 'requestId' ]
         } )
 
         sleep 5
 
-        ImCore.send_message( job_status_q.name, {
-          event: 'error',
-          requestId: message[ 'requestId' ],
-          responseId: message[ 'responseId' ],
-          errorCode: 501,
-          message: 'Not Implemented'
-        } )
+        # postTo IM Core, don't need IM Core id
       }
     }
   end

@@ -24,6 +24,7 @@ module ImCore
       queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
       queue.bind( $rabbitmq_exchange, routing_key: queue.name )
 
+      # TODO: shouldn't have to block or create new thread
       consumer = queue.subscribe( block: true ) { | delivery_info, metadata, payload |
         Rails.logger.info "queue: #{queue.name}, payload: #{payload}"
 
@@ -31,6 +32,8 @@ module ImCore
         country = Country.find_by_iso2 message[ 'countryCode' ]
 
         Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
+
+        # TODO: wait for event 'ping', reply to im.nodes all up messages for existing proxies
       }
     }
 
