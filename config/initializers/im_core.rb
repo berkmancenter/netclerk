@@ -3,6 +3,8 @@ module ImCore
   PORT = ENV['IM_CORE_PORT']
   VHOST = ENV['IM_CORE_VHOST']
   PENDING_QUEUE_NAME = ENV['IM_CORE_PENDING_QUEUE_NAME']
+  JOBS_QUEUE_NAME = "#{ENV['IM_CORE_JOBS_ROUTE']}.watcher"
+  JOBS_ROUTING_KEY = "#{ENV['IM_CORE_JOBS_ROUTE']}.*.*.*.*"
   QUEUE_NAME = ENV['IM_CORE_QUEUE_NAME']
   USERNAME = ENV['IM_CORE_USERNAME']
   PASSWORD = ENV['IM_CORE_PASSWORD']
@@ -42,8 +44,15 @@ module ImCore
       # TODO: wait for event 'ping', reply to im.nodes all up messages for existing proxies
     }
 
-    # start listeners for existing proxies
-    Proxy.all.each( &:im_core_up )
+    # start jobs listener
+    jobs_queue = $rabbitmq_channel.queue( ImCore::JOBS_QUEUE_NAME, auto_delete: false, durable: true )
+    jobs_queue.bind( $rabbitmq_exchange, routing_key: ImCore::JOBS_ROUTING_KEY )
+
+    jobs_queue.subscribe { | delivery_info, metadata, payload |
+      Rails.logger.info "routing_key: #{pending_queue.name}, payload: #{payload}"
+
+      message = JSON.parse(payload)
+    }
   end
 
   def self.send_message( routing_key, message )
