@@ -93,7 +93,7 @@ def netclerk_scan( input_dir )
       event: 'down',
       id: p.id
     }
-    Rails.logger.info "[netclerk_scan] publish #{message.to_json}"
+    Rails.logger.info "[netclerk_scan] publish: #{p.id} down"
     $rabbitmq_exchange.publish( message.to_json, routing_key: queue.name, content_type: 'application/json' )
   }
 
@@ -124,7 +124,7 @@ def netclerk_scan( input_dir )
             port: ip_and_port[1].to_i,
             countryCode: iso2
           }
-          Rails.logger.info "[netclerk_scan] publish #{message.to_json}"
+          Rails.logger.info "[netclerk_scan] publish #{ip_and_port} up country: #{iso2}"
           $rabbitmq_exchange.publish( message.to_json, routing_key: queue.name, content_type: 'application/json' )
         end
       end

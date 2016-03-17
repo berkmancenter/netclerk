@@ -20,39 +20,37 @@ module ImCore
 
   def self.start_listeners
     # start pending listener
-    Thread.new {
-      queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
-      queue.bind( $rabbitmq_exchange, routing_key: queue.name )
+    queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
+    queue.bind( $rabbitmq_exchange, routing_key: queue.name )
 
-      # TODO: shouldn't have to block or create new thread
-      consumer = queue.subscribe( block: true ) { | delivery_info, metadata, payload |
-        Rails.logger.info "queue: #{queue.name}, payload: #{payload}"
+    # TODO: shouldn't have to block or create new thread
+    consumer = queue.subscribe { | delivery_info, metadata, payload |
+      Rails.logger.info "queue: #{queue.name}, payload: #{payload}"
 
-        message = JSON.parse(payload)
+      message = JSON.parse(payload)
 
-        if message[ 'event' ] == 'down'
-          id = message[ 'id' ]
-          if Proxy.where( id: id ).empty?
-            Rails.logger.info "[pending] down message for missing proxy id: #{id}"
-          else
-            Proxy.find( id ).destroy
-          end
-        else # up
-          country = Country.find_by_iso2 message[ 'countryCode' ]
-          Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
+      if message[ 'event' ] == 'down'
+        id = message[ 'id' ]
+        if Proxy.where( id: id ).empty?
+          Rails.logger.info "[pending] down message for missing proxy id: #{id}"
+        else
+          Proxy.find( id ).destroy
         end
-        # TODO: wait for event 'ping', reply to im.nodes all up messages for existing proxies
-      }
+      else # up
+        country = Country.find_by_iso2 message[ 'countryCode' ]
+        Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
+      end
+      # TODO: wait for event 'ping', reply to im.nodes all up messages for existing proxies
     }
 
     # start listeners for existing proxies
     Proxy.all.each( &:im_core_up )
   end
 
-  def self.send_message( queue_name, message )
-    Rails.logger.info "queue: #{queue_name}, message: #{message}"
+  def self.send_message( routing_key, message )
+    Rails.logger.info "[im_core] routing_key: #{routing_key}, message: #{message}"
 
-    $rabbitmq_exchange.publish( message.to_json, routing_key: queue_name, content_type: 'application/json' )
+    $rabbitmq_exchange.publish( message.to_json, routing_key: routing_key, content_type: 'application/json' )
   end
 end
 
