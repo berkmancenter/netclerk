@@ -20,12 +20,11 @@ module ImCore
 
   def self.start_listeners
     # start pending listener
-    queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
-    queue.bind( $rabbitmq_exchange, routing_key: queue.name )
+    pending_queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
+    pending_queue.bind( $rabbitmq_exchange, routing_key: pending_queue.name )
 
-    # TODO: shouldn't have to block or create new thread
-    consumer = queue.subscribe { | delivery_info, metadata, payload |
-      Rails.logger.info "queue: #{queue.name}, payload: #{payload}"
+    pending_queue.subscribe { | delivery_info, metadata, payload |
+      Rails.logger.info "routing_key: #{pending_queue.name}, payload: #{payload}"
 
       message = JSON.parse(payload)
 
