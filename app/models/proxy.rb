@@ -23,7 +23,7 @@ class Proxy < ActiveRecord::Base
       source: ImCore::USERNAME
     } )
 
-    end_listener
+    #end_listener
   end
 
   def im_core_up
@@ -34,10 +34,10 @@ class Proxy < ActiveRecord::Base
       location: {
         countryCode: country.iso2
       },
-      idFromSource: id
+      idFromSource: id.to_s
     } )
 
-    start_listener
+    #start_listener
   end
 
   private

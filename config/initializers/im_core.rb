@@ -26,7 +26,7 @@ module ImCore
     pending_queue.bind( $rabbitmq_exchange, routing_key: pending_queue.name )
 
     pending_queue.subscribe { | delivery_info, metadata, payload |
-      Rails.logger.info "routing_key: #{pending_queue.name}, payload: #{payload}"
+      Rails.logger.info "[pending] routing_key: #{pending_queue.name}, payload: #{payload}"
 
       message = JSON.parse(payload)
 
@@ -49,10 +49,13 @@ module ImCore
     jobs_queue.bind( $rabbitmq_exchange, routing_key: ImCore::JOBS_ROUTING_KEY )
 
     jobs_queue.subscribe { | delivery_info, metadata, payload |
-      Rails.logger.info "routing_key: #{pending_queue.name}, payload: #{payload}"
+      Rails.logger.info "[jobs] routing_key: #{ImCore::JOBS_ROUTING_KEY}, payload: #{payload}"
 
       message = JSON.parse(payload)
     }
+
+    # send up messages for all existing proxies
+    Proxy.all.each( &:im_core_up )
   end
 
   def self.send_message( routing_key, message )
