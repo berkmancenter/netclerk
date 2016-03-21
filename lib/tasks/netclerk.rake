@@ -87,18 +87,7 @@ def netclerk_scan( input_dir )
   queue = $rabbitmq_channel.queue( ImCore::PENDING_QUEUE_NAME, auto_delete: false, durable: true )
   queue.bind( $rabbitmq_exchange, routing_key: queue.name )
 
-  # mark all old non-permanent proxies as down
-  Proxy.where( permanent: false ).each { |p|
-    message = {
-      event: 'down',
-      id: p.id
-    }
-    Rails.logger.info "[netclerk_scan] publish: #{p.id} down"
-    $rabbitmq_exchange.publish( message.to_json, routing_key: queue.name, content_type: 'application/json' )
-  }
-
-  # wait for netclerk main process to catch up
-  sleep 1
+  old_proxies = Proxy.where( permanent: false ).to_a
 
   # read _reliable_list
   reliable_list = "#{input_dir}/_reliable_list.txt"
@@ -124,12 +113,20 @@ def netclerk_scan( input_dir )
             port: ip_and_port[1].to_i,
             countryCode: iso2
           }
-          Rails.logger.info "[netclerk_scan] publish #{ip_and_port} up country: #{iso2}"
-          $rabbitmq_exchange.publish( message.to_json, routing_key: queue.name, content_type: 'application/json' )
+          old_proxies.delete_if { |p| p.ip == ip_and_port[0] }
+          ImCore.send_message queue.name, message
         end
       end
       country_file.close
     end
+  }
+
+  old_proxies.each { |p|
+    message = {
+      event: 'down',
+      id: p.id
+    }
+    ImCore.send_message queue.name, message
   }
 end
 
