@@ -14,29 +14,9 @@ class Laapi::RequestsController < ApplicationController
     response.headers[ 'Access-Control-Allow-Origin' ] = '*'
     response.headers[ 'Content-Type' ] = 'application/vnd.api+json'
 
-    attributes = request_params[ :attributes ]
+    Rails.logger.info params.inspect
 
-    url = attributes[ :url ]
-    page = Page.find_or_create_by url: url
-
-    @request = Request.new( {
-      page: page,
-      country: Country.find_by( iso2: 'US' ),
-      unproxied_ip: nil, # request locally
-      proxied_ip: attributes[ :request_ip ],
-      local_dns_ip: attributes[ :dns_ip ],
-      response_time: attributes[ :response_content_time ],
-      response_status: attributes[ :response_status ],
-      response_headers: attributes[ :response_headers ],
-      response_length: nil, # extract from header
-      response_delta: 0 # compare to baseline_content
-    } )
-
-    if @request.save
-      render json: @request.to_laapi
-    else
-      render json: { error: 500 }, status: 500
-    end
+    render json: { error: 500 }, status: 500
   end
 
   private

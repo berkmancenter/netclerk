@@ -1,3 +1,5 @@
+require 'net/http'
+
 module ImCore
   HOST = ENV['IM_CORE_HOST']
   PORT = ENV['IM_CORE_PORT']
@@ -51,7 +53,25 @@ module ImCore
     jobs_queue.subscribe { | delivery_info, metadata, payload |
       Rails.logger.info "[jobs] routing_key: #{ImCore::JOBS_ROUTING_KEY}, payload: #{payload}"
 
-      message = JSON.parse(payload)
+      message = JSON.parse payload
+
+      id = message[ 'id' ]
+      url = message[ 'url' ]
+      post_to = message[ 'postTo' ]
+
+      # TODO: move the following to Proxy model
+
+      uri = URI.parse post_to
+      http = Net::HTTP.new uri.host, uri.port
+      post_back = Net::HTTP::Post.new uri.request_uri
+      post_back.set_form_data( {
+        attributes: {
+          url: url
+        }
+      } )
+      post_back_response = http.request post_back
+
+      Rails.logger.info post_back_response.inspect
     }
 
     # send up messages for all existing proxies
