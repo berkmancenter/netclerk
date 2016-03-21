@@ -32,18 +32,23 @@ module ImCore
 
       message = JSON.parse(payload)
 
-      if message[ 'event' ] == 'down'
+      case message[ 'event' ]
+      when 'up'
+        country = Country.find_by_iso2 message[ 'countryCode' ]
+        Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
+      when 'down'
         id = message[ 'id' ]
         if Proxy.where( id: id ).empty?
           Rails.logger.info "[pending] down message for missing proxy id: #{id}"
         else
           Proxy.find( id ).destroy
         end
-      else # up
-        country = Country.find_by_iso2 message[ 'countryCode' ]
-        Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
+      when 'ping'
+        # send up messages for all existing proxies
+        Proxy.all.each( &:im_core_up )
+      else
+        Rails.logger.info "[pending] unknown message event #{message[ 'event' ]}"
       end
-      # TODO: wait for event 'ping', reply to im.nodes all up messages for existing proxies
     }
 
     # start jobs listener
