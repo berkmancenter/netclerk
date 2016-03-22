@@ -5,6 +5,7 @@ module ImCore
   PORT = ENV['IM_CORE_PORT']
   VHOST = ENV['IM_CORE_VHOST']
   PENDING_QUEUE_NAME = ENV['IM_CORE_PENDING_QUEUE_NAME']
+  JOBS_ROUTE = ENV['IM_CORE_JOBS_ROUTE']
   JOBS_QUEUE_NAME = "#{ENV['IM_CORE_JOBS_ROUTE']}.watcher"
   JOBS_ROUTING_KEY = "#{ENV['IM_CORE_JOBS_ROUTE']}.*.*.*.*"
   QUEUE_NAME = ENV['IM_CORE_QUEUE_NAME']
@@ -56,27 +57,25 @@ module ImCore
     jobs_queue.bind( $rabbitmq_exchange, routing_key: ImCore::JOBS_ROUTING_KEY )
 
     jobs_queue.subscribe { | delivery_info, metadata, payload |
-      Rails.logger.info "[jobs] routing_key: #{ImCore::JOBS_ROUTING_KEY}, payload: #{payload}"
+      # sample message:
+      # {"id":23,"url":"http://cyber.law.harvard.edu","postTo":"http://localhost:3000/laapi/requests"}
+      Rails.logger.info "[jobs] routing_key: #{delivery_info[ :routing_key ]}, payload: #{payload}"
 
       message = JSON.parse payload
 
-      id = message[ 'id' ]
-      url = message[ 'url' ]
-      post_to = message[ 'postTo' ]
+      # proxy_ip will be part of payload later
+      routing_key = delivery_info[ :routing_key ]
+      proxy_ip = routing_key[ ImCore::JOBS_ROUTE.length+1..-1]
 
-      # TODO: move the following to Proxy model
+      proxy = Proxy.find_by ip: proxy_ip
+      im_job = ImJob.from_message message
 
-      uri = URI.parse post_to
-      http = Net::HTTP.new uri.host, uri.port
-      post_back = Net::HTTP::Post.new uri.request_uri
-      post_back.set_form_data( {
-        attributes: {
-          url: url
-        }
-      } )
-      post_back_response = http.request post_back
-
-      Rails.logger.info post_back_response.inspect
+      if proxy.present? && im_job.valid?
+        proxy.perform im_job
+      else
+        Rails.logger.info "[jobs] could not find proxy with IP #{proxy_ip}" unless proxy.present?
+        Rails.logger.info "[jobs] could not find proxy with IP #{proxy_ip}" unless im_job.valid?
+      end
     }
 
     # send up messages for all existing proxies

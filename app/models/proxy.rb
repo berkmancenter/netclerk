@@ -22,8 +22,6 @@ class Proxy < ActiveRecord::Base
       ip: ip,
       source: ImCore::USERNAME
     } )
-
-    #end_listener
   end
 
   def im_core_up
@@ -36,48 +34,21 @@ class Proxy < ActiveRecord::Base
       },
       idFromSource: id.to_s
     } )
-
-    #start_listener
   end
 
-  private
+  def perform( im_job )
+    # TODO: move the following to Proxy model
 
-  def start_listener
-    if @listener_thread.nil?
-      @listener_thread = Thread.new {
-        job_q = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-        job_q.bind( $rabbitmq_exchange, routing_key: job_q.name )
-
-        job_status_q = $rabbitmq_channel.queue( job_status_queue, auto_delete: false, durable: true )
-        job_status_q.bind( $rabbitmq_exchange, routing_key: job_status_q.name )
-
-      # TODO: only need one listener for all of NetClerk, check out routing_keys in dyn
-      # queue_name can be anything, routing_key is the messages we want to listen on
-        consumer = job_q.subscribe( block: true ) { | delivery_info, metadata, payload |
-          Rails.logger.info "queue: #{job_q.name}, payload: #{payload}"
-
-          message = JSON.parse payload
-
-          ImCore.send_message( job_status_q.name, {
-            event: 'start',
-          id: message[ 'requestId' ]
-          } )
-
-          sleep 5
-
-        # postTo IM Core, don't need IM Core id
-        }
+    uri = URI.parse im_job.post_to
+    http = Net::HTTP.new uri.host, uri.port
+    post_back = Net::HTTP::Post.new uri.request_uri
+    post_back.set_form_data( {
+      attributes: {
+        url: im_job.url
       }
-    end
-  end
+    } )
+    post_back_response = http.request post_back
 
-  def end_listener
-    @listener_thread.kill if @listener_thread.present?
-
-    job_q = $rabbitmq_channel.queue( job_queue, auto_delete: false, durable: true )
-    job_q.delete
-
-    job_status_q = $rabbitmq_channel.queue( job_status_queue, auto_delete: false, durable: true )
-    job_status_q.delete
+    Rails.logger.info post_back_response.inspect
   end
 end
