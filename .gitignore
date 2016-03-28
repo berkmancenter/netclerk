@@ -27,3 +27,4 @@ config/database.yml
 
 ## Data
 db/proxies
+public/wget_test/content
