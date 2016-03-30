@@ -36,8 +36,19 @@ class Proxy < ActiveRecord::Base
     } )
   end
 
+  def content_path( im_job )
+    File.join NetClerk::CONTENT_PATH, im_job.id.to_s
+  end
+
   def perform( im_job )
-    # TODO: move the following to Proxy model
+    cp = content_path( im_job )
+    FileUtils.mkpath cp
+
+    Rails.logger.info "[proxy] saving #{im_job.url} to #{cp}"
+    cmd_str = "wget -U \"#{NetClerk::USER_AGENT}\" --header=\"Accept-Language: #{country.iso2.downcase};q=0.8\" --page-requisites --html-extension --convert-links --save-cookies=#{cp}/cookies.txt --no-check-certificate --directory-prefix=#{cp} --output-file=#{cp}/wget.log #{im_job.url} --warc-file=#{cp}/#{im_job.id} --no-warc-compression"
+    Rails.logger.info "[proxy] cmd: #{cmd_str}"
+
+            %x[wget -U \"#{NetClerk::USER_AGENT}\" --header=\"Accept-Language: #{country.iso2.downcase};q=0.8\" --page-requisites --html-extension --convert-links --save-cookies=#{cp}/cookies.txt --no-check-certificate --directory-prefix=#{cp} --output-file=#{cp}/wget.log #{im_job.url} --warc-file=#{cp}/#{im_job.id} --no-warc-compression]
 
     uri = URI.parse im_job.post_to
     http = Net::HTTP.new uri.host, uri.port
