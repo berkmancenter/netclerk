@@ -36,7 +36,16 @@ module ImCore
       case message[ 'event' ]
       when 'up'
         country = Country.find_by_iso2 message[ 'countryCode' ]
-        Proxy.create( ip: message[ 'ip' ], port: message[ 'port' ], permanent: false, country: country )
+        ip = message[ 'ip' ]
+        p = Proxy.find_by ip: ip
+        if p.present?
+          p.port = message[ 'port' ]
+          p.country = country
+          p.save
+          p.im_core_up
+        else
+          Proxy.create( ip: ip, port: message[ 'port' ], permanent: false, country: country )
+        end
       when 'down'
         id = message[ 'id' ]
         if Proxy.where( id: id ).empty?
