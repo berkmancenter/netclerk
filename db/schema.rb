@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222210845) do
+ActiveRecord::Schema.define(version: 20160404195126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,5 +87,36 @@ ActiveRecord::Schema.define(version: 20160222210845) do
   add_index "statuses", ["country_id"], name: "index_statuses_on_country_id", using: :btree
   add_index "statuses", ["page_id", "country_id", "created_at"], name: "index_statuses_on_page_id_and_country_id_and_created_at", unique: true, using: :btree
   add_index "statuses", ["page_id"], name: "index_statuses_on_page_id", using: :btree
+
+  create_table "wget_log_requests", force: true do |t|
+    t.integer  "wget_log_id"
+    t.datetime "requested_at"
+    t.string   "url"
+    t.string   "host"
+    t.string   "ip_v4"
+    t.string   "ip_v6"
+    t.integer  "port"
+    t.integer  "response_code"
+    t.boolean  "is_redirect"
+    t.string   "redirect_location"
+    t.string   "specified_length"
+    t.string   "saved_path"
+    t.integer  "saved_length"
+    t.string   "download_speed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wget_log_requests", ["wget_log_id"], name: "index_wget_log_requests_on_wget_log_id", using: :btree
+
+  create_table "wget_logs", force: true do |t|
+    t.string   "warc_path"
+    t.datetime "finished_at"
+    t.string   "total_time"
+    t.integer  "file_count"
+    t.string   "download_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
