@@ -1,0 +1,2653 @@
+Opening WARC file 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/53.warc'.
+
+--2016-04-01 16:56:56--  http://nytimes.com/
+Resolving nytimes.com (nytimes.com)... 170.149.159.130, 170.149.161.130
+Connecting to nytimes.com (nytimes.com)|170.149.159.130|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://www.nytimes.com/ [following]
+
+     0K                                                        0.00 =0s
+
+--2016-04-01 16:56:56--  http://www.nytimes.com/
+Resolving www.nytimes.com (www.nytimes.com)... 170.149.161.130
+Connecting to www.nytimes.com (www.nytimes.com)|170.149.161.130|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/nytimes.com/index.html'
+
+     0K .......... .......... .......... .......... .......... 1.81M
+    50K .......... .......... .......... .......... .......... 1.82M
+   100K .......... .......... .......... .......... .......... 3.25M
+   150K .......... .......... ....                             11.6M=0.07s
+
+2016-04-01 16:56:56 (2.40 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/nytimes.com/index.html' saved [178382]
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:56--  http://www.nytimes.com/robots.txt
+Connecting to www.nytimes.com (www.nytimes.com)|170.149.161.130|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1029 (1.0K) [text/plain]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/www.nytimes.com/robots.txt'
+
+     0K .                                                     100% 31.9M=0s
+
+2016-04-01 16:56:56 (31.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/www.nytimes.com/robots.txt' saved [1029/1029]
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:56--  https://static01.nyt.com/robots.txt
+Resolving static01.nyt.com (static01.nyt.com)... 23.33.84.130
+Connecting to static01.nyt.com (static01.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 512 [text/plain]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/robots.txt'
+
+     0K                                                       100% 1.78M=0s
+
+2016-04-01 16:56:57 (1.78 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/robots.txt' saved [512/512]
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:57--  https://a1.nyt.com/robots.txt
+Resolving a1.nyt.com (a1.nyt.com)... 23.33.84.130
+Connecting to a1.nyt.com (a1.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+
+     0K                                                       100% 2.06M=0s
+
+2016-04-01 16:56:57 ERROR 404: Not Found.
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:57--  https://cdn.optimizely.com/robots.txt
+Resolving cdn.optimizely.com (cdn.optimizely.com)... 23.33.87.136
+Connecting to cdn.optimizely.com (cdn.optimizely.com)|23.33.87.136|:443... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+
+     0K                                                         574K=0s
+
+2016-04-01 16:56:57 ERROR 403: Forbidden.
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:57--  http://css.nyt.com/robots.txt
+Resolving css.nyt.com (css.nyt.com)... 23.33.84.130
+Connecting to css.nyt.com (css.nyt.com)|23.33.84.130|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 512 [text/plain]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/css.nyt.com/robots.txt'
+
+     0K                                                       100% 9.18M=0s
+
+2016-04-01 16:56:57 (9.18 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/css.nyt.com/robots.txt' saved [512/512]
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:57--  http://graphics8.nytimes.com/robots.txt
+Resolving graphics8.nytimes.com (graphics8.nytimes.com)... 23.33.84.130
+Reusing existing connection to css.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 512 [text/plain]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/graphics8.nytimes.com/robots.txt'
+
+     0K                                                       100% 10.7M=0s
+
+2016-04-01 16:56:57 (10.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/graphics8.nytimes.com/robots.txt' saved [512/512]
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:57--  http://int.nyt.com/robots.txt
+Resolving int.nyt.com (int.nyt.com)... 72.247.9.208, 72.247.10.11
+Connecting to int.nyt.com (int.nyt.com)|72.247.9.208|:80... connected.
+HTTP request sent, awaiting response... 404 Not Found
+
+     0K                                                       100% 8.73K=0.001s
+
+2016-04-01 16:56:57 ERROR 404: Not Found.
+
+--2016-04-01 16:56:57--  https://static01.nyt.com/favicon.ico
+Connecting to static01.nyt.com (static01.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 15086 (15K) [image/x-icon]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/favicon.ico'
+
+     0K .......... ....                                       100% 15.7M=0.001s
+
+2016-04-01 16:56:57 (15.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/favicon.ico' saved [15086/15086]
+
+--2016-04-01 16:56:57--  https://a1.nyt.com/assets/homepage/20160328-174152/css/homepage/styles.css
+Connecting to a1.nyt.com (a1.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/css]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/css/homepage/styles.css'
+
+     0K .......... .......... .......... .......... .......... 1.90M
+    50K .......... .......... .......... .......... .......... 1.79M
+   100K .......... .......... .......... .......... .......... 1.94M
+   150K .......... .......... .......... .......... .......... 2.03M
+   200K .......... .......... .......... .......... .......... 6.81M
+   250K .......... .......... .......... .......... .......... 10.0M
+   300K .......... .......... .......... .......... .......... 2.52M
+   350K .......... .......... .......... .......... .......... 11.3M
+   400K .......                                                38.0G=0.1s
+
+2016-04-01 16:56:58 (2.88 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/css/homepage/styles.css' saved [417079]
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:58--  http://i1.nyt.com/robots.txt
+Resolving i1.nyt.com (i1.nyt.com)... 23.33.84.130
+Connecting to i1.nyt.com (i1.nyt.com)|23.33.84.130|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 512 [text/plain]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/i1.nyt.com/robots.txt'
+
+     0K                                                       100% 2.04M=0s
+
+2016-04-01 16:56:58 (2.04 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/i1.nyt.com/robots.txt' saved [512/512]
+
+--2016-04-01 16:56:58--  https://cdn.optimizely.com/js/3338050995.js
+Connecting to cdn.optimizely.com (cdn.optimizely.com)|23.33.87.136|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/javascript]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/cdn.optimizely.com/js/3338050995.js'
+
+     0K .......... .......... .......... .......... .......... 4.54M
+    50K .......... .......... .......... .......... .......... 3.25M
+   100K .......... .......... .......... .......... .......... 3.84M
+   150K .......... .......... .......... .......... .......... 5.51M
+   200K .......... .......... .......... .......... ..........  900K
+   250K .......... ........                                    5.97M=0.1s
+
+2016-04-01 16:56:58 (2.48 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/cdn.optimizely.com/js/3338050995.js' saved [275115]
+
+--2016-04-01 16:56:58--  https://a1.nyt.com/assets/homepage/20160328-174152/js/foundation/lib/framework.js
+Connecting to a1.nyt.com (a1.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/javascript]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/js/foundation/lib/framework.js'
+
+     0K .......... .......... .......... .......... .......... 1.83M
+    50K ........                                               10.7M=0.03s
+
+2016-04-01 16:56:58 (2.08 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/js/foundation/lib/framework.js' saved [59835]
+
+--2016-04-01 16:56:58--  https://static01.nyt.com/images/icons/icon-alert-12x12-a81817.png
+Connecting to static01.nyt.com (static01.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1080 (1.1K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/icons/icon-alert-12x12-a81817.png'
+
+     0K .                                                     100% 3.87M=0s
+
+2016-04-01 16:56:58 (3.87 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/icons/icon-alert-12x12-a81817.png' saved [1080/1080]
+
+--2016-04-01 16:56:58--  http://css.nyt.com/images/icons/bullet4x4.gif
+Connecting to css.nyt.com (css.nyt.com)|23.33.84.130|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 68 [image/gif]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/css.nyt.com/images/icons/bullet4x4.gif'
+
+     0K                                                       100%  498K=0s
+
+2016-04-01 16:56:58 (498 KB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/css.nyt.com/images/icons/bullet4x4.gif' saved [68/68]
+
+--2016-04-01 16:56:58--  http://graphics8.nytimes.com/packages/images/homepage/newsletter_icon.png
+Reusing existing connection to css.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 334 [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/graphics8.nytimes.com/packages/images/homepage/newsletter_icon.png'
+
+     0K                                                       100% 1.21M=0s
+
+2016-04-01 16:56:58 (1.21 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/graphics8.nytimes.com/packages/images/homepage/newsletter_icon.png' saved [334/334]
+
+--2016-04-01 16:56:58--  http://graphics8.nytimes.com/packages/images/homepage/briefings/dogear_sm.png
+Reusing existing connection to css.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 1158 (1.1K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/graphics8.nytimes.com/packages/images/homepage/briefings/dogear_sm.png'
+
+     0K .                                                     100% 6.09M=0s
+
+2016-04-01 16:56:58 (6.09 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/graphics8.nytimes.com/packages/images/homepage/briefings/dogear_sm.png' saved [1158/1158]
+
+--2016-04-01 16:56:58--  http://graphics8.nytimes.com/newsgraphics/2015/02/25/election-navigation/assets/images/election-2016-logo.png
+Reusing existing connection to css.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 1476 (1.4K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/graphics8.nytimes.com/newsgraphics/2015/02/25/election-navigation/assets/images/election-2016-logo.png'
+
+     0K .                                                     100% 10.7M=0s
+
+2016-04-01 16:56:58 (10.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/graphics8.nytimes.com/newsgraphics/2015/02/25/election-navigation/assets/images/election-2016-logo.png' saved [1476/1476]
+
+--2016-04-01 16:56:58--  https://static01.nyt.com/images/2016/04/02/us/02TRUMPweb1-sub/02TRUMPweb1-sub-thumbStandard-v3.jpg
+Connecting to static01.nyt.com (static01.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1736 (1.7K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/us/02TRUMPweb1-sub/02TRUMPweb1-sub-thumbStandard-v3.jpg'
+
+     0K .                                                     100% 7.35M=0s
+
+2016-04-01 16:56:59 (7.35 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/us/02TRUMPweb1-sub/02TRUMPweb1-sub-thumbStandard-v3.jpg' saved [1736/1736]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/03/31/us/bodycam_promo/bodycam_promo-largeHorizontal375.png
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 177052 (173K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/us/bodycam_promo/bodycam_promo-largeHorizontal375.png'
+
+     0K .......... .......... .......... .......... .......... 28% 4.09M 0s
+    50K .......... .......... .......... .......... .......... 57% 3.43M 0s
+   100K .......... .......... .......... .......... .......... 86% 4.10M 0s
+   150K .......... .......... ..                              100% 15.8M=0.04s
+
+2016-04-01 16:56:59 (4.28 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/us/bodycam_promo/bodycam_promo-largeHorizontal375.png' saved [177052/177052]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/01/us/racerelated-illo-promo/racerelated-illo-promo-mediumFlexible177.gif
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 700006 (684K) [image/gif]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/us/racerelated-illo-promo/racerelated-illo-promo-mediumFlexible177.gif'
+
+     0K .......... .......... .......... .......... ..........  7% 18.7M 0s
+    50K .......... .......... .......... .......... .......... 14% 6.08M 0s
+   100K .......... .......... .......... .......... .......... 21% 12.1M 0s
+   150K .......... .......... .......... .......... .......... 29% 9.58M 0s
+   200K .......... .......... .......... .......... .......... 36% 11.1M 0s
+   250K .......... .......... .......... .......... .......... 43% 16.1M 0s
+   300K .......... .......... .......... .......... .......... 51% 9.20M 0s
+   350K .......... .......... .......... .......... .......... 58% 13.5M 0s
+   400K .......... .......... .......... .......... .......... 65% 10.7M 0s
+   450K .......... .......... .......... .......... .......... 73% 9.86M 0s
+   500K .......... .......... .......... .......... .......... 80% 14.7M 0s
+   550K .......... .......... .......... .......... .......... 87% 9.91M 0s
+   600K .......... .......... .......... .......... .......... 95% 11.1M 0s
+   650K .......... .......... .......... ...                  100% 12.7M=0.06s
+
+2016-04-01 16:56:59 (11.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/us/racerelated-illo-promo/racerelated-illo-promo-mediumFlexible177.gif' saved [700006/700006]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/02/world/02spy-web/02spy-web-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2068 (2.0K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/world/02spy-web/02spy-web-thumbStandard.jpg'
+
+     0K ..                                                    100% 9.71M=0s
+
+2016-04-01 16:56:59 (9.71 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/world/02spy-web/02spy-web-thumbStandard.jpg' saved [2068/2068]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/01/upshot/01UP-Bailout/01UP-Bailout-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2947 (2.9K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/upshot/01UP-Bailout/01UP-Bailout-thumbStandard.jpg'
+
+     0K ..                                                    100% 14.0M=0s
+
+2016-04-01 16:56:59 (14.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/upshot/01UP-Bailout/01UP-Bailout-thumbStandard.jpg' saved [2947/2947]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/01/sports/02mets-promo/02mets-promo-mediumFlexible177-v2.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 14082 (14K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/sports/02mets-promo/02mets-promo-mediumFlexible177-v2.jpg'
+
+     0K .......... ...                                        100% 24.0M=0.001s
+
+2016-04-01 16:56:59 (24.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/sports/02mets-promo/02mets-promo-mediumFlexible177-v2.jpg' saved [14082/14082]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/03/31/business/03juicero1/03juicero1-mediumThreeByTwo210.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 10731 (10K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/business/03juicero1/03juicero1-mediumThreeByTwo210.jpg'
+
+     0K ..........                                            100% 19.0M=0.001s
+
+2016-04-01 16:56:59 (19.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/business/03juicero1/03juicero1-mediumThreeByTwo210.jpg' saved [10731/10731]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/01/arts/milesimage3/milesimage3-mediumThreeByTwo210.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 11604 (11K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/milesimage3/milesimage3-mediumThreeByTwo210.jpg'
+
+     0K .......... .                                          100% 13.5M=0.001s
+
+2016-04-01 16:56:59 (13.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/milesimage3/milesimage3-mediumThreeByTwo210.jpg' saved [11604/11604]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/01/fashion/02OTR-web01/02slimane-web01-mediumThreeByTwo210.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 5994 (5.9K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/fashion/02OTR-web01/02slimane-web01-mediumThreeByTwo210.jpg'
+
+     0K .....                                                 100% 31.2M=0s
+
+2016-04-01 16:56:59 (31.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/fashion/02OTR-web01/02slimane-web01-mediumThreeByTwo210.jpg' saved [5994/5994]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/03/opinion/sunday/03hanif/03hanif-blogSmallThumb.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 1719 (1.7K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/opinion/sunday/03hanif/03hanif-blogSmallThumb.jpg'
+
+     0K .                                                     100% 7.74M=0s
+
+2016-04-01 16:56:59 (7.74 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/opinion/sunday/03hanif/03hanif-blogSmallThumb.jpg' saved [1719/1719]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/03/opinion/sunday/03kennedy/03kennedy-blogSmallThumb.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 1165 (1.1K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/opinion/sunday/03kennedy/03kennedy-blogSmallThumb.jpg'
+
+     0K .                                                     100% 10.3M=0s
+
+2016-04-01 16:56:59 (10.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/opinion/sunday/03kennedy/03kennedy-blogSmallThumb.jpg' saved [1165/1165]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/03/opinion/sunday/03greenhouse/03greenhouse-blogSmallThumb.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 1948 (1.9K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/opinion/sunday/03greenhouse/03greenhouse-blogSmallThumb.jpg'
+
+     0K .                                                     100% 12.2M=0s
+
+2016-04-01 16:56:59 (12.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/opinion/sunday/03greenhouse/03greenhouse-blogSmallThumb.jpg' saved [1948/1948]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/crosswords/crosswords_30x30.png
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 17812 (17K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/crosswords/crosswords_30x30.png'
+
+     0K .......... .......                                    100% 14.9M=0.001s
+
+2016-04-01 16:56:59 (14.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/crosswords/crosswords_30x30.png' saved [17812/17812]
+
+--2016-04-01 16:56:59--  http://int.nyt.com/applications/portals/assets/portal-3dc2bf0e7593a689f857e1edec4a2566.css
+Connecting to int.nyt.com (int.nyt.com)|72.247.9.208|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/css]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal-3dc2bf0e7593a689f857e1edec4a2566.css'
+
+     0K .......... .......... .......... .......... .......... 2.01M
+    50K .......... ......                                      11.3M=0.03s
+
+2016-04-01 16:56:59 (2.53 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal-3dc2bf0e7593a689f857e1edec4a2566.css' saved [68177]
+
+Loading robots.txt; please ignore errors.
+--2016-04-01 16:56:59--  http://int.stg.nyt.com/robots.txt
+Resolving int.stg.nyt.com (int.stg.nyt.com)... 23.218.92.162
+Connecting to int.stg.nyt.com (int.stg.nyt.com)|23.218.92.162|:80... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+
+     0K                                                        2.85M=0s
+
+2016-04-01 16:56:59 ERROR 403: Forbidden.
+
+--2016-04-01 16:56:59--  http://int.nyt.com/applications/portals/assets/portal/app-d37d526acc5f1ea70c6a0bee273416cc.js
+Reusing existing connection to int.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/javascript]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal/app-d37d526acc5f1ea70c6a0bee273416cc.js'
+
+     0K .......... .......... .......... .......... .......... 20.6M
+    50K .......... .......... .......... .......... .......... 1.72M
+   100K .......... .......... .......... ........              1.56M=0.05s
+
+2016-04-01 16:56:59 (2.47 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal/app-d37d526acc5f1ea70c6a0bee273416cc.js' saved [141334]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/03/31/blogs/20160331WIP-slide-JCPI/20160331WIP-slide-JCPI-mediumSquare149.jpg
+Connecting to static01.nyt.com (static01.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8588 (8.4K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/blogs/20160331WIP-slide-JCPI/20160331WIP-slide-JCPI-mediumSquare149.jpg'
+
+     0K ........                                              100% 6.42M=0.001s
+
+2016-04-01 16:56:59 (6.42 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/blogs/20160331WIP-slide-JCPI/20160331WIP-slide-JCPI-mediumSquare149.jpg' saved [8588/8588]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/01/arts/design/zaha-hadid-images-slide-T7LM/zaha-hadid-images-slide-T7LM-mediumSquare149.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 10012 (9.8K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/design/zaha-hadid-images-slide-T7LM/zaha-hadid-images-slide-T7LM-mediumSquare149.jpg'
+
+     0K .........                                             100% 11.9M=0.001s
+
+2016-04-01 16:56:59 (11.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/design/zaha-hadid-images-slide-T7LM/zaha-hadid-images-slide-T7LM-mediumSquare149.jpg' saved [10012/10012]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/03/30/opinion/30eleazar/30eleazar-mediumSquare149.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 4066 (4.0K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/30/opinion/30eleazar/30eleazar-mediumSquare149.jpg'
+
+     0K ...                                                   100% 23.7M=0s
+
+2016-04-01 16:56:59 (23.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/30/opinion/30eleazar/30eleazar-mediumSquare149.jpg' saved [4066/4066]
+
+--2016-04-01 16:56:59--  https://static01.nyt.com/images/2016/04/01/science/31VIKINGS1/31VIKINGS1-mediumSquare149.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 9671 (9.4K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/science/31VIKINGS1/31VIKINGS1-mediumSquare149.jpg'
+
+     0K .........                                             100% 9.18M=0.001s
+
+2016-04-01 16:57:00 (9.18 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/science/31VIKINGS1/31VIKINGS1-mediumSquare149.jpg' saved [9671/9671]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/realestate/03COVJP1/03COVJP1-mediumSquare149-v2.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 8943 (8.7K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/realestate/03COVJP1/03COVJP1-mediumSquare149-v2.jpg'
+
+     0K ........                                              100% 6.36M=0.001s
+
+2016-04-01 16:57:00 (6.36 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/realestate/03COVJP1/03COVJP1-mediumSquare149-v2.jpg' saved [8943/8943]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/01/arts/01CRUCIBLE/01CRUCIBLE-mediumSquare149.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 9289 (9.1K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/01CRUCIBLE/01CRUCIBLE-mediumSquare149.jpg'
+
+     0K .........                                             100% 15.7M=0.001s
+
+2016-04-01 16:57:00 (15.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/01CRUCIBLE/01CRUCIBLE-mediumSquare149.jpg' saved [9289/9289]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/03/29/science/welldepression/welldepression-mediumSquare149.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 6434 (6.3K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/29/science/welldepression/welldepression-mediumSquare149.jpg'
+
+     0K ......                                                100% 34.2M=0s
+
+2016-04-01 16:57:00 (34.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/29/science/welldepression/welldepression-mediumSquare149.jpg' saved [6434/6434]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/01/arts/01MAPPLETHORPEJP1/01MAPPLETHORPEJP1-mediumSquare149-v3.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 5148 (5.0K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/01MAPPLETHORPEJP1/01MAPPLETHORPEJP1-mediumSquare149-v3.jpg'
+
+     0K .....                                                 100% 39.7M=0s
+
+2016-04-01 16:57:00 (39.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/01MAPPLETHORPEJP1/01MAPPLETHORPEJP1-mediumSquare149-v3.jpg' saved [5148/5148]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/03/31/arts/31HUNTjp2/31HUNTjp2-mediumSquare149.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 8810 (8.6K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/arts/31HUNTjp2/31HUNTjp2-mediumSquare149.jpg'
+
+     0K ........                                              100% 14.4M=0.001s
+
+2016-04-01 16:57:00 (14.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/arts/31HUNTjp2/31HUNTjp2-mediumSquare149.jpg' saved [8810/8810]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/02/business/02db-anbang1/02db-anbang1-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 1759 (1.7K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/business/02db-anbang1/02db-anbang1-thumbStandard.jpg'
+
+     0K .                                                     100% 10.6M=0s
+
+2016-04-01 16:57:00 (10.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/business/02db-anbang1/02db-anbang1-thumbStandard.jpg' saved [1759/1759]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2014/11/12/opinion/krugman-circular/krugman-circular-thumbStandard-v5.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3133 (3.1K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2014/11/12/opinion/krugman-circular/krugman-circular-thumbStandard-v5.jpg'
+
+     0K ...                                                   100% 16.7M=0s
+
+2016-04-01 16:57:00 (16.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2014/11/12/opinion/krugman-circular/krugman-circular-thumbStandard-v5.jpg' saved [3133/3133]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/02/us/02chalk_XP/02chalk_XP-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2432 (2.4K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/us/02chalk_XP/02chalk_XP-thumbStandard.jpg'
+
+     0K ..                                                    100% 15.8M=0s
+
+2016-04-01 16:57:00 (15.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/us/02chalk_XP/02chalk_XP-thumbStandard.jpg' saved [2432/2432]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/01/business/01fabric1/01fabric1-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2578 (2.5K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/business/01fabric1/01fabric1-thumbStandard.jpg'
+
+     0K ..                                                    100% 20.2M=0s
+
+2016-04-01 16:57:00 (20.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/business/01fabric1/01fabric1-thumbStandard.jpg' saved [2578/2578]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/01/arts/01hadid_web2/01hadid_web2-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3145 (3.1K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/01hadid_web2/01hadid_web2-thumbStandard.jpg'
+
+     0K ...                                                   100% 18.0M=0s
+
+2016-04-01 16:57:00 (18.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/arts/01hadid_web2/01hadid_web2-thumbStandard.jpg' saved [3145/3145]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/fashion/03SCENE-SS-slide-783P/03SCENE-SS-slide-783P-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3467 (3.4K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/fashion/03SCENE-SS-slide-783P/03SCENE-SS-slide-783P-thumbStandard.jpg'
+
+     0K ...                                                   100% 27.2M=0s
+
+2016-04-01 16:57:00 (27.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/fashion/03SCENE-SS-slide-783P/03SCENE-SS-slide-783P-thumbStandard.jpg' saved [3467/3467]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/arts/03BAILLIE1/03BAILLIE1-thumbStandard-v2.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2538 (2.5K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/arts/03BAILLIE1/03BAILLIE1-thumbStandard-v2.jpg'
+
+     0K ..                                                    100% 20.3M=0s
+
+2016-04-01 16:57:00 (20.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/arts/03BAILLIE1/03BAILLIE1-thumbStandard-v2.jpg' saved [2538/2538]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/nyregion/03BOOKSHELF1/03BOOKSHELF1-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 1980 (1.9K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/nyregion/03BOOKSHELF1/03BOOKSHELF1-thumbStandard.jpg'
+
+     0K .                                                     100% 13.2M=0s
+
+2016-04-01 16:57:00 (13.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/nyregion/03BOOKSHELF1/03BOOKSHELF1-thumbStandard.jpg' saved [1980/1980]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/01/sports/02mets-promo/02mets-promo-thumbStandard-v2.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 4112 (4.0K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/sports/02mets-promo/02mets-promo-thumbStandard-v2.jpg'
+
+     0K ....                                                  100% 34.3M=0s
+
+2016-04-01 16:57:00 (34.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/sports/02mets-promo/02mets-promo-thumbStandard-v2.jpg' saved [4112/4112]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/nyregion/03ARTSLI1/03ARTSLI1-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3590 (3.5K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/nyregion/03ARTSLI1/03ARTSLI1-thumbStandard.jpg'
+
+     0K ...                                                   100% 24.4M=0s
+
+2016-04-01 16:57:00 (24.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/nyregion/03ARTSLI1/03ARTSLI1-thumbStandard.jpg' saved [3590/3590]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/05/science/05zimmer_illo/05zimmer_illo-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3027 (3.0K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/05/science/05zimmer_illo/05zimmer_illo-thumbStandard.jpg'
+
+     0K ..                                                    100% 21.3M=0s
+
+2016-04-01 16:57:00 (21.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/05/science/05zimmer_illo/05zimmer_illo-thumbStandard.jpg' saved [3027/3027]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/02/world/02genscher_web2/02genscher_web2-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3453 (3.4K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/world/02genscher_web2/02genscher_web2-thumbStandard.jpg'
+
+     0K ...                                                   100% 24.1M=0s
+
+2016-04-01 16:57:00 (24.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/world/02genscher_web2/02genscher_web2-thumbStandard.jpg' saved [3453/3453]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/arts/03FEAR1/03FEAR1-thumbStandard-v3.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3516 (3.4K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/arts/03FEAR1/03FEAR1-thumbStandard-v3.jpg'
+
+     0K ...                                                   100% 16.7M=0s
+
+2016-04-01 16:57:00 (16.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/arts/03FEAR1/03FEAR1-thumbStandard-v3.jpg' saved [3516/3516]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/02/science/02zika-microcephaly6/02zika-microcephaly5-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3169 (3.1K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/science/02zika-microcephaly6/02zika-microcephaly5-thumbStandard.jpg'
+
+     0K ...                                                   100% 14.1M=0s
+
+2016-04-01 16:57:00 (14.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/02/science/02zika-microcephaly6/02zika-microcephaly5-thumbStandard.jpg' saved [3169/3169]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/travel/03QA2/03QA2-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3861 (3.8K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/travel/03QA2/03QA2-thumbStandard.jpg'
+
+     0K ...                                                   100% 7.68M=0s
+
+2016-04-01 16:57:00 (7.68 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/travel/03QA2/03QA2-thumbStandard.jpg' saved [3861/3861]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/03/31/multimedia/clark-babka/clark-babka-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3364 (3.3K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/multimedia/clark-babka/clark-babka-thumbStandard.jpg'
+
+     0K ...                                                   100% 7.35M=0s
+
+2016-04-01 16:57:00 (7.35 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/31/multimedia/clark-babka/clark-babka-thumbStandard.jpg' saved [3364/3364]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/03/27/opinion/sunday/27druckermanWEB/27druckermanWEB-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3372 (3.3K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/27/opinion/sunday/27druckermanWEB/27druckermanWEB-thumbStandard.jpg'
+
+     0K ...                                                   100% 8.43M=0s
+
+2016-04-01 16:57:00 (8.43 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/27/opinion/sunday/27druckermanWEB/27druckermanWEB-thumbStandard.jpg' saved [3372/3372]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/realestate/03COVJP1/03COVJP1-thumbStandard-v2.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3110 (3.0K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/realestate/03COVJP1/03COVJP1-thumbStandard-v2.jpg'
+
+     0K ...                                                   100% 8.14M=0s
+
+2016-04-01 16:57:00 (8.14 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/realestate/03COVJP1/03COVJP1-thumbStandard-v2.jpg' saved [3110/3110]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/business/03VIEW/03VIEW-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2747 (2.7K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/business/03VIEW/03VIEW-thumbStandard.jpg'
+
+     0K ..                                                    100% 10.1M=0s
+
+2016-04-01 16:57:00 (10.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/business/03VIEW/03VIEW-thumbStandard.jpg' saved [2747/2747]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/magazine/03lives/03lives-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2719 (2.7K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/magazine/03lives/03lives-thumbStandard.jpg'
+
+     0K ..                                                    100% 12.5M=0s
+
+2016-04-01 16:57:00 (12.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/magazine/03lives/03lives-thumbStandard.jpg' saved [2719/2719]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/01/business/01wheels/01wheels-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2623 (2.6K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/business/01wheels/01wheels-thumbStandard.jpg'
+
+     0K ..                                                    100% 7.81M=0s
+
+2016-04-01 16:57:00 (7.81 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/business/01wheels/01wheels-thumbStandard.jpg' saved [2623/2623]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/01/t-magazine/blackman-cruz-slide-GOFJ/blackman-cruz-slide-GOFJ-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3120 (3.0K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/t-magazine/blackman-cruz-slide-GOFJ/blackman-cruz-slide-GOFJ-thumbStandard.jpg'
+
+     0K ...                                                   100% 10.7M=0s
+
+2016-04-01 16:57:00 (10.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/01/t-magazine/blackman-cruz-slide-GOFJ/blackman-cruz-slide-GOFJ-thumbStandard.jpg' saved [3120/3120]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/03/23/world/23BELGIUM-1/23BELGIUM-1-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2771 (2.7K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/23/world/23BELGIUM-1/23BELGIUM-1-thumbStandard.jpg'
+
+     0K ..                                                    100% 11.1M=0s
+
+2016-04-01 16:57:00 (11.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/03/23/world/23BELGIUM-1/23BELGIUM-1-thumbStandard.jpg' saved [2771/2771]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/realestate/03TICKET/03TICKET-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2593 (2.5K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/realestate/03TICKET/03TICKET-thumbStandard.jpg'
+
+     0K ..                                                    100% 8.66M=0s
+
+2016-04-01 16:57:00 (8.66 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/realestate/03TICKET/03TICKET-thumbStandard.jpg' saved [2593/2593]
+
+--2016-04-01 16:57:00--  https://static01.nyt.com/images/2016/04/03/realestate/03OTM-NYC-slide-NJVP/03OTM-NYC-slide-NJVP-thumbStandard.jpg
+Reusing existing connection to static01.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2609 (2.5K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/realestate/03OTM-NYC-slide-NJVP/03OTM-NYC-slide-NJVP-thumbStandard.jpg'
+
+     0K ..                                                    100% 9.45M=0s
+
+2016-04-01 16:57:00 (9.45 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/static01.nyt.com/images/2016/04/03/realestate/03OTM-NYC-slide-NJVP/03OTM-NYC-slide-NJVP-thumbStandard.jpg' saved [2609/2609]
+
+--2016-04-01 16:57:00--  https://a1.nyt.com/assets/homepage/20160328-174152/images/sprite/sprite-no-repeat.svg
+Connecting to a1.nyt.com (a1.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/sprite/sprite-no-repeat.svg'
+
+     0K .......... .......... .......... .......... .......... 3.63M
+    50K .......... .......... .......... .......... .......... 3.86M
+   100K .......... .......... .......... .......... .......... 4.10M
+   150K .......... .......... .......... .......... ..........  853K
+   200K .......... .......... .......... .......... .......... 8.62M
+   250K .......... .......... .......... .......... .......... 4.41M
+   300K .......                                                26.1M=0.1s
+
+2016-04-01 16:57:00 (2.65 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/sprite/sprite-no-repeat.svg' saved [315335]
+
+--2016-04-01 16:57:00--  https://a1.nyt.com/assets/homepage/20160328-174152/images/sprite/sprite-no-repeat-fallback.png
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 93101 (91K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/sprite/sprite-no-repeat-fallback.png'
+
+     0K .......... .......... .......... .......... .......... 54% 10.9M 0s
+    50K .......... .......... .......... ..........           100% 14.5M=0.007s
+
+2016-04-01 16:57:00 (12.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/sprite/sprite-no-repeat-fallback.png' saved [93101/93101]
+
+--2016-04-01 16:57:00--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-200.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 49628 (48K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-200.woff'
+
+     0K .......... .......... .......... .......... ........  100% 12.2M=0.004s
+
+2016-04-01 16:57:01 (12.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-200.woff' saved [49628/49628]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-200.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-200.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.27M
+    50K .......... .......... .......... .......... .......    13.3M=0.01s
+
+2016-04-01 16:57:01 (9.31 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-200.ttf' saved [99396]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 49780 (49K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-300.woff'
+
+     0K .......... .......... .......... .......... ........  100% 9.28M=0.005s
+
+2016-04-01 16:57:01 (9.28 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-300.woff' saved [49780/49780]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 12.1M
+    50K .......... .......... .......... .......... .......    19.9M=0.006s
+
+2016-04-01 16:57:01 (15.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-300.ttf' saved [100284]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 50104 (49K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-400.woff'
+
+     0K .......... .......... .......... .......... ........  100% 14.4M=0.003s
+
+2016-04-01 16:57:01 (14.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-400.woff' saved [50104/50104]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.5M
+    50K .......... .......... .......... .......... .........  19.8M=0.007s
+
+2016-04-01 16:57:01 (13.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-400.ttf' saved [101952]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 49680 (49K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-500.woff'
+
+     0K .......... .......... .......... .......... ........  100% 13.5M=0.004s
+
+2016-04-01 16:57:01 (13.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-500.woff' saved [49680/49680]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 11.5M
+    50K .......... .......... .......... .......... .......... 20.0M
+   100K                                                        3.21G=0.007s
+
+2016-04-01 16:57:01 (14.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-500.ttf' saved [103032]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 35708 (35K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-700.woff'
+
+     0K .......... .......... .......... ....                 100% 19.6M=0.002s
+
+2016-04-01 16:57:01 (19.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-700.woff' saved [35708/35708]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 14.7M
+    50K .......... ...                                         20.7M=0.004s
+
+2016-04-01 16:57:01 (15.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-700.ttf' saved [65524]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-800.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 49100 (48K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-800.woff'
+
+     0K .......... .......... .......... .......... .......   100% 20.5M=0.002s
+
+2016-04-01 16:57:01 (20.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-800.woff' saved [49100/49100]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-800.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-800.ttf'
+
+     0K .......... .......... .......... .......... .......... 14.0M
+    50K .......... .......... .......... .......... ........   17.1M=0.006s
+
+2016-04-01 16:57:01 (15.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-italic-800.ttf' saved [101044]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-200.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 33772 (33K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-200.woff'
+
+     0K .......... .......... .......... ..                   100% 10.6M=0.003s
+
+2016-04-01 16:57:01 (10.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-200.woff' saved [33772/33772]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-200.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-200.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.69M
+    50K ..........                                             45.3M=0.007s
+
+2016-04-01 16:57:01 (9.02 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-200.ttf' saved [62188]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 34272 (33K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-300.woff'
+
+     0K .......... .......... .......... ...                  100%  456K=0.07s
+
+2016-04-01 16:57:01 (456 KB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-300.woff' saved [34272/34272]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 9.43M
+    50K .........                                              29.4M=0.006s
+
+2016-04-01 16:57:01 (10.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-300.ttf' saved [61328]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 46044 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-400.woff'
+
+     0K .......... .......... .......... .......... ....      100% 9.45M=0.005s
+
+2016-04-01 16:57:01 (9.45 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-400.woff' saved [46044/46044]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.4M
+    50K .......... .......... .......... .......... .          12.8M=0.008s
+
+2016-04-01 16:57:01 (11.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-400.ttf' saved [94176]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 35904 (35K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-500.woff'
+
+     0K .......... .......... .......... .....                100% 7.20M=0.005s
+
+2016-04-01 16:57:01 (7.20 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-500.woff' saved [35904/35904]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.44M
+    50K .......... .....                                       7.26M=0.009s
+
+2016-04-01 16:57:01 (7.40 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-500.ttf' saved [67220]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 35556 (35K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-700.woff'
+
+     0K .......... .......... .......... ....                 100% 13.7M=0.002s
+
+2016-04-01 16:57:01 (13.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-700.woff' saved [35556/35556]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.24M
+    50K .......... .....                                       12.4M=0.007s
+
+2016-04-01 16:57:01 (8.94 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-700.ttf' saved [66808]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-800.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 45780 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-800.woff'
+
+     0K .......... .......... .......... .......... ....      100% 9.96M=0.004s
+
+2016-04-01 16:57:01 (9.96 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-800.woff' saved [45780/45780]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-800.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-800.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.05M
+    50K .......... .......... .......... .......... ..         10.6M=0.01s
+
+2016-04-01 16:57:01 (8.34 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham/cheltenham-normal-800.ttf' saved [94484]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 44244 (43K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-300.woff'
+
+     0K .......... .......... .......... .......... ...       100% 13.0M=0.003s
+
+2016-04-01 16:57:01 (13.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-300.woff' saved [44244/44244]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.05M
+    50K .......... .......... .......... .......               11.0M=0.009s
+
+2016-04-01 16:57:01 (9.09 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-300.ttf' saved [89660]
+
+--2016-04-01 16:57:01--  https://a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 43792 (43K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-500.woff'
+
+     0K .......... .......... .......... .......... ..        100% 12.4M=0.003s
+
+2016-04-01 16:57:02 (12.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-500.woff' saved [43792/43792]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 9.72M
+    50K .......... .......... .......... .....                 9.86M=0.009s
+
+2016-04-01 16:57:02 (9.78 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-500.ttf' saved [88004]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 52624 (51K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-700.woff'
+
+     0K .......... .......... .......... .......... .......... 97% 16.7M 0s
+    50K .                                                     100% 7.23G=0.003s
+
+2016-04-01 16:57:02 (17.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-700.woff' saved [52624/52624]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 16.9M
+    50K .......... .......... .......... .......... .......... 6.25M
+   100K ..........                                             30.3M=0.01s
+
+2016-04-01 16:57:02 (9.78 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-cond/cheltenham-cond-normal-700.ttf' saved [113140]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-scaps/cheltenham-scaps-normal-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 45860 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-scaps/cheltenham-scaps-normal-300.woff'
+
+     0K .......... .......... .......... .......... ....      100% 18.5M=0.002s
+
+2016-04-01 16:57:02 (18.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-scaps/cheltenham-scaps-normal-300.woff' saved [45860/45860]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-scaps/cheltenham-scaps-normal-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-scaps/cheltenham-scaps-normal-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 14.9M
+    50K .......... .......... .......... .......... ....       19.1M=0.006s
+
+2016-04-01 16:57:02 (16.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-scaps/cheltenham-scaps-normal-300.ttf' saved [96536]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 30800 (30K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-400.woff'
+
+     0K .......... .......... ..........                      100% 11.9M=0.002s
+
+2016-04-01 16:57:02 (11.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-400.woff' saved [30800/30800]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 13.4M
+    50K ...                                                    19.9G=0.004s
+
+2016-04-01 16:57:02 (14.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-400.ttf' saved [55112]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 31756 (31K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-700.woff'
+
+     0K .......... .......... .......... .                    100% 9.39M=0.003s
+
+2016-04-01 16:57:02 (9.39 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-700.woff' saved [31756/31756]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.78M
+    50K .......                                                4.17M=0.007s
+
+2016-04-01 16:57:02 (7.71 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-italic-700.ttf' saved [58520]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 28684 (28K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-400.woff'
+
+     0K .......... .......... ........                        100% 8.74M=0.003s
+
+2016-04-01 16:57:02 (8.74 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-400.woff' saved [28684/28684]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.80M
+    50K                                                        4.35G=0.006s
+
+2016-04-01 16:57:02 (7.93 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-400.ttf' saved [52056]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 30452 (30K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-700.woff'
+
+     0K .......... .......... .........                       100% 8.27M=0.004s
+
+2016-04-01 16:57:02 (8.27 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-700.woff' saved [30452/30452]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 6.80M
+    50K ......                                                 10.3M=0.008s
+
+2016-04-01 16:57:02 (7.06 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-small/cheltenham-small-normal-700.ttf' saved [57344]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-italic-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 50904 (50K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-italic-400.woff'
+
+     0K .......... .......... .......... .......... ......... 100% 12.0M=0.004s
+
+2016-04-01 16:57:02 (12.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-italic-400.woff' saved [50904/50904]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-italic-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-italic-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.52M
+    50K .......... .......... .......... .......... ........   14.7M=0.009s
+
+2016-04-01 16:57:02 (10.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-italic-400.ttf' saved [101224]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-normal-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 46204 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-normal-400.woff'
+
+     0K .......... .......... .......... .......... .....     100% 11.1M=0.004s
+
+2016-04-01 16:57:02 (11.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-normal-400.woff' saved [46204/46204]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-normal-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-normal-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 6.40M
+    50K .......... .......... .......... .........             15.3M=0.01s
+
+2016-04-01 16:57:02 (8.61 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-wide/cheltenham-wide-normal-400.ttf' saved [91720]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-xcond/cheltenham-xcond-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 52936 (52K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-xcond/cheltenham-xcond-normal-700.woff'
+
+     0K .......... .......... .......... .......... .......... 96% 10.5M 0s
+    50K .                                                     100% 8.82G=0.005s
+
+2016-04-01 16:57:02 (10.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-xcond/cheltenham-xcond-normal-700.woff' saved [52936/52936]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/cheltenham-xcond/cheltenham-xcond-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-xcond/cheltenham-xcond-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.8M
+    50K .......... .......... .......... .......... .......... 12.4M
+   100K .........                                              38.2M=0.009s
+
+2016-04-01 16:57:02 (12.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/cheltenham-xcond/cheltenham-xcond-normal-700.ttf' saved [112556]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 26824 (26K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-300.woff'
+
+     0K .......... .......... ......                          100% 8.38M=0.003s
+
+2016-04-01 16:57:02 (8.38 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-300.woff' saved [26824/26824]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.3M
+    50K ...                                                    16.4G=0.005s
+
+2016-04-01 16:57:02 (10.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-300.ttf' saved [54432]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 26432 (26K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-500.woff'
+
+     0K .......... .......... .....                           100% 8.53M=0.003s
+
+2016-04-01 16:57:02 (8.53 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-500.woff' saved [26432/26432]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 9.86M
+    50K ...                                                    16.9G=0.005s
+
+2016-04-01 16:57:02 (10.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-500.ttf' saved [54524]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-600.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 26748 (26K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-600.woff'
+
+     0K .......... .......... ......                          100% 9.17M=0.003s
+
+2016-04-01 16:57:02 (9.17 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-600.woff' saved [26748/26748]
+
+--2016-04-01 16:57:02--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-600.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-600.ttf'
+
+     0K .......... .......... .......... .......... .......... 9.47M
+    50K ...                                                    18.5G=0.005s
+
+2016-04-01 16:57:02 (10.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-600.ttf' saved [54832]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 27856 (27K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-700.woff'
+
+     0K .......... .......... .......                         100% 11.1M=0.002s
+
+2016-04-01 16:57:03 (11.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-700.woff' saved [27856/27856]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.50M
+    50K ...                                                    2.29M=0.007s
+
+2016-04-01 16:57:03 (7.12 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-700.ttf' saved [55128]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-800.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 45848 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-800.woff'
+
+     0K .......... .......... .......... .......... ....      100% 11.0M=0.004s
+
+2016-04-01 16:57:03 (11.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-800.woff' saved [45848/45848]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-800.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-800.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.19M
+    50K .......... .......... .......... ..........            11.9M=0.01s
+
+2016-04-01 16:57:03 (8.73 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-800.ttf' saved [92952]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-900.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 45824 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-900.woff'
+
+     0K .......... .......... .......... .......... ....      100% 9.32M=0.005s
+
+2016-04-01 16:57:03 (9.32 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-900.woff' saved [45824/45824]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-italic-900.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-900.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.92M
+    50K .......... .......... .......... ..........            12.0M=0.009s
+
+2016-04-01 16:57:03 (9.35 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-italic-900.ttf' saved [92900]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 26244 (26K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-300.woff'
+
+     0K .......... .......... .....                           100% 9.31M=0.003s
+
+2016-04-01 16:57:03 (9.31 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-300.woff' saved [26244/26244]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.32M
+    50K                                                         936M=0.006s
+
+2016-04-01 16:57:03 (8.35 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-300.ttf' saved [51380]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 25980 (25K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-500.woff'
+
+     0K .......... .......... .....                           100% 10.1M=0.002s
+
+2016-04-01 16:57:03 (10.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-500.woff' saved [25980/25980]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-500.ttf'
+
+     0K .......... .......... .......... .......... .........  6.91M=0.007s
+
+2016-04-01 16:57:03 (6.91 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-500.ttf' saved [51124]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-600.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 26596 (26K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-600.woff'
+
+     0K .......... .......... .....                           100% 12.8M=0.002s
+
+2016-04-01 16:57:03 (12.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-600.woff' saved [26596/26596]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-600.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-600.ttf'
+
+     0K .......... .......... .......... .......... .......... 15.5M
+    50K                                                         603M=0.003s
+
+2016-04-01 16:57:03 (15.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-600.ttf' saved [51316]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 26840 (26K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-700.woff'
+
+     0K .......... .......... ......                          100% 10.2M=0.003s
+
+2016-04-01 16:57:03 (10.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-700.woff' saved [26840/26840]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.75M
+    50K                                                         957M=0.006s
+
+2016-04-01 16:57:03 (8.79 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-700.ttf' saved [51384]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-800.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 42432 (41K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-800.woff'
+
+     0K .......... .......... .......... .......... .         100% 14.2M=0.003s
+
+2016-04-01 16:57:03 (14.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-800.woff' saved [42432/42432]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-800.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-800.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.5M
+    50K .......... .......... .......... .                     15.7M=0.007s
+
+2016-04-01 16:57:03 (12.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-800.ttf' saved [83232]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-900.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 42508 (42K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-900.woff'
+
+     0K .......... .......... .......... .......... .         100% 12.7M=0.003s
+
+2016-04-01 16:57:03 (12.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-900.woff' saved [42508/42508]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin/franklin-normal-900.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-900.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.7M
+    50K .......... .......... .......... .                     14.4M=0.007s
+
+2016-04-01 16:57:03 (11.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin/franklin-normal-900.ttf' saved [83244]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin-cword/franklin-cword-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 26020 (25K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-cword/franklin-cword-normal-500.woff'
+
+     0K .......... .......... .....                           100% 10.8M=0.002s
+
+2016-04-01 16:57:03 (10.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-cword/franklin-cword-normal-500.woff' saved [26020/26020]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin-cword/franklin-cword-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-cword/franklin-cword-normal-500.ttf'
+
+     0K .......... .......... .......... .......... .........  12.4M=0.004s
+
+2016-04-01 16:57:03 (12.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-cword/franklin-cword-normal-500.ttf' saved [51140]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 20720 (20K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-500.woff'
+
+     0K .......... ..........                                 100% 20.6M=0.001s
+
+2016-04-01 16:57:03 (20.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-500.woff' saved [20720/20720]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-500.ttf'
+
+     0K .......... .......... .......... ..........            7.40M=0.005s
+
+2016-04-01 16:57:03 (7.40 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-500.ttf' saved [41168]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 20824 (20K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-700.woff'
+
+     0K .......... ..........                                 100% 15.5M=0.001s
+
+2016-04-01 16:57:03 (15.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-700.woff' saved [20824/20824]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-700.ttf'
+
+     0K .......... .......... .......... .........             13.2M=0.003s
+
+2016-04-01 16:57:03 (13.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/franklin-small/franklin-small-normal-700.ttf' saved [40920]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 45266 (44K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-300.woff'
+
+     0K .......... .......... .......... .......... ....      100% 17.9M=0.002s
+
+2016-04-01 16:57:03 (17.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-300.woff' saved [45266/45266]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 13.2M
+    50K .......... .......... .......... .......... ...        25.2M=0.005s
+
+2016-04-01 16:57:03 (16.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-300.ttf' saved [95308]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 42454 (41K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-400.woff'
+
+     0K .......... .......... .......... .......... .         100% 15.5M=0.003s
+
+2016-04-01 16:57:03 (15.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-400.woff' saved [42454/42454]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 14.4M
+    50K .......... .......... .......... ........              17.9M=0.005s
+
+2016-04-01 16:57:03 (15.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-400.ttf' saved [90556]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 45954 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-500.woff'
+
+     0K .......... .......... .......... .......... ....      100% 20.6M=0.002s
+
+2016-04-01 16:57:03 (20.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-500.woff' saved [45954/45954]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 13.2M
+    50K .......... .......... .......... .......... ..         20.2M=0.006s
+
+2016-04-01 16:57:03 (15.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-500.ttf' saved [95096]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-600.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 45670 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-600.woff'
+
+     0K .......... .......... .......... .......... ....      100% 19.4M=0.002s
+
+2016-04-01 16:57:03 (19.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-600.woff' saved [45670/45670]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-600.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-600.ttf'
+
+     0K .......... .......... .......... .......... .......... 12.8M
+    50K .......... .......... .......... .......... ...        16.0M=0.006s
+
+2016-04-01 16:57:03 (14.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-600.ttf' saved [95656]
+
+--2016-04-01 16:57:03--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 45594 (45K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-700.woff'
+
+     0K .......... .......... .......... .......... ....      100% 21.0M=0.002s
+
+2016-04-01 16:57:04 (21.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-700.woff' saved [45594/45594]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/graphik/graphik-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 15.5M
+    50K .......... .......... .......... .......... .......... 17.4M
+   100K .                                                      6.75G=0.006s
+
+2016-04-01 16:57:04 (16.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik/graphik-normal-700.ttf' saved [103728]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/graphik-cond/graphik-cond-normal-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 35266 (34K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik-cond/graphik-cond-normal-400.woff'
+
+     0K .......... .......... .......... ....                 100% 13.3M=0.003s
+
+2016-04-01 16:57:04 (13.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik-cond/graphik-cond-normal-400.woff' saved [35266/35266]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/graphik-cond/graphik-cond-normal-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik-cond/graphik-cond-normal-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.56M
+    50K .......... .......... .........                        23.1M=0.007s
+
+2016-04-01 16:57:04 (11.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik-cond/graphik-cond-normal-400.ttf' saved [81800]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/graphik-xcond/graphik-xcond-normal-600.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 44042 (43K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik-xcond/graphik-xcond-normal-600.woff'
+
+     0K .......... .......... .......... .......... ...       100% 12.5M=0.003s
+
+2016-04-01 16:57:04 (12.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik-xcond/graphik-xcond-normal-600.woff' saved [44042/44042]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/graphik-xcond/graphik-xcond-normal-600.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik-xcond/graphik-xcond-normal-600.ttf'
+
+     0K .......... .......... .......... .......... .......... 11.3M
+    50K .......... .......... .......... .......... .          15.1M=0.007s
+
+2016-04-01 16:57:04 (12.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/graphik-xcond/graphik-xcond-normal-600.ttf' saved [93444]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-italic-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 39444 (39K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-500.woff'
+
+     0K .......... .......... .......... ........             100% 13.7M=0.003s
+
+2016-04-01 16:57:04 (13.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-500.woff' saved [39444/39444]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-italic-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 11.5M
+    50K .......... .......... ...                              14.0M=0.006s
+
+2016-04-01 16:57:04 (12.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-500.ttf' saved [75436]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-italic-600.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 40124 (39K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-600.woff'
+
+     0K .......... .......... .......... .........            100% 13.7M=0.003s
+
+2016-04-01 16:57:04 (13.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-600.woff' saved [40124/40124]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-italic-600.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-600.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.85M
+    50K .......... .......... ..                               21.6M=0.007s
+
+2016-04-01 16:57:04 (9.77 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-600.ttf' saved [74104]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-italic-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 50136 (49K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-700.woff'
+
+     0K .......... .......... .......... .......... ........  100% 14.6M=0.003s
+
+2016-04-01 16:57:04 (14.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-700.woff' saved [50136/50136]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-italic-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.4M
+    50K .......... .......... .......... .......... .........  19.7M=0.007s
+
+2016-04-01 16:57:04 (13.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-italic-700.ttf' saved [102116]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 38632 (38K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-500.woff'
+
+     0K .......... .......... .......... .......              100% 12.6M=0.003s
+
+2016-04-01 16:57:04 (12.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-500.woff' saved [38632/38632]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.9M
+    50K .......... .......... .                                25.6M=0.005s
+
+2016-04-01 16:57:04 (13.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-500.ttf' saved [73440]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-normal-600.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 38168 (37K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-600.woff'
+
+     0K .......... .......... .......... .......              100% 11.9M=0.003s
+
+2016-04-01 16:57:04 (11.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-600.woff' saved [38168/38168]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-normal-600.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-600.ttf'
+
+     0K .......... .......... .......... .......... .......... 8.25M
+    50K .......... .........                                   23.2M=0.007s
+
+2016-04-01 16:57:04 (10.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-600.ttf' saved [70824]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 48084 (47K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-700.woff'
+
+     0K .......... .......... .......... .......... ......    100% 12.9M=0.004s
+
+2016-04-01 16:57:04 (12.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-700.woff' saved [48084/48084]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/imperial/imperial-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 11.0M
+    50K .......... .......... .......... .......... .....      13.1M=0.008s
+
+2016-04-01 16:57:04 (11.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/imperial/imperial-normal-700.ttf' saved [97460]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/karnak/karnak-normal-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 31076 (30K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/karnak/karnak-normal-400.woff'
+
+     0K .......... .......... ..........                      100% 11.8M=0.003s
+
+2016-04-01 16:57:04 (11.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/karnak/karnak-normal-400.woff' saved [31076/31076]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/karnak/karnak-normal-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/karnak/karnak-normal-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 12.4M
+    50K .......... ..                                          15.4M=0.005s
+
+2016-04-01 16:57:04 (12.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/karnak/karnak-normal-400.ttf' saved [64244]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/karnak-small/karnak-small-normal-400.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 29668 (29K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/karnak-small/karnak-small-normal-400.woff'
+
+     0K .......... .......... ........                        100% 15.1M=0.002s
+
+2016-04-01 16:57:04 (15.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/karnak-small/karnak-small-normal-400.woff' saved [29668/29668]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/karnak-small/karnak-small-normal-400.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/karnak-small/karnak-small-normal-400.ttf'
+
+     0K .......... .......... .......... .......... .......... 15.5M
+    50K .........                                              14.6M=0.004s
+
+2016-04-01 16:57:04 (15.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/karnak-small/karnak-small-normal-400.ttf' saved [60600]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/magsans/magsans-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 78480 (77K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magsans/magsans-normal-500.woff'
+
+     0K .......... .......... .......... .......... .......... 65% 14.8M 0s
+    50K .......... .......... ......                          100% 23.4M=0.004s
+
+2016-04-01 16:57:04 (17.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magsans/magsans-normal-500.woff' saved [78480/78480]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/magsans/magsans-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magsans/magsans-normal-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 14.2M
+    50K .......... .......... .......... .......... .......... 18.0M
+   100K .......... .......... .......... .......... .......... 8.64M
+   150K .......... .......... .......                          12.2M=0.01s
+
+2016-04-01 16:57:04 (12.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magsans/magsans-normal-500.ttf' saved [181928]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/magsans/magsans-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 76188 (74K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magsans/magsans-normal-700.woff'
+
+     0K .......... .......... .......... .......... .......... 67% 20.9M 0s
+    50K .......... .......... ....                            100% 20.4M=0.004s
+
+2016-04-01 16:57:04 (20.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magsans/magsans-normal-700.woff' saved [76188/76188]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/magsans/magsans-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magsans/magsans-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 15.6M
+    50K .......... .......... .......... .......... .......... 14.6M
+   100K .......... .......... .......... .......... .......... 10.3M
+   150K .......... ..........                                  19.5M=0.01s
+
+2016-04-01 16:57:04 (13.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magsans/magsans-normal-700.ttf' saved [175016]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/magserif/magserif-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 81116 (79K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magserif/magserif-normal-700.woff'
+
+     0K .......... .......... .......... .......... .......... 63% 19.6M 0s
+    50K .......... .......... .........                       100% 21.1M=0.004s
+
+2016-04-01 16:57:04 (20.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magserif/magserif-normal-700.woff' saved [81116/81116]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/magserif/magserif-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magserif/magserif-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 15.7M
+    50K .......... .......... .......... .......... .......... 13.5M
+   100K .......... .......... .......... .......... .......... 12.4M
+   150K .......... .......... .......... .                     16.1M=0.01s
+
+2016-04-01 16:57:04 (14.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magserif/magserif-normal-700.ttf' saved [185920]
+
+--2016-04-01 16:57:04--  https://a1.nyt.com/fonts/family/magslab/magslab-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 82116 (80K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magslab/magslab-normal-700.woff'
+
+     0K .......... .......... .......... .......... .......... 62% 19.1M 0s
+    50K .......... .......... ..........                      100% 20.6M=0.004s
+
+2016-04-01 16:57:05 (19.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magslab/magslab-normal-700.woff' saved [82116/82116]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/magslab/magslab-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magslab/magslab-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 14.5M
+    50K .......... .......... .......... .......... .......... 13.4M
+   100K .......... .......... .......... .......... .......... 11.9M
+   150K .......... .......... .......... ..........            15.6M=0.01s
+
+2016-04-01 16:57:05 (13.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/magslab/magslab-normal-700.ttf' saved [194688]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-600.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 42930 (42K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-600.woff'
+
+     0K .......... .......... .......... .......... .         100% 16.3M=0.003s
+
+2016-04-01 16:57:05 (16.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-600.woff' saved [42930/42930]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-600.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-600.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.6M
+    50K .......... .......... .......... .......... .          18.3M=0.007s
+
+2016-04-01 16:57:05 (13.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-600.ttf' saved [93492]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 41546 (41K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-700.woff'
+
+     0K .......... .......... .......... ..........           100% 12.5M=0.003s
+
+2016-04-01 16:57:05 (12.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-700.woff' saved [41546/41546]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 13.9M
+    50K .......... .......... .......... .......... .          15.8M=0.006s
+
+2016-04-01 16:57:05 (14.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-s/schnyder-s-normal-700.ttf' saved [93424]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 34574 (34K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-300.woff'
+
+     0K .......... .......... .......... ...                  100% 12.3M=0.003s
+
+2016-04-01 16:57:05 (12.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-300.woff' saved [34574/34574]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.7M
+    50K .......... .......... .....                            14.8M=0.006s
+
+2016-04-01 16:57:05 (11.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-300.ttf' saved [77752]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-600.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 35402 (35K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-600.woff'
+
+     0K .......... .......... .......... ....                 100% 8.84M=0.004s
+
+2016-04-01 16:57:05 (8.84 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-600.woff' saved [35402/35402]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-600.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-600.ttf'
+
+     0K .......... .......... .......... .......... .......... 9.80M
+    50K .......... .......... .....                            18.4M=0.006s
+
+2016-04-01 16:57:05 (11.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-600.ttf' saved [77208]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 35142 (34K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-700.woff'
+
+     0K .......... .......... .......... ....                 100% 10.3M=0.003s
+
+2016-04-01 16:57:05 (10.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-700.woff' saved [35142/35142]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.5M
+    50K .......... .......... .....                            14.6M=0.006s
+
+2016-04-01 16:57:05 (11.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/schnyder-scond/schnyder-scond-normal-700.ttf' saved [77732]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-italic-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 50140 (49K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-300.woff'
+
+     0K .......... .......... .......... .......... ........  100% 16.5M=0.003s
+
+2016-04-01 16:57:05 (16.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-300.woff' saved [50140/50140]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-italic-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 9.77M
+    50K .......... .......... .......... .......... .......... 12.8M
+   100K ........                                               42.1M=0.009s
+
+2016-04-01 16:57:05 (11.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-300.ttf' saved [111160]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-italic-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 53072 (52K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-500.woff'
+
+     0K .......... .......... .......... .......... .......... 96% 2.01M 0s
+    50K .                                                     100% 9.51G=0.02s
+
+2016-04-01 16:57:05 (2.09 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-500.woff' saved [53072/53072]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-italic-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.92M
+    50K .......... .......... .......... .......... .......... 10.0M
+   100K .......... .........                                   7.68M=0.01s
+
+2016-04-01 16:57:05 (8.64 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-500.ttf' saved [122592]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-italic-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 55132 (54K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-700.woff'
+
+     0K .......... .......... .......... .......... .......... 92% 8.51M 0s
+    50K ...                                                   100% 7.58M=0.006s
+
+2016-04-01 16:57:05 (8.43 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-700.woff' saved [55132/55132]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-italic-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 6.43M
+    50K .......... .......... .......... .......... .......... 8.85M
+   100K .......... .......... .                                8.37M=0.02s
+
+2016-04-01 16:57:05 (7.60 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-700.ttf' saved [124908]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-italic-800.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 54992 (54K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-800.woff'
+
+     0K .......... .......... .......... .......... .......... 93% 9.74M 0s
+    50K ...                                                   100% 19.3G=0.005s
+
+2016-04-01 16:57:05 (10.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-800.woff' saved [54992/54992]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-italic-800.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-800.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.5M
+    50K .......... .......... .......... .......... .......... 20.1M
+   100K .......... .......... ....                             17.2M=0.008s
+
+2016-04-01 16:57:05 (14.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-italic-800.ttf' saved [127432]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-100.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 51388 (50K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-100.woff'
+
+     0K .......... .......... .......... .......... .......... 99% 20.5M 0s
+    50K                                                       100%  978M=0.002s
+
+2016-04-01 16:57:05 (20.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-100.woff' saved [51388/51388]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-100.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-100.ttf'
+
+     0K .......... .......... .......... .......... .......... 13.9M
+    50K .......... .......... .......... .......... .......... 16.6M
+   100K .......... .......                                     17.7M=0.007s
+
+2016-04-01 16:57:05 (15.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-100.ttf' saved [120396]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-200.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 52408 (51K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-200.woff'
+
+     0K .......... .......... .......... .......... .......... 97% 17.9M 0s
+    50K .                                                     100% 6.14G=0.003s
+
+2016-04-01 16:57:05 (18.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-200.woff' saved [52408/52408]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-200.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-200.ttf'
+
+     0K .......... .......... .......... .......... .......... 12.6M
+    50K .......... .......... .......... .......... .......... 22.7M
+   100K .......... ......                                      15.6M=0.007s
+
+2016-04-01 16:57:05 (16.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-200.ttf' saved [119552]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-300.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 29112 (28K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-300.woff'
+
+     0K .......... .......... ........                        100% 17.8M=0.002s
+
+2016-04-01 16:57:05 (17.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-300.woff' saved [29112/29112]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-300.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-300.ttf'
+
+     0K .......... .......... .......... .......... .......... 12.5M
+    50K .......... ..                                          16.0M=0.005s
+
+2016-04-01 16:57:05 (13.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-300.ttf' saved [64480]
+
+--2016-04-01 16:57:05--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-500.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 29172 (28K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-500.woff'
+
+     0K .......... .......... ........                        100% 14.2M=0.002s
+
+2016-04-01 16:57:06 (14.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-500.woff' saved [29172/29172]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-500.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-500.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.6M
+    50K .......... ..                                          14.9M=0.005s
+
+2016-04-01 16:57:06 (11.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-500.ttf' saved [63804]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-700.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 50148 (49K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-700.woff'
+
+     0K .......... .......... .......... .......... ........  100% 16.8M=0.003s
+
+2016-04-01 16:57:06 (16.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-700.woff' saved [50148/50148]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-700.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-700.ttf'
+
+     0K .......... .......... .......... .......... .......... 13.7M
+    50K .......... .......... .......... .......... .......... 20.6M
+   100K ..........                                             13.2M=0.007s
+
+2016-04-01 16:57:06 (16.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-700.ttf' saved [113136]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-800.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 30172 (29K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-800.woff'
+
+     0K .......... .......... .........                       100% 11.6M=0.002s
+
+2016-04-01 16:57:06 (11.6 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-800.woff' saved [30172/30172]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-800.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-800.ttf'
+
+     0K .......... .......... .......... .......... .......... 7.93M
+    50K .......... ...                                         12.2M=0.007s
+
+2016-04-01 16:57:06 (8.55 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-800.ttf' saved [64600]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-900.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 52508 (51K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-900.woff'
+
+     0K .......... .......... .......... .......... .......... 97% 12.9M 0s
+    50K .                                                     100% 6.65G=0.004s
+
+2016-04-01 16:57:06 (13.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-900.woff' saved [52508/52508]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie/stymie-normal-900.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-900.ttf'
+
+     0K .......... .......... .......... .......... .......... 10.0M
+    50K .......... .......... .......... .......... .......... 15.3M
+   100K .......... ........                                    18.6M=0.009s
+
+2016-04-01 16:57:06 (12.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie/stymie-normal-900.ttf' saved [121012]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie-small/stymie-small-italic-800.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 56216 (55K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie-small/stymie-small-italic-800.woff'
+
+     0K .......... .......... .......... .......... .......... 91% 14.7M 0s
+    50K ....                                                  100% 16.8M=0.004s
+
+2016-04-01 16:57:06 (14.9 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie-small/stymie-small-italic-800.woff' saved [56216/56216]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie-small/stymie-small-italic-800.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie-small/stymie-small-italic-800.ttf'
+
+     0K .......... .......... .......... .......... .......... 9.88M
+    50K .......... .......... .......... .......... .......... 14.0M
+   100K .......... .......... ........                         17.1M=0.01s
+
+2016-04-01 16:57:06 (12.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie-small/stymie-small-italic-800.ttf' saved [132044]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie-small/stymie-small-normal-800.woff
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 53708 (52K) [application/font-woff]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie-small/stymie-small-normal-800.woff'
+
+     0K .......... .......... .......... .......... .......... 95% 12.9M 0s
+    50K ..                                                    100% 7.72M=0.004s
+
+2016-04-01 16:57:06 (12.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie-small/stymie-small-normal-800.woff' saved [53708/53708]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/fonts/family/stymie-small/stymie-small-normal-800.ttf
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-font-ttf]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie-small/stymie-small-normal-800.ttf'
+
+     0K .......... .......... .......... .......... .......... 11.5M
+    50K .......... .......... .......... .......... .......... 17.1M
+   100K .......... .......... ..                               13.9M=0.009s
+
+2016-04-01 16:57:06 (13.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/fonts/family/stymie-small/stymie-small-normal-800.ttf' saved [125544]
+
+--2016-04-01 16:57:06--  http://i1.nyt.com/images/loaders/loading-grey-lines-circle-18.gif
+Connecting to i1.nyt.com (i1.nyt.com)|23.33.84.130|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2078 (2.0K) [image/gif]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/i1.nyt.com/images/loaders/loading-grey-lines-circle-18.gif'
+
+     0K ..                                                    100% 33.0M=0s
+
+2016-04-01 16:57:06 (33.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/i1.nyt.com/images/loaders/loading-grey-lines-circle-18.gif' saved [2078/2078]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/messaging/icon-bell-count-1-59x60-fullcolor.svg
+Connecting to a1.nyt.com (a1.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1845 (1.8K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/messaging/icon-bell-count-1-59x60-fullcolor.svg'
+
+     0K .                                                     100% 4.66M=0s
+
+2016-04-01 16:57:06 (4.66 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/messaging/icon-bell-count-1-59x60-fullcolor.svg' saved [1845/1845]
+
+--2016-04-01 16:57:06--  http://i1.nyt.com/images/global/borders/aColumnHorizontalBorder.gif
+Connecting to i1.nyt.com (i1.nyt.com)|23.33.84.130|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 46 [image/gif]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/i1.nyt.com/images/global/borders/aColumnHorizontalBorder.gif'
+
+     0K                                                       100%  382K=0s
+
+2016-04-01 16:57:06 (382 KB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/i1.nyt.com/images/global/borders/aColumnHorizontalBorder.gif' saved [46/46]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-free-trial-modern-love-75x75-fullcolor.jpg
+Connecting to a1.nyt.com (a1.nyt.com)|23.33.84.130|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3478 (3.4K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-free-trial-modern-love-75x75-fullcolor.jpg'
+
+     0K ...                                                   100% 18.1M=0s
+
+2016-04-01 16:57:06 (18.1 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-free-trial-modern-love-75x75-fullcolor.jpg' saved [3478/3478]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-free-trial-36-hours-75x75-fullcolor.jpg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3243 (3.2K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-free-trial-36-hours-75x75-fullcolor.jpg'
+
+     0K ...                                                   100% 9.00M=0s
+
+2016-04-01 16:57:06 (9.00 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-free-trial-36-hours-75x75-fullcolor.jpg' saved [3243/3243]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-get-our-apps-120x120-fullcolor.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 4511 (4.4K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-get-our-apps-120x120-fullcolor.svg'
+
+     0K ....                                                  100% 13.0M=0s
+
+2016-04-01 16:57:06 (13.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-get-our-apps-120x120-fullcolor.svg' saved [4511/4511]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-crosswords-120x120-fullcolor.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3774 (3.7K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-crosswords-120x120-fullcolor.svg'
+
+     0K ...                                                   100% 16.7M=0s
+
+2016-04-01 16:57:06 (16.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-crosswords-120x120-fullcolor.svg' saved [3774/3774]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-riveting-reads-120x120-fullcolor.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 3053 (3.0K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-riveting-reads-120x120-fullcolor.svg'
+
+     0K ..                                                    100% 3.16M=0.001s
+
+2016-04-01 16:57:06 (3.16 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-riveting-reads-120x120-fullcolor.svg' saved [3053/3053]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-whats-cooking-120x120-fullcolor.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2031 (2.0K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-whats-cooking-120x120-fullcolor.svg'
+
+     0K .                                                     100% 8.43M=0s
+
+2016-04-01 16:57:06 (8.43 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-whats-cooking-120x120-fullcolor.svg' saved [2031/2031]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-where-to-go-120x120-fullcolor.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 1836 (1.8K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-where-to-go-120x120-fullcolor.svg'
+
+     0K .                                                     100% 13.8M=0s
+
+2016-04-01 16:57:06 (13.8 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-where-to-go-120x120-fullcolor.svg' saved [1836/1836]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-timesmachine-120x120-fullcolor.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2320 (2.3K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-timesmachine-120x120-fullcolor.svg'
+
+     0K ..                                                    100% 17.7M=0s
+
+2016-04-01 16:57:06 (17.7 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-timesmachine-120x120-fullcolor.svg' saved [2320/2320]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/nyt-trial-logo-65x15-ffffff.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2456 (2.4K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/nyt-trial-logo-65x15-ffffff.svg'
+
+     0K ..                                                    100% 18.3M=0s
+
+2016-04-01 16:57:06 (18.3 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/nyt-trial-logo-65x15-ffffff.svg' saved [2456/2456]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-collapse-14x14-ffffff.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 584 [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-collapse-14x14-ffffff.svg'
+
+     0K                                                       100% 3.79M=0s
+
+2016-04-01 16:57:06 (3.79 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-collapse-14x14-ffffff.svg' saved [584/584]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-expand-14x14-ffffff.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 612 [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-expand-14x14-ffffff.svg'
+
+     0K                                                       100% 5.61M=0s
+
+2016-04-01 16:57:06 (5.61 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/icon-expand-14x14-ffffff.svg' saved [612/612]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/foundation/logos/nyt-logo-185x26.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 10903 (11K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/foundation/logos/nyt-logo-185x26.svg'
+
+     0K ..........                                            100% 13.4M=0.001s
+
+2016-04-01 16:57:06 (13.4 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/foundation/logos/nyt-logo-185x26.svg' saved [10903/10903]
+
+--2016-04-01 16:57:06--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/asset-free-trial-tour-545x319-fullcolor.jpg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 42035 (41K) [image/jpeg]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/asset-free-trial-tour-545x319-fullcolor.jpg'
+
+     0K .......... .......... .......... .......... .         100% 3.05M=0.01s
+
+2016-04-01 16:57:07 (3.05 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/asset-free-trial-tour-545x319-fullcolor.jpg' saved [42035/42035]
+
+--2016-04-01 16:57:07--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/asset-free-trial-post-138x100-fullcolor.png
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 11726 (11K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/asset-free-trial-post-138x100-fullcolor.png'
+
+     0K .......... .                                          100% 21.0M=0.001s
+
+2016-04-01 16:57:07 (21.0 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/asset-free-trial-post-138x100-fullcolor.png' saved [11726/11726]
+
+--2016-04-01 16:57:07--  https://a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-circle-devices-274x274-fullcolor.svg
+Reusing existing connection to a1.nyt.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 12132 (12K) [image/svg+xml]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-circle-devices-274x274-fullcolor.svg'
+
+     0K .......... .                                          100% 9.34M=0.001s
+
+2016-04-01 16:57:07 (9.34 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/images/shared/freetrial/free-trial-circle-devices-274x274-fullcolor.svg' saved [12132/12132]
+
+--2016-04-01 16:57:07--  http://int.nyt.com/applications/portals/assets/mCSB_buttons.png
+Connecting to int.nyt.com (int.nyt.com)|72.247.9.208|:80... connected.
+HTTP request sent, awaiting response... 404 Not Found
+
+     0K                                                       100% 68.0K=0s
+
+2016-04-01 16:57:07 ERROR 404: Not Found.
+
+--2016-04-01 16:57:07--  http://int.nyt.com/applications/portals/assets/loader-t-logo-32x32-e2e2e2@2x-f29d4ccd2265994b538b55b8f832935d.gif
+Reusing existing connection to int.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 13242 (13K) [image/gif]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/loader-t-logo-32x32-e2e2e2@2x-f29d4ccd2265994b538b55b8f832935d.gif'
+
+     0K .......... ..                                         100% 13.2M=0.001s
+
+2016-04-01 16:57:07 (13.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/loader-t-logo-32x32-e2e2e2@2x-f29d4ccd2265994b538b55b8f832935d.gif' saved [13242/13242]
+
+--2016-04-01 16:57:07--  http://int.nyt.com/applications/portals/assets/portal_icons_hinted-3a3efd51719f3e9a61039471b47a8b0c.png
+Reusing existing connection to int.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 1823 (1.8K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal_icons_hinted-3a3efd51719f3e9a61039471b47a8b0c.png'
+
+     0K .                                                     100% 6.64M=0s
+
+2016-04-01 16:57:07 (6.64 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal_icons_hinted-3a3efd51719f3e9a61039471b47a8b0c.png' saved [1823/1823]
+
+--2016-04-01 16:57:07--  http://int.nyt.com/applications/portals/assets/playbutton_arrow-f145d746df1db75d9c434c0e81d69a32.png
+Reusing existing connection to int.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 601 [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/playbutton_arrow-f145d746df1db75d9c434c0e81d69a32.png'
+
+     0K                                                       100% 3.24M=0s
+
+2016-04-01 16:57:07 (3.24 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/playbutton_arrow-f145d746df1db75d9c434c0e81d69a32.png' saved [601/601]
+
+--2016-04-01 16:57:07--  http://int.nyt.com/applications/portals/assets/sprite-no-repeat-5fb526ddd2ccdf9f876ec07311eebe0b.png
+Reusing existing connection to int.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 19593 (19K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/sprite-no-repeat-5fb526ddd2ccdf9f876ec07311eebe0b.png'
+
+     0K .......... .........                                  100% 10.5M=0.002s
+
+2016-04-01 16:57:07 (10.5 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/sprite-no-repeat-5fb526ddd2ccdf9f876ec07311eebe0b.png' saved [19593/19593]
+
+--2016-04-01 16:57:07--  http://int.stg.nyt.com/applications/portals/assets/temp_intents-8ba16568bfe6e08e7157d7c83cfa1885.png
+Connecting to int.stg.nyt.com (int.stg.nyt.com)|23.218.92.162|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 902 [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.stg.nyt.com/applications/portals/assets/temp_intents-8ba16568bfe6e08e7157d7c83cfa1885.png'
+
+     0K                                                       100% 13.2M=0s
+
+2016-04-01 16:57:07 (13.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.stg.nyt.com/applications/portals/assets/temp_intents-8ba16568bfe6e08e7157d7c83cfa1885.png' saved [902/902]
+
+--2016-04-01 16:57:07--  http://int.nyt.com/images/video/background-1x1-2d2d2d-90a.png
+Connecting to int.nyt.com (int.nyt.com)|72.247.9.208|:80... connected.
+HTTP request sent, awaiting response... 404 Not Found
+
+     0K                                                       100% 51.2K=0s
+
+2016-04-01 16:57:07 ERROR 404: Not Found.
+
+--2016-04-01 16:57:07--  http://int.nyt.com/applications/portals/assets/loader-t-logo-32x32-ecedeb-49955d7789658d80497f4f2b996577f6.gif
+Reusing existing connection to int.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 8400 (8.2K) [image/gif]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/loader-t-logo-32x32-ecedeb-49955d7789658d80497f4f2b996577f6.gif'
+
+     0K ........                                              100% 4.99M=0.002s
+
+2016-04-01 16:57:07 (4.99 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/loader-t-logo-32x32-ecedeb-49955d7789658d80497f4f2b996577f6.gif' saved [8400/8400]
+
+--2016-04-01 16:57:07--  http://int.nyt.com/applications/portals/assets/portal_icons_hinted-2x-8e349b817b95db27df9018b9d8687138.png
+Reusing existing connection to int.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3647 (3.6K) [image/png]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal_icons_hinted-2x-8e349b817b95db27df9018b9d8687138.png'
+
+     0K ...                                                   100% 41.2M=0s
+
+2016-04-01 16:57:07 (41.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal_icons_hinted-2x-8e349b817b95db27df9018b9d8687138.png' saved [3647/3647]
+
+--2016-04-01 16:57:07--  http://int.nyt.com/applications/portals/assets/loader-t-logo-32x32-ecedeb@2x-1465a4e7a08a33d478b3cd24df70929b.gif
+Reusing existing connection to int.nyt.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 11953 (12K) [image/gif]
+Saving to: 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/loader-t-logo-32x32-ecedeb@2x-1465a4e7a08a33d478b3cd24df70929b.gif'
+
+     0K .......... .                                          100% 10.2M=0.001s
+
+2016-04-01 16:57:07 (10.2 MB/s) - 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/loader-t-logo-32x32-ecedeb@2x-1465a4e7a08a33d478b3cd24df70929b.gif' saved [11953/11953]
+
+FINISHED --2016-04-01 16:57:07--
+Total wall clock time: 11s
+Downloaded: 242 files, 12M in 1.6s (7.74 MB/s)
+Converting links in C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/nytimes.com/index.html... 70-0
+Converting links in C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/a1.nyt.com/assets/homepage/20160328-174152/css/homepage/styles.css... 181-0
+Converting links in C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/int.nyt.com/applications/portals/assets/portal-3dc2bf0e7593a689f857e1edec4a2566.css... 12-2
+Converted links in 3 files in 0.1 seconds.
