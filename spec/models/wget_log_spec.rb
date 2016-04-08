@@ -6,7 +6,7 @@ describe WgetLog do
       WgetLog.from_file( Rails.root.join( 'spec/fixtures/files/wget.log' ).to_s )
     }
 
-    it 'should be valid' do
+    it {
       log.should be_valid
       
       log.should respond_to :requests
@@ -14,62 +14,75 @@ describe WgetLog do
       # use request_count instead of requests.count because the latter
       # only updates when saved to db, which we don't need to do
       log.should respond_to :request_count
+    }
 
-    end
+    it { log.warc_path.should eq( 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/53.warc' ) }
 
-    it 'should have warc_path' do
-      log.warc_path.should eq( 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/53.warc' )
-    end
+    it { log.finished_at.should eq( DateTime.new( 2016, 4, 1, 16, 57, 7 ) ) }
 
-    it 'should have finished_at' do
-      log.finished_at.should eq( DateTime.new( 2016, 4, 1, 16, 57, 7 ) )
-    end
+    it { log.total_time.should eq( '11s' ) }
 
-    it 'should have total_time' do
-      log.total_time.should eq( '11s' )
-    end
+    it { log.file_count.should eq( 242 ) }
 
-    it 'should have file_count' do
-      log.file_count.should eq( 242 )
-    end
+    it { log.download_time.should eq( '1.6s' ) }
 
-    it 'should have download_time' do
-      log.download_time.should eq( '1.6s' )
-    end
-
-    it 'should have wget log requests' do
-      log.request_count.should eq( 10 )
-    end
+    it { log.request_count.should eq( 10 ) }
 
     describe 'log request' do
-      let ( :req ) {
-        log.requests[ 0 ]
-      }
+      context 'common attributes' do
+        let ( :req ) { log.requests[ 0 ] }
 
-      it 'should be valid' do
-        req.should be_valid
+        it {
+          req.should be_valid
+          req.should respond_to :ip
+        }
 
-        req.should respond_to :ip
+        it { req.requested_at.should eq( DateTime.new( 2016, 4, 1, 16, 56, 56 ) ) }
+
+        it { req.url.should eq( 'http://nytimes.com/' ) }
+
+        it { req.host.should eq( 'nytimes.com' ) }
+
+        it { req.ip.should eq( '170.149.159.130' ) }
       end
 
-      it 'should have requested_at' do
-        req.requested_at.should eq( DateTime.new( 2016, 4, 1, 16, 56, 56 ) )
+      context 'redirect' do
+        let ( :req ) { log.requests[ 0 ] }
+
+        it { req.response_code.should eq( 301 ) }
+
+        it { req.is_redirect.should be true }
+
+        it { req.redirect_location.should eq( 'http://www.nytimes.com/' ) }
       end
 
-      it 'should have url' do
-        req.url.should eq( 'http://nytimes.com/' )
+      context 'saved content' do
+        let ( :req ) { log.requests[ 1 ] }
+
+        it { req.specified_mime_type.should eq( 'text/html' ) }
+
+        it { req.saved_path.should eq( 'C:/Users/rwestphal/Projects/berkmancenter/netclerk/public/content/53/nytimes.com/index.html' ) }
+
+        it { req.saved_length.should eq( 178382 ) }
+
+        it { req.download_speed.should eq( '2.40 MB/s' ) }
       end
 
-      it 'should have host' do
-        req.host.should eq( 'nytimes.com' )
-      end
+      describe 'specified length' do
+        context 'no length' do
+          let ( :req ) { log.requests[ 0 ] }
+          it { req.specified_length.should eq( 0 ) }
+        end
 
-      it 'should have ip' do
-        req.ip.should eq( '170.149.159.130' )
-      end
+        context 'unspecified' do
+          let ( :req ) { log.requests[ 1 ] }
+          it { req.specified_length.should eq( nil ) }
+        end
 
-      it 'should have port' do
-        req.port.should eq( 80 )
+        context 'specified' do
+          let ( :req ) { log.requests[ 2 ] }
+          it { req.specified_length.should eq( 1029 ) }
+        end
       end
     end
   end

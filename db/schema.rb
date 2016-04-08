@@ -88,6 +88,11 @@ ActiveRecord::Schema.define(version: 20160404195126) do
   add_index "statuses", ["page_id", "country_id", "created_at"], name: "index_statuses_on_page_id_and_country_id_and_created_at", unique: true, using: :btree
   add_index "statuses", ["page_id"], name: "index_statuses_on_page_id", using: :btree
 
+  create_table "users", force: true do |t|
+    t.string "username"
+    t.string "email"
+  end
+
   create_table "wget_log_requests", force: true do |t|
     t.integer  "wget_log_id"
     t.datetime "requested_at"
@@ -99,7 +104,8 @@ ActiveRecord::Schema.define(version: 20160404195126) do
     t.integer  "response_code"
     t.boolean  "is_redirect"
     t.string   "redirect_location"
-    t.string   "specified_length"
+    t.integer  "specified_length",    default: 0
+    t.string   "specified_mime_type"
     t.string   "saved_path"
     t.integer  "saved_length"
     t.string   "download_speed"

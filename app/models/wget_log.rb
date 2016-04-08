@@ -34,7 +34,31 @@ class WgetLog < ActiveRecord::Base
         req.ip_v4 = connecting_to[0][2]
         req.port = connecting_to[0][3]
 
-      when /.* saved [(.*)]/
+      when /\AHTTP request sent/
+        req.response_code = line.scan( /(\d\d\d)/ )[0][0]
+
+      when /\ALocation/
+        req.is_redirect = line.match( /following/ ).present?
+        req.redirect_location = line.scan( /Location: (.*)? \[following\]/ )[0][0]
+
+      when /\ASaving to/
+        req.saved_path = line.scan( /Saving to: '(.*)?'/ )[0][0]
+
+      when /saved \[(\d*)?\]/
+        saved = line.scan /\((.*)?\) - .*? saved \[(\d*)?\]/
+        req.download_speed = saved[0][0]
+        req.saved_length = saved[0][1].to_i
+
+      when /\ALength/
+        len = line.scan /Length: (.*)? \[(.*)?\]/
+        if len[0][0] == 'unspecified'
+          req.specified_length = nil
+        else
+          req.specified_length = len[0][0].scan( /(\d+)/ )[0][0].to_i
+        end
+
+        req.specified_mime_type = len[0][1]
+
       end
     }
 

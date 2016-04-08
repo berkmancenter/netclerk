@@ -11,7 +11,8 @@ class CreateWgetLogRequests < ActiveRecord::Migration
       t.integer :response_code
       t.boolean :is_redirect
       t.string :redirect_location
-      t.string :specified_length
+      t.integer :specified_length, default: 0
+      t.string :specified_mime_type
       t.string :saved_path
       t.integer :saved_length
       t.string :download_speed
